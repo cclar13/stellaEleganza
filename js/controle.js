@@ -54,6 +54,7 @@ function fazerLogin() {
             console.error("Erro na requisição", error);
         });
 }
+
 // FUNCAO DE LOADING
 function mostrarProcessando() {
     var divProcessando = document.createElement("div");
@@ -66,6 +67,7 @@ function mostrarProcessando() {
         '<img src="./img/loading.gif" width="70px" alt="Processando..." title="Processando...">';
     document.body.appendChild(divProcessando);
 }
+
 // FUNCAO DE ESCONDER O LOADING
 function esconderProcessando() {
     var divProcessando = document.getElementById("processandoDiv");
@@ -82,14 +84,13 @@ function mostrarsenha() {
     if (inputPass.type === 'password') {
         inputPass.setAttribute('type', 'text');
         btnShowPass.classList.replace('bi-eye-slash', 'bi-eye');
-    }
-    else {
+    } else {
         inputPass.setAttribute('type', 'password');
         btnShowPass.classList.replace('bi-eye', 'bi-eye-slash');
     }
 }
 
-function carregarConteudo(controle){
+function carregarConteudo(controle) {
     fetch('controle.php', {
         method: 'POST', headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -98,7 +99,7 @@ function carregarConteudo(controle){
         .then(response => response.text())
         .then(data => {
 
-            document.getElementById('show').innerHTML= data;
+            document.getElementById('show').innerHTML = data;
         })
         .catch(error => {
             console.error('Erro na requisição:', error);
@@ -107,13 +108,77 @@ function carregarConteudo(controle){
 
 $('.cpf').mask('000.000.000-00');
 
-var options = {
-    onKeyPress: function (tell, e, field, options) {
-        var masks = ['(00) 0 0000-0000', '(00) 0000-0000'];
-        var mask = (tell.length < 15) ? masks[1] : masks[0];
-        $('.telefoneBR').mask(mask, options);
+// var options = {
+//     onKeyPress: function (tell, e, field, options) {
+//         var masks = ['(00) 0 0000-0000', '(00) 0000-0000'];
+//         var mask = (tell.length < 15) ? masks[1] : masks[0];
+//         $('.telefoneBR').mask(mask, options);
+//     }
+// };
+$('.telefoneBR').mask('(00) 0 0000-0000');
+
+
+function addContato() {
+    const formulario = document.getElementById('frmContato');
+    const submitHandler = function (event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        formData.append('controle', 'addContato');
+        fetch('controle.php', {
+            method: 'POST',
+            body: formData,
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                if (data.success) {
+                    alertSuccess(data.message, 'green')
+                }else{
+                    alertError('Algo deu Errado, tente novamente.')
+                }
+
+            })
+            .catch(error => {
+                console.error('Erro na requisição:', error);
+            });
     }
-};
-$('.telefoneBR').mask('(00) 0 0000-0000', options);
+    formulario.addEventListener('submit', submitHandler);
 
 
+}
+
+function alertSuccess(msg, cor) {
+
+    Toastify({
+        text: `${msg}`,
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: `${cor}`,
+            color: 'white',
+        },
+    }).showToast();
+
+}
+
+function alertError(msg) {
+    Toastify({
+        text: `${msg}`,
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "#F40000",
+            color: 'white',
+        },
+    }).showToast();
+
+}

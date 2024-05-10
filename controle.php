@@ -22,8 +22,8 @@ if ($_SESSION['idadm']) {
 
 if (!empty($controle) && isset($controle)) {
     switch ($controle) {
-        case 'Algo':
-            include_once('index.php');
+        case 'addContato':
+            include_once('addContato.php');
             break;
 
     }

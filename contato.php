@@ -18,6 +18,7 @@ include_once("func/funcoes.php");
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -27,19 +28,19 @@ include_once("func/funcoes.php");
             <h2>Entre em contato conosco:</h2>
         </div>
         <div class="col-6 ">
-            <form method="post" id="frmContato" name="frmContato">
+            <form  method="post" id="frmContato" name="frmContato">
 
                 <div class="input-container ">
-                    <input type="text" id="input" required="required">
-                    <label for="input" class="label">Seu Nome</label>
+                    <input type="text" id="nome" name="nome" required="required">
+                    <label for="nome" class="label">Seu Nome</label>
                     <div class="underline"></div>
                 </div>
                 <div class="input-container ">
-                    <input type="text" id="input" required="required" class="telefoneBR">
-                    <label for="input" class="label ">Telefone</label>
+                    <input type="text" id="telefone" name="telefone" required="required" class="telefoneBR" minlength="14">
+                    <label for="telefone" class="label ">Telefone</label>
                     <div class="underline"></div>
                 </div>
-                <button class="botaoContato">Enviar</button>
+                <button class="botaoContato" type="submit" onclick="addContato()" >Enviar</button>
             </form>
         </div>
         <div class="col-6">
@@ -59,10 +60,11 @@ include_once("func/funcoes.php");
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="./js/controle.js"></script>
 
 </body>
