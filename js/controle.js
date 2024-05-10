@@ -147,6 +147,89 @@ function addContato() {
 
 
 }
+function abrirModalJsVenda(id, inID, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, inFocus, inFocusValue, formulario) {
+    const formDados = document.getElementById(`${formulario}`)
+
+    var botoes = document.getElementById(`${botao}`);
+    const ModalInstacia = new bootstrap.Modal(document.getElementById(`${nomeModal}`))
+    if (abrirModal === 'A') {
+        ModalInstacia.show();
+
+        const inputFocar = document.getElementById(`${inFocus}`);
+        if (inFocusValue !== 'nao') {
+            inputFocar.value = inFocusValue;
+            setTimeout(function () {
+                inputFocar.focus();
+
+            }, 500);
+        }
+        const ID = document.getElementById(`${inID}`);
+        if (inID !== 'nao') {
+            ID.value = id;
+        }
+
+
+        const submitHandler = function (event) {
+            event.preventDefault();
+
+            botoes.disabled = true;
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            if (dataTime !== 'nao') {
+                formData.append('dataTime', `${dataTime}`)
+            }
+            formData.append('controle', `${addEditDel}`)
+
+            fetch('controle.php', {
+                method: 'POST', body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.success) {
+                        carregarConteudo("listarVenda");
+
+                        switch (addEditDel) {
+                            case 'addVenda':
+                                addOuEditSucesso('Você', 'success', 'adicionou')
+                                break;
+                            case 'editVenda':
+                                addOuEditSucesso('Você', 'info', 'editou')
+                                botoes.disabled = false;
+                                break;
+                            case 'deleteVenda':
+                                addOuEditSucesso('Você', 'success', 'deletou')
+                                botoes.disabled = false;
+                                break;
+                        }
+                        ModalInstacia.hide();
+                    } else {
+                        addErro()
+                        ModalInstacia.hide();
+                        carregarConteudo("listarVenda");
+                    }
+                })
+                .catch(error => {
+                    botoes.disabled = false;
+                    ModalInstacia.hide();
+                    addErro()
+                    carregarConteudo("listarVenda");
+                    console.error('Erro na requisição:', error);
+                });
+
+
+        }
+        formDados.addEventListener('submit', submitHandler);
+
+
+    } else {
+        botoes.disabled = false;
+        ModalInstacia.hide();
+    }
+
+}
 
 function alertSuccess(msg, cor) {
 
