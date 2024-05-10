@@ -13,11 +13,11 @@ if ($_SESSION['idadm']) {
 
     if ($resultadoSenha !== 'deBOA') {
         session_destroy();
-        header('location: index.php?error=404');
+        header('location:index.php?error=404');
     }
 } else {
     session_destroy();
-    header('location: index.php?error=404');
+    header('location:index.php?error=404');
 }
 
 if (!empty($controle) && isset($controle)) {
