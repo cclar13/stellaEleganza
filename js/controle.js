@@ -101,7 +101,7 @@ function mostrarsenha() {
 }
 
 function carregarConteudo(controle) {
-    fetch('controle.php', {
+    fetch('./admin/controle.php', {
         method: 'POST', headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         }, body: 'controle=' + encodeURIComponent(controle),
@@ -143,15 +143,16 @@ function addContato() {
             .then(data => {
                 console.log(data)
                 if (data.success) {
+                    formulario.reset()
                     alertSuccess(data.message, 'green')
                 }else{
                     alertError('Algo deu Errado, tente novamente.')
                 }
 
             })
-            .catch(error => {
-                console.error('Erro na requisição:', error);
-            });
+            // .catch(error => {
+            //     console.error('Erro na requisição:', error);
+            // });
     }
     formulario.addEventListener('submit', submitHandler);
 

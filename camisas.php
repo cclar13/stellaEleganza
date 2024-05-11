@@ -9,7 +9,7 @@ include_once("func/funcoes.php");
 <html lang="pt-br">
 
 <head>
-    <title>Contato</title>
+    <title>Blazers masculinos</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="./css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -19,43 +19,47 @@ include_once("func/funcoes.php");
           href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="quasebranco">
 
-<?php include_once ('navbar.php')?>
+<?php include_once('navbar.php') ?>
 
-<div class="container mt-5 mb-5">
-    <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-12">
-            <h2>Entre em contato conosco:</h2>
-        </div>
-        <div class="col-6 ">
-            <form  method="post" id="frmContato" name="frmContato">
-
-                <div class="input-container ">
-                    <input type="text" id="nome" name="nome" required="required">
-                    <label for="nome" class="label">Seu Nome</label>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-container ">
-                    <input type="text" id="telefone" name="telefone" required="required" class="telefoneBR" minlength="14">
-                    <label for="telefone" class="label ">Telefone</label>
-                    <div class="underline"></div>
-                </div>
-                <button class="botaoContato" type="submit" onclick="addContato()" >Enviar</button>
-            </form>
-        </div>
-        <div class="col-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.072490757377!2d-41.96478547404086!3d-18.88386500658829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb1a7d340d00e43%3A0xf3acb8b7a321ccf2!2sSENAI%20Governador%20Valadares%20UI%20Luiz%20Chaves!5e0!3m2!1spt-BR!2sbr!4v1715363614152!5m2!1spt-BR!2sbr"
-                    class="w-100" style="border:1px black solid; height: 500px; border-radius: 20px" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+<div class="container mt-4">
+    <div class="text-center fs-3">
+        Camisas
     </div>
+    <div class="row mt-5 mb-3">
+        <?php
+        $roupas = listarTabela('*', 'produto');
+        foreach ($roupas as $masc) {
+            $sexo = $masc->idsexo;
+            $tipo = $masc->tipo;
+            if ($sexo === 2 && $tipo === 'camisa') {
+                $foto = $masc->nomeFoto;
+                $nome = $masc->nomeProduto;
 
+                ?>
+                <div class="col-lg-3 mt-3">
+                    <div class="card quasebranco pointer">
+                        <img src="./img/roupas/masculino/<?php echo $foto ?>" class="card-img-top"
+                             alt="<?php echo $nome ?>" title="<?php echo $nome ?>">
+                        <div class="card-body quasebranco minHeightCard">
+                            <h5 class="card-title"><?php echo $nome ?></h5>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+        }
+        ?>
+    </div>
 </div>
 
-<?php include_once ('footer.php')?>
+<?php include_once('footer.php') ?>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
