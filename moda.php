@@ -48,7 +48,6 @@ include_once('func/funcoes.php');
     </div>
 </nav>
 
-
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -74,7 +73,30 @@ include_once('func/funcoes.php');
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="fs-3">
+        Explore categorias
+    </div>
+    <div class="d-flex justify-content-around align-items-center mt-5">
+        <div>
+            <div class="">
+                <img src="./img/blazerM1.png" alt="" class="circulo" width="200px">
+            </div>
+        </div>
+        <div>
+            <div class="">
+                <img src="./img/blazerM1.png" alt="" class="circulo" width="200px">
+            </div>
+        </div>
+        <div>
+            <div class="">
+                <img src="./img/blazerM1.png" alt="" class="circulo" width="200px">
+            </div>
+        </div>
+        <div>
+            <div class="">
+                <img src="./img/blazerM1.png" alt="" class="circulo" width="200px">
+            </div>
+        </div>
 
     </div>
     <div class="fs-3 mt-5">
@@ -91,23 +113,6 @@ include_once('func/funcoes.php');
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card">
-                <img src="./img/roupas/masculino/blazerM2.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco">
-                    <h5 class="card-title">Blazer masculino</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-
-        </div>
-        <div class="col-lg-3">
-
         </div>
     </div>
 </div>
