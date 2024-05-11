@@ -269,3 +269,12 @@ body {
 .circulo{
     border-radius: 50%;
 }
+
+.minHeightCard{
+    min-height: 120px;
+}
+
+.edicaoLink{
+    text-decoration: none;
+    color: black;
+}
