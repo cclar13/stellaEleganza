@@ -1,7 +1,7 @@
 <?php
-include_once("config/constantes.php");
-include_once("config/conexao.php");
-include_once("func/funcoes.php");
+include_once("../config/constantes.php");
+include_once("../config/conexao.php");
+include_once("../func/funcoes.php");
 
 ?>
 
@@ -51,7 +51,7 @@ include_once("func/funcoes.php");
         ?>
         <div style="display: flex;justify-content: center;align-items: center; min-height: 95vh !important;">
             <h1>Página Vazia.</h1>
-            <img src="./img/vazio.gif" alt="ERROR 404">
+            <img src="../img/vazio.gif" alt="ERROR 404">
         </div>
         <?php
     }

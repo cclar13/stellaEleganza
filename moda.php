@@ -5,7 +5,7 @@ include_once('func/funcoes.php');
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,12 +42,13 @@ include_once('func/funcoes.php');
 
             </ul>
             <div style="margin-right: 20px" class="pointer">
-                <i class="bi bi-person-square"></i> Contato
+                <a href="contato.php" class="text-white nav-link">
+                    <i class="bi bi-person-square"></i> Contato
+                </a>
             </div>
         </div>
     </div>
 </nav>
-
 
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -74,7 +75,42 @@ include_once('func/funcoes.php');
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="fs-3 mt-3">
+        Explore por categorias
+    </div>
+    <div class="d-flex justify-content-around align-items-center mt-5">
+        <div>
+            <div class="">
+                <img src="./img/blazerM1.png" alt="" class="circulo" width="200px">
+            </div>
+            <div>
+                Blazers masculinos
+            </div>
+        </div>
+        <div>
+            <div class="">
+                <img src="./img/blazerF3.png" alt="" class="circulo" width="200px">
+            </div>
+            <div>
+                Blazers femininos
+            </div>
+        </div>
+        <div>
+            <div class="">
+                <img src="./img/calcaF2.png" alt="" class="circulo" width="200px">
+            </div>
+            <div class="text-center mt-1">
+                Calças femininas
+            </div>
+        </div>
+        <div>
+            <div class="">
+                <img src="./img/calcaM1.png" alt="" class="circulo" width="200px">
+            </div>
+            <div>
+                Calças masculinas
+            </div>
+        </div>
 
     </div>
     <div class="fs-3 mt-5">
@@ -82,32 +118,36 @@ include_once('func/funcoes.php');
     </div>
     <div class="row mt-5 mb-3">
         <div class="col-lg-3">
-            <div class="card quasebranco">
+            <div class="card quasebranco pointer">
                 <img src="./img/roupas/feminino/blazerF2.png" class="card-img-top" alt="...">
                 <div class="card-body quasebranco">
                     <h5 class="card-title">Blazer feminino</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
-            <div class="card">
-                <img src="./img/roupas/masculino/blazerM2.png" class="card-img-top" alt="...">
+            <div class="card quasebranco pointer">
+                <img src="./img/roupas/feminino/vestidoF2.png" class="card-img-top" alt="...">
+                <div class="card-body quasebranco">
+                    <h5 class="card-title">Vestido</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card quasebranco pointer">
+                <img src="./img/roupas/masculino/blazerM3.png" class="card-img-top" alt="...">
                 <div class="card-body quasebranco">
                     <h5 class="card-title">Blazer masculino</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
-
-        </div>
-        <div class="col-lg-3">
-
+            <div class="card quasebranco pointer">
+                <img src="./img/roupas/feminino/calcaF3.png" class="card-img-top" alt="...">
+                <div class="card-body quasebranco">
+                    <h5 class="card-title">Calça feminino</h5>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -163,26 +203,20 @@ include_once('func/funcoes.php');
             </div>
         </div>
 
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-5 my-2 border-top">
             <p>©
                 <script>document.write(new Date().getFullYear());</script>
                 Stella Eleganza. Todos os direitos reservados.
             </p>
             <ul class="list-unstyled d-flex">
                 <li class="ms-3"><a class="link-body-emphasis" href="#">
-                        <svg class="bi" width="24" height="24">
-                            <use xlink:href="#twitter"></use>
-                        </svg>
+                        <i class="bi bi-twitter-x"></i>
                     </a></li>
                 <li class="ms-3"><a class="link-body-emphasis" href="#">
-                        <svg class="bi" width="24" height="24">
-                            <use xlink:href="#instagram"></use>
-                        </svg>
+                        <i class="bi bi-instagram"></i>
                     </a></li>
                 <li class="ms-3"><a class="link-body-emphasis" href="#">
-                        <svg class="bi" width="24" height="24">
-                            <use xlink:href="#facebook"></use>
-                        </svg>
+                        <i class="bi bi-threads"></i>
                     </a></li>
             </ul>
         </div>

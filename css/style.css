@@ -265,3 +265,7 @@ body {
 .radius_top{
     border-radius: 10px 10px 0px 0px;
 }
+
+.circulo{
+    border-radius: 50%;
+}
