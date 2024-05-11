@@ -208,6 +208,7 @@ body {
     transform: translateY(10px);
     transition: 100ms;
 }
+
 .marromEscuro{
     background-color: #73543e;
     color:white;
@@ -235,6 +236,32 @@ body {
     background-color: #f8e7d8;
 }
 
+.quasebranco{
+    background-color: #fff8f0;
+}
+
 .pointer{
     cursor: pointer;
+}
+
+.botaoRevista{
+    width: 120px;
+    background:  transparent;
+    border-radius: 10px;
+    border: 3px solid #73543e;
+    color: #73543e;
+}
+
+.botaoRevista:hover{
+    transition: 0.5s;
+    background-color: #73543e;
+    color: white;
+}
+
+.tranparente{
+    background: transparent;
+}
+
+.radius_top{
+    border-radius: 10px 10px 0px 0px;
 }
