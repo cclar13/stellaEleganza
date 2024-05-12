@@ -56,11 +56,11 @@ include_once('func/funcoes.php');
     <div class="fs-3 mt-3">
         Explore por categorias
     </div>
-    <div class="d-flex justify-content-around align-items-center mt-5">
-        <div>
+    <div class="row mt-2">
+        <div class="col-lg-2 col-md-4 col-6 mt-3">
             <a href="blazermasculino.php" class="edicaoLink">
                 <div class="">
-                    <img src="./img/blazerM1.png" alt="" class="circulo pointer" width="200px">
+                    <img src="./img/blazerM1.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1">
                     Blazers masculinos
@@ -68,57 +68,56 @@ include_once('func/funcoes.php');
             </a>
 
         </div>
-        <div>
+        <div class="col-lg-2 col-md-4 col-6 mt-3">
             <a href="blazerfeminino.php" class="edicaoLink">
                 <div class="">
-                    <img src="./img/blazerF3.png" alt="" class="circulo pointer" width="200px">
+                    <img src="./img/blazerF3.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
                     Blazers femininos
                 </div>
             </a>
         </div>
-        <div>
+        <div class="col-lg-2 col-md-4 col-6 mt-3">
             <a href="camisas.php" class="edicaoLink">
                 <div class="">
-                    <img src="./img/camisaM2.png" alt="" class="circulo pointer" width="200px">
+                    <img src="./img/camisaM2.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
                     Camisas
                 </div>
             </a>
         </div>
-        <div>
+        <div class="col-lg-2 col-md-4 col-6 mt-3">
             <a href="blusas.php" class="edicaoLink">
                 <div class="">
-                    <img src="./img/camisaF2.png" alt="" class="circulo pointer" width="200px">
+                    <img src="./img/camisaF2.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
                     Blusas
                 </div>
             </a>
         </div>
-        <div>
+        <div class="col-lg-2 col-md-4 col-6 mt-3">
             <a href="calcafeminina.php" class="edicaoLink">
                 <div class="">
-                    <img src="./img/calcaF2.png" alt="" class="circulo pointer" width="200px">
+                    <img src="./img/calcaF2.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
                     Calças femininas
                 </div>
             </a>
         </div>
-        <div>
+        <div class="col-lg-2 col-md-4 col-6 mt-3">
             <a href="calcamasculina.php" class="edicaoLink">
                 <div class="">
-                    <img src="./img/calcaM1.png" alt="" class="circulo pointer" width="200px">
+                    <img src="./img/calcaM1.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
                     Calças masculinas
                 </div>
             </a>
         </div>
-
     </div>
     <div class="fs-3 mt-5">
         Produtos mais vendidos
