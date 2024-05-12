@@ -1,10 +1,3 @@
-<?php
-include_once("../config/constantes.php");
-include_once("../config/conexao.php");
-include_once("../func/funcoes.php");
-
-?>
-
 <div class="fs-3 d-flex justify-content-around">
     # Banner
 
@@ -26,17 +19,17 @@ include_once("../func/funcoes.php");
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-4 ">
                         <h3 class="text-center">Imagem 1</h3>
-                        <img src="img/banners/<?php echo $foto1 ?>" alt="" class="img-fluid">
+                        <img src="../img/banners/<?php echo $foto1 ?>" alt="" class="img-fluid">
 
                     </div>
                     <div class="col-4">
                         <h3 class="text-center">Imagem 2</h3>
-                        <img src="img/banners/<?php echo $foto2 ?>" alt="" class="img-fluid">
+                        <img src="../img/banners/<?php echo $foto2 ?>" alt="" class="img-fluid">
 
                     </div>
                     <div class="col-4">
                         <h3 class="text-center">Imagem 3</h3>
-                        <img src="img/banners/<?php echo $foto3 ?>" alt="" class="img-fluid">
+                        <img src="../img/banners/<?php echo $foto3 ?>" alt="" class="img-fluid">
 
                     </div>
                 </div>

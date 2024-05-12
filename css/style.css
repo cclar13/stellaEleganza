@@ -4,17 +4,28 @@ body {
     margin: 0;
     padding: 0;
 }
-.erroBonito{
+
+.erroBonito {
     color: #ffffff;
     background-color: rgba(126, 0, 0, 0.55);
     border: #940000 1px solid;
 }
-.acertoBonito{
+
+.acertoBonito {
     color: #ffffff;
     background-color: rgba(27, 126, 0, 0.55);
     border: #259400 1px solid;
 }
 
+
+.divLogin {
+    font-size: 40px;
+    font-family: 'Calibri';
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px 20px 0px 0px;
+    padding-top: 20px;
+}
 
 .form {
     display: flex;
@@ -23,7 +34,7 @@ body {
     background-color: #ffffff;
     padding: 30px;
     width: 450px;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -129,9 +140,9 @@ body {
 }
 
 .btnLogin:hover {
-    border: 1px solid #2d79f3;
-;
+    border: 1px solid #2d79f3;;
 }
+
 /* INPUT CONTATO ABAIXO*/
 .input-container {
     position: relative;
@@ -186,7 +197,7 @@ body {
     cursor: pointer;
     border: 0;
     background-color: #946e61;
-    color:white;
+    color: white;
     box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -204,85 +215,98 @@ body {
 
 .botaoContato:active {
     letter-spacing: 3px;
-    background-color:#73543eFF;
+    background-color: #73543eFF;
     color: hsl(0, 0%, 100%);
     box-shadow: #dfccb3 0px 0px 0px 0px;
     transform: translateY(10px);
     transition: 100ms;
 }
 
-.marromEscuro{
+.marromEscuro {
     background-color: #73543e;
-    color:white;
+    color: white;
 }
-.marromIntermediario{
+
+.marromIntermediario {
     background-color: #946e61;
 }
 
-.marromToddy{
+.marromToddy {
     background-color: #a17759;
 }
 
-.marromTerra{
+.marromTerra {
     background-color: #a56e52;
 }
 
-.marromAreia{
+.marromAreia {
     background-color: #c09f86;
 }
 
-.marromAreiaClara{
+.marromAreiaClara {
     background-color: #dfccb3;
 }
-.areia{
+
+.areia {
     background-color: #f8e7d8;
 }
 
-.quasebranco{
+.quasebranco {
     background-color: #fff8f0;
 }
 
-.pointer{
+.pointer {
     cursor: pointer;
 }
 
-.botaoRevista{
+.botaoRevista {
     width: 120px;
-    background:  transparent;
+    background: transparent;
     border-radius: 10px;
     border: 3px solid #73543e;
     color: #73543e;
 }
 
-.botaoRevista:hover{
+.botaoRevista:hover {
     transition: 0.5s;
     background-color: #73543e;
     color: white;
 }
 
-.tranparente{
+.tranparente {
     background: transparent;
 }
 
-.radius_top{
+.radius_top {
     border-radius: 10px 10px 0px 0px;
 }
 
-.circulo{
+.circulo {
     border-radius: 50%;
 }
 
-.minHeightCard{
+.minHeightCard {
     min-height: 120px;
 }
 
-.edicaoLink{
+.edicaoLink {
     text-decoration: none;
     color: black;
 }
 
-.secao{
+.secao {
     font-family: "DM Serif Display", serif;
     font-weight: 400;
     font-style: italic;
+}
+
+.fotoPerfil{
+    box-shadow: black 0 0 2em;
+}
+
+.aside{
+    font-size: 25px;
+    flex-direction: column;
+    margin-left: 30px;
+    min-height: 65vh;
 }
