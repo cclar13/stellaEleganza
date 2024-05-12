@@ -22,7 +22,7 @@ include_once('func/funcoes.php');
           href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" sizes="16x16"  href="./favicons/sc.png" class="rounded-circle">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/sc.png" class="rounded-circle">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -56,8 +56,8 @@ include_once('func/funcoes.php');
 </div>
 
 <div class="container">
-    <div class="fs-3 mt-3">
-        Explore por categorias
+    <div class="fs-3 mt-3 secao">
+        Explore por nossas categorias
     </div>
     <div class="row mt-2">
         <div class="col-lg-2 col-md-4 col-6 mt-3">
@@ -122,7 +122,7 @@ include_once('func/funcoes.php');
             </a>
         </div>
     </div>
-    <div class="fs-3 mt-5">
+    <div class="fs-3 mt-5 secao">
         Produtos mais vendidos
     </div>
     <div class="row mt-3 mb-3">
@@ -156,6 +156,51 @@ include_once('func/funcoes.php');
                 <img src="./img/roupas/feminino/calcaF3.png" class="card-img-top" alt="...">
                 <div class="card-body quasebranco minHeightCard">
                     <h5 class="card-title">Calça Wide Leg Em Viscose Com Fivelas Na Cós E Bolsos Off White</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bannerFixo mb-2 mt-4">
+        <img src="./bannerRotativos/4.png" alt="" width="100%">
+    </div>
+
+    <div class="fs-3 mt-5 secao">
+       Nunca sai de moda
+    </div>
+
+    <div class="row mt-3 mb-3">
+        <div class="col-lg-3 col-md-6 col-6 mt-3">
+            <div class="card quasebranco pointer">
+                <img src="./img/roupas/masculino/blazerM2.png" class="card-img-top" alt="...">
+                <div class="card-body quasebranco minHeightCard">
+                    <h5 class="card-title">
+                        Blazer Slim Em Poliviscose Com Gola Lapela E Bolsos Verde Escuro
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6 mt-3">
+            <div class="card quasebranco pointer">
+                <img src="./img/roupas/feminino/vestidoF1.png" class="card-img-top" alt="...">
+                <div class="card-body quasebranco minHeightCard">
+                    <h5 class="card-title">Vestido New Midi Com Leve Brilho E Decote Halter Bege</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6 mt-3">
+            <div class="card quasebranco pointer">
+                <img src="./img/roupas/masculino/blazerM4.png" class="card-img-top" alt="...">
+                <div class="card-body quasebranco minHeightCard">
+                    <h5 class="card-title">Blazer Super Slim Em Poliviscose Xadrez Com Bolsos </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6 mt-3">
+            <div class="card quasebranco pointer">
+                <img src="./img/roupas/feminino/calcaF1.png" class="card-img-top" alt="...">
+                <div class="card-body quasebranco minHeightCard">
+                    <h5 class="card-title">Calça Reta Alfaiatada Com Risca De Giz E Cós Elástico Cinza</h5>
                 </div>
             </div>
         </div>
