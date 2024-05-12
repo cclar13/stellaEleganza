@@ -101,7 +101,7 @@ function mostrarsenha() {
 }
 
 function carregarConteudo(controle) {
-    fetch('./admin/controle.php', {
+    fetch('controle.php', {
         method: 'POST', headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         }, body: 'controle=' + encodeURIComponent(controle),

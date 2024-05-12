@@ -25,7 +25,9 @@ if (!empty($controle) && isset($controle)) {
         case 'addContato':
             include_once('addContato.php');
             break;
-
+        case 'listarBanner':
+            include_once ('./admin/listarBanner.php');
+            break;
     }
 
 } else {

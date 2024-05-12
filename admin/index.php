@@ -9,7 +9,7 @@ include_once("../func/funcoes.php");
 <html lang="pt-br">
 
 <head>
-    <title>Login</title>
+    <title>Área restrita - Stella Eleganza</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -18,15 +18,18 @@ include_once("../func/funcoes.php");
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons/sc.png" class="rounded-circle">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body class="quasebranco">
 
-<div class="container mt-5  ">
+<div class="container mt-5">
 
 
     <div class="position-absolute top-50 start-50 translate-middle">
-        <div style="font-size: 40px; font-family: 'Calibri'; text-align: center">
+        <div class="divLogin">
             Área restrita
         </div>
         <form class="form" method="post" name="frmLogin" id="frmLogin">
