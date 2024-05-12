@@ -82,6 +82,10 @@ if ($_SESSION['idadm']) {
                     <i class="bi bi-file-person"></i>
                     <span>Administrador(es)</span>
                 </div>
+                <div class="pointer mt-4">
+                    <i class="bi bi-door-open"></i>
+                    <span><a href="logout.php" class="edicaoLink text-white">Sair</a></span>
+                </div>
             </div>
         </div>
         <div class="col-lg-10">
