@@ -57,7 +57,7 @@ include_once('func/funcoes.php');
 
 <div class="container">
     <div class="fs-3 mt-3 secao">
-        Explore por categorias
+        Explore por nossas categorias
     </div>
     <div class="d-flex justify-content-around align-items-center mt-5 secao">
         <div>
