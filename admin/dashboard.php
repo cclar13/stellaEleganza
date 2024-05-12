@@ -5,6 +5,7 @@ include_once("../func/funcoes.php");
 
 if ($_SESSION['idadm']) {
     $idUsuario = $_SESSION['idadm'];
+    $fotoAdm = $_SESSION['fotoAdm'];
     //echo '<p class="text-white">'.$idUsuario.'</p>';
 } else {
     session_destroy();
@@ -44,6 +45,7 @@ if ($_SESSION['idadm']) {
                     if ($id === $idUsuario) {
                         $nome = $admin->nomeAdm;
                         $email = $admin->email;
+                        $fotoAdm = $admin -> fotoAdm;
 //                    $foto = $admin->foto;
 //
 //                    if ($foto === ''){
@@ -51,8 +53,8 @@ if ($_SESSION['idadm']) {
 //                    }
                         ?>
 
-                        <img src="../img/perfil-300x300-4.jpg" alt="Foto de perfil" title="Foto de perfil"
-                             class="circulo fotoPerfil mt-5" height="200px">
+                        <img src="../img/perfil/<?php echo $fotoAdm?>" alt="Foto de perfil" title="Foto de perfil"
+                             class="circulo fotoPerfil mt-2" height="200px">
                         <p class="fs-3 mt-2"><?php echo $nome?></p>
                         <p class="mt-1 mb-3"><?php echo $email?></p>
                         <?php
