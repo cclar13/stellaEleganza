@@ -29,7 +29,7 @@ include_once("func/funcoes.php");
 <?php include_once('navbar.php') ?>
 
 <div class="container mt-4">
-    <div class="text-center fs-3">
+    <div class="text-center fs-3 secao">
         Camisas
     </div>
     <div class="row mt-5 mb-3">
@@ -43,7 +43,7 @@ include_once("func/funcoes.php");
                 $nome = $masc->nomeProduto;
 
                 ?>
-                <div class="col-lg-3 mt-3">
+                <div class="col-lg-3 col-6 mt-3">
                     <div class="card quasebranco pointer">
                         <img src="./img/roupas/masculino/<?php echo $foto ?>" class="card-img-top"
                              alt="<?php echo $nome ?>" title="<?php echo $nome ?>">

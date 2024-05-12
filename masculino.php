@@ -42,7 +42,7 @@ include_once("func/funcoes.php");
                 $nome = $masc->nomeProduto;
 
                 ?>
-                <div class="col-lg-3 mt-3">
+                <div class="col-lg-3 col-6 mt-3">
                     <div class="card quasebranco pointer">
                         <img src="./img/roupas/masculino/<?php echo $foto ?>" class="card-img-top" alt="<?php echo $nome ?>" title="<?php echo $nome ?>">
                         <div class="card-body quasebranco minHeightCard">
