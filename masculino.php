@@ -29,7 +29,7 @@ include_once("func/funcoes.php");
 <?php include_once('navbar.php') ?>
 
 <div class="container mt-4">
-    <div class="text-center fs-3">
+    <div class="text-center fs-3 secao">
         Seção masculina
     </div>
     <div class="row mt-5 mb-3">

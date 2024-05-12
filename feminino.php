@@ -19,7 +19,7 @@ include_once("func/funcoes.php");
           href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="icon" type="image/png" sizes="16x16"  href="./favicons/sc.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/sc.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 </head>
@@ -29,7 +29,7 @@ include_once("func/funcoes.php");
 <?php include_once('navbar.php') ?>
 
 <div class="container mt-4">
-    <div class="text-center fs-3">
+    <div class="text-center fs-3 secao">
         Seção feminina
     </div>
     <div class="row mt-5 mb-3">
@@ -44,7 +44,8 @@ include_once("func/funcoes.php");
                 ?>
                 <div class="col-lg-3 mt-3">
                     <div class="card quasebranco pointer">
-                        <img src="./img/roupas/feminino/<?php echo $foto ?>" class="card-img-top" alt="<?php echo $nome ?>" title="<?php echo $nome ?>">
+                        <img src="./img/roupas/feminino/<?php echo $foto ?>" class="card-img-top"
+                             alt="<?php echo $nome ?>" title="<?php echo $nome ?>">
                         <div class="card-body quasebranco minHeightCard">
                             <h5 class="card-title"><?php echo $nome ?></h5>
                         </div>
