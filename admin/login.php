@@ -17,6 +17,7 @@ if ($retornoValidar) {
         echo json_encode(['success' => false, 'message' => 'Senha invalida!']);
     } else {
         $_SESSION['idadm'] = $retornoValidar->idadm;
+        $_SESSION['fotoAdm'] = $retornoValidar->fotoAdm;
         $_SESSION['nome'] = $retornoValidar->nomeAdm;
         $_SESSION['emailAdm'] = $retornoValidar->email;
         $_SESSION['senhaAdm'] = $dados['senha'];
