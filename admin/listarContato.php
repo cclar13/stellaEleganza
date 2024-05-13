@@ -13,10 +13,10 @@
         <table class="table table-hover table-bordered border-dark">
             <thead class="table-dark">
             <tr>
-                <th scope="col" style="width: 5%">#</th>
-                <th scope="col" style="width: 40%">Nome</th>
+                <th scope="col" style="width: 5.7%">#</th>
+                <th scope="col" style="width: 45%">Nome</th>
                 <th scope="col" style="width: 40%">Telefone</th>
-                <th scope="col" style="width: 10%">Ação</th>
+                <th scope="col" style="width: 9.3%">Ação</th>
             </tr>
             </thead>
             <tbody>
@@ -35,9 +35,7 @@
                         <td><?php echo $telefone ?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <button type="button" class="btn btn-outline-primary">Left</button>
-                                <button type="button" class="btn btn-outline-primary">Middle</button>
-                                <button type="button" class="btn btn-outline-primary">Right</button>
+                                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash">Deletar</i></button>
                             </div>
                         </td>
                     </tr>

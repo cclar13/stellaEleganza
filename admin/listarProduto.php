@@ -17,9 +17,9 @@
             <tr>
                 <th scope="col" style="width: 5%">#</th>
                 <th scope="col" style="width: 10%">Sexo</th>
-                <th scope="col" style="width: 70%">Nome</th>
-                <th scope="col" style="width: 10%">Tipo</th>
-                <th scope="col" style="width: 5%">Ação</th>
+                <th scope="col" style="width: 58.5%">Nome</th>
+                <th scope="col" style="width: 5%">Tipo</th>
+                <th scope="col" style="width: 21.5%">Ação</th>
             </tr>
             </thead>
             <tbody>
@@ -48,11 +48,12 @@
                         <td><?php echo $tipo ?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <button type="button" class="btn btn-outline-primary">Left</button>
-                                <button type="button" class="btn btn-outline-primary">Middle</button>
-                                <button type="button" class="btn btn-outline-primary">Right</button>
+                                <button type="button" class="btn btn-outline-primary">Ver+</button>
+                                <button type="button" class="btn btn-outline-success"><i class="bi bi-pen">Alterar</i></button>
+                                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash">Deletar</i></button>
                             </div>
                         </td>
+
                     </tr>
                     <?php
                 }

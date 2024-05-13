@@ -6,16 +6,18 @@
     </ol>
 </nav>
 <div class="card">
-    <h4 class="card-header">Administadores</h4>
+    <h4 class="card-header">Administadores
+        <button type="button" class="btn btn-primary" style="float: right">Cadastrar</button></h4>
+
     <div class="card-body">
         <table class="table table-light table-striped table-bordered border-dark table-hover">
             <thead class="table-dark">
             <tr>
                 <th scope="col" style="width: 5%">#</th>
 <!--                <th scope="col" style="width: 10%">Foto</th>-->
-                <th scope="col" style="width: 45%">Nome</th>
-                <th scope="col" style="width: 40%">Email</th>
-                <th scope="col" style="width: 10%">Ação</th>
+                <th scope="col" style="width: 38.6%">Nome</th>
+                <th scope="col" style="width: 35%">Email</th>
+                <th scope="col" style="width: 21.4%">Ação</th>
             </tr>
             </thead>
             <tbody>
@@ -38,9 +40,9 @@
                         <td><?php echo $email ?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <button type="button" class="btn btn-outline-primary">Left</button>
-                                <button type="button" class="btn btn-outline-primary">Middle</button>
-                                <button type="button" class="btn btn-outline-primary">Right</button>
+                                <button type="button" class="btn btn-outline-primary">Ver+</button>
+                                <button type="button" class="btn btn-outline-success"><i class="bi bi-pen">Alterar</i></button>
+                                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash">Deletar</i></button>
                             </div>
                         </td>
                     </tr>
