@@ -8,6 +8,7 @@ include_once('./func/funcoes.php');
 
 <!doctype html>
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,21 +26,33 @@ include_once('./func/funcoes.php');
     <meta name="theme-color" content="#ffffff">
 
 </head>
+
 <body class="quasebranco">
 
 <?php include_once('navbar.php') ?>
 
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
+        <?php
+        $banner = listarTabela('*', 'banner');
+        foreach($banner as $item){
+            $foto1 = $item->foto1;
+            $foto2 = $item->foto2;
+            $foto3 = $item->foto3;
+       
+        ?>
         <div class="carousel-item active">
-            <img src="./img/banners/1.png" class="d-block w-100" alt="Banner 1">
+            <img src="./img/banners/<?php echo $foto1?>" class="d-block w-100" alt="Banner 1">
         </div>
         <div class="carousel-item">
-            <img src="./img/banners/2.png" class="d-block w-100" alt="Banner 2">
+            <img src="./img/banners/<?php echo $foto2?>" class="d-block w-100" alt="Banner 2">
         </div>
         <div class="carousel-item">
-            <img src="./img/banners/3.png" class="d-block w-100" alt="Banner 3">
+            <img src="./img/banners/<?php echo $foto3?>" class="d-block w-100" alt="Banner 3">
         </div>
+        <?php
+         }
+        ?>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
             data-bs-slide="prev">
@@ -129,7 +142,7 @@ include_once('./func/funcoes.php');
         foreach ($produto as $products) {
             $id = $products->idproduto;
             $nome = $products->nomeProduto;
-//            $preco = $products->valor;
+            $preco = $products->valor;
             $foto = $products->nomeFoto;
             $idsexo = $products->idsexo;
 
@@ -149,14 +162,14 @@ include_once('./func/funcoes.php');
                             <?php echo $nome ?>
                         </h5>
                         <hr>
-                        <div>
-                            A second item
+                        <div class="d-flex align-items-center">
+                            <div>Preço: R$ </div> <div><?php echo $preco?></div>
                         </div>
                         <hr>
                         <div>
                             <form action="produto.php" method="get">
-                                <input type="text" name="produto" value="<?php echo $id ?>">
-                                <button type="submit" class="botaoVerProduto">Ver produto</button>
+                                <input type="hidden" name="produto" value="<?php echo $id ?>">
+                                <button type="submit" class="btnVerProduto">Ver produto</button>
                             </form>
                         </div>
 
@@ -182,7 +195,7 @@ include_once('./func/funcoes.php');
             foreach ($produto as $products) {
                 $id = $products->idproduto;
                 $nome = $products->nomeProduto;
-//            $preco = $products->valor;
+                $preco = $products->valor;
                 $foto = $products->nomeFoto;
                 $idsexo = $products->idsexo;
 
@@ -202,17 +215,16 @@ include_once('./func/funcoes.php');
                                 <?php echo $nome ?>
                             </h5>
                             <hr>
-                            <div>
-                                A second item
+                            <div class="d-flex align-items-center">
+                                <div>Preço: R$  </div> <div><?php echo $preco?></div>
                             </div>
                             <hr>
                             <div>
                                 <form action="produto.php" method="get">
-                                    <input type="text" name="produto" value="<?php echo $id ?>">
-                                    <button type="submit" class="botaoVerProduto">Ver produto</button>
+                                    <input type="hidden" name="produto" value="<?php echo $id ?>">
+                                    <button type="submit" class="btnVerProduto">Ver produto</button>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -232,8 +244,8 @@ include_once('./func/funcoes.php');
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js"
         integrity="sha512-oJCa6FS2+zO3EitUSj+xeiEN9UTr+AjqlBZO58OPadb2RfqwxHpjTU8ckIC8F4nKvom7iru2s8Jwdo+Z8zm0Vg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -241,4 +253,5 @@ include_once('./func/funcoes.php');
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="./js/controle.js"></script>
 </body>
+
 </html>

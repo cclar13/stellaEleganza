@@ -1,7 +1,7 @@
 <div class="fs-3 d-flex justify-content-around">
     # Banner
 
-    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal">
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" onclick="abrirModalBanner('imagem1','imagem2','imagem3','modalBannerEdit', 'A', 'btnEditBanner', 'bannerEdit','modalBannerEdit')">
         Alterar
     </button>
 </div>
@@ -17,17 +17,17 @@
             <div class="container">
 
                 <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col-4 ">
+                    <div class="col-12 ">
                         <h3 class="text-center">Imagem 1</h3>
                         <img src="../img/banners/<?php echo $foto1 ?>" alt="" class="img-fluid">
 
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 ">
                         <h3 class="text-center">Imagem 2</h3>
                         <img src="../img/banners/<?php echo $foto2 ?>" alt="" class="img-fluid">
 
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 ">
                         <h3 class="text-center">Imagem 3</h3>
                         <img src="../img/banners/<?php echo $foto3 ?>" alt="" class="img-fluid">
 

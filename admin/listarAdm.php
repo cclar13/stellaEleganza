@@ -5,23 +5,24 @@
         <li class="breadcrumb-item active" aria-current="page"><a href="">Administradores</a></li>
     </ol>
 </nav>
-<div class="card">
-    <h4 class="card-header">Administadores
-        <button type="button" class="btn btn-primary" style="float: right">Cadastrar</button></h4>
+<div class="card" style="background: transparent;border:none">
+    <h4 class="card-header">#Administadores
+        <button type="button" class="btn btn-dark" style="float: right" onclick="abrirModalJsAdm('nao','nao','nao','nao','nao','nao','nao', 'nao','nao','nao','addAdm','<?php echo DATATIMEATUAL?>','A','btnAddAdm','addAdm','nao','nao','frmAddAdm')">Cadastrar</button></h4>
 
     <div class="card-body">
-        <table class="table table-light table-striped table-bordered border-dark table-hover">
+        <table class="table table-bordered border-dark table-hover">
             <thead class="table-dark">
             <tr>
                 <th scope="col" style="width: 5%">#</th>
 <!--                <th scope="col" style="width: 10%">Foto</th>-->
-                <th scope="col" style="width: 38.6%">Nome</th>
+                <th scope="col" style="width: 43%">Nome</th>
                 <th scope="col" style="width: 35%">Email</th>
-                <th scope="col" style="width: 21.4%">Ação</th>
+                <th scope="col" style="width: 18%">Ação</th>
             </tr>
             </thead>
             <tbody>
             <?php
+            $contar = 1;
             $listaAdm = listarTabela("*", "adm");
             if ($listaAdm !== "Vazio") {
                 foreach ($listaAdm as $itemAdm) {
@@ -34,8 +35,7 @@
 
                     ?>
                     <tr>
-                        <th scope="row"><?php echo $idadm ?></th>
-<!--                        <td><img src="../img/perfil/--><?php //echo $fotoAdm?><!--" alt="foto do Admnistrador" class="rounded-circle" width="50px" height="50px"></td>-->
+                        <th scope="row"><?php echo $contar ?></th>
                         <td><?php echo $nomeAdm ?></td>
                         <td><?php echo $email ?></td>
                         <td>
@@ -47,6 +47,7 @@
                         </td>
                     </tr>
                     <?php
+                    ++$contar;
                 }
             } else {
                 ?>

@@ -57,10 +57,11 @@ if (isset($dados) && !empty($dados)) {
             $produto = listarItemExpecifico('*', 'produto', 'idproduto', "$idproduto");
             foreach ($produto as $product) {
                 $nome = $product->nomeProduto;
+                $preco = $product-> valor;
             }
             ?>
             <h5 class="mt-5"><?php echo $nome ?></h5>
-            <h3 class="mt-3 text-success">R$ 389,89</h3>
+            <h3 class="mt-3 text-success">R$ <?php echo $preco?></h3>
             <hr>
             <p>Tamanho</p>
             <div class="col-4 d-flex justify-content-around align-items-center">
@@ -95,7 +96,7 @@ if (isset($dados) && !empty($dados)) {
                 <p>Quantidade: <input id="qtdProduto" value="0" disabled class="text-black" style="border: none; background: transparent;"></p> <button id="diminuirQtd" class="btnQtd">-</button><button class="btnQtd" id="aumentarQtd">+</button>
             </div>
             <div class="mt-5 text-center ">
-                <button class="botaoAddCarrinho">Adicionar ao carrinho</button>
+                <button class="botaoAddCarrinho" onclick="">Adicionar ao carrinho</button>
             </div>
         </div>
     </div>

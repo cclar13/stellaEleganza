@@ -41,6 +41,9 @@ include_once("func/funcoes.php");
             if ($sexo === 1 && $tipo === 'calca') {
                 $foto = $femi->nomeFoto;
                 $nome = $femi->nomeProduto;
+                $id = $femi -> idproduto;
+                $preco = $femi->valor;
+                $idsexo = $femi->idsexo;
                 ?>
                 <div class="col-lg-3 col-6 mt-3">
                     <div class="card quasebranco pointer">
@@ -48,6 +51,17 @@ include_once("func/funcoes.php");
                              alt="<?php echo $nome ?>" title="<?php echo $nome ?>">
                         <div class="card-body quasebranco minHeightCard">
                             <h5 class="card-title"><?php echo $nome ?></h5>
+                            <hr>
+                            <div class="d-flex align-items-center">
+                                <div>Preço: R$  </div> <div><?php echo $preco?></div>
+                            </div>
+                            <hr>
+                            <div>
+                                <form action="produto.php" method="get">
+                                    <input type="hidden" name="produto" value="<?php echo $id ?>">
+                                    <button type="submit" class="btnVerProduto">Ver produto</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

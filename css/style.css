@@ -286,7 +286,7 @@ body {
 }
 
 .minHeightCard {
-    min-height: 120px;
+    min-height: 150px;
 }
 
 .edicaoLink {
@@ -334,4 +334,20 @@ body {
     color: #73543e;
     border-radius: 5px;
     margin-left: 5px;
+}
+
+.btnVerProduto{
+    width: 150px;
+    height: 40px;
+    border: 1px solid #73543e;
+    color: #73543e;
+    background: transparent;
+    border-radius: 5px;
+
+}
+
+.btnVerProduto:hover{
+    transition: 0.5s;
+    background-color: #73543e;
+    color: white;
 }
