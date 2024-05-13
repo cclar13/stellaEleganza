@@ -5,7 +5,7 @@
         <li class="breadcrumb-item active" aria-current="page"><a href="">Contato</a></li>
     </ol>
 </nav>
-<div class="card">
+<div class="card" style="background: transparent;border:none">
     <div class="card-header">
         <h4>#Contato</h4>
     </div>
@@ -13,29 +13,30 @@
         <table class="table table-hover table-bordered border-dark">
             <thead class="table-dark">
             <tr>
-                <th scope="col" style="width: 5.7%">#</th>
+                <th scope="col" style="width: 7.1%">#</th>
                 <th scope="col" style="width: 45%">Nome</th>
                 <th scope="col" style="width: 40%">Telefone</th>
-                <th scope="col" style="width: 9.3%">Ação</th>
+                <th scope="col" style="width: 7.9%">Ação</th>
             </tr>
             </thead>
             <tbody>
             <?php
-            $listaContato = listarTabela("*", "contato");
+           $contar = 0;
+            $listaContato = listarTabelaOrdenada("*", "contato",'nomeContato','ASC');
             if ($listaContato !== "Vazio") {
                 foreach ($listaContato as $itemContato) {
                     $idcontato = $itemContato->idcontato;
                     $nomeContato = $itemContato->nomeContato;
                     $telefone = $itemContato->telefone;
-
+                    $contar = $contar+1;
                     ?>
                     <tr>
-                        <th scope="row"><?php echo $idcontato ?></th>
+                        <th scope="row"><?php echo $contar ?></th>
                         <td><?php echo $nomeContato ?></td>
                         <td><?php echo $telefone ?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash">Deletar</i></button>
+                                <button type="button" class="btn btn-outline-danger" onclick="abrirModalContato('<?php echo $idcontato?>','idDeletarContato','<?php echo $nomeContato?>','nomeDelete' ,'modalDeleteContato','A', 'btnDeleteContato', 'deleteContato', 'frmContatoDelete')"><i class="bi bi-trash">Deletar</i></button>
                             </div>
                         </td>
                     </tr>

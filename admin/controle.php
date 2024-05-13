@@ -26,16 +26,22 @@ if (!empty($controle) && isset($controle)) {
             include_once('addContato.php');
             break;
         case 'listarBanner':
-            include_once ('listarBanner.php');
+            include_once('listarBanner.php');
             break;
         case 'listarContato':
-            include_once ('listarContato.php');
+            include_once('listarContato.php');
             break;
         case 'listarProduto':
-            include_once ('listarProduto.php');
+            include_once('listarProduto.php');
             break;
         case 'listarAdm':
-            include_once ('listarAdm.php');
+            include_once('listarAdm.php');
+            break;
+        case 'addAdm':
+            include_once('addAdm.php');
+            break;
+        case 'deleteContato':
+            include_once('contatoDelete.php');
             break;
     }
 

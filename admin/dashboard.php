@@ -45,18 +45,18 @@ if ($_SESSION['idadm']) {
                     if ($id === $idUsuario) {
                         $nome = $admin->nomeAdm;
                         $email = $admin->email;
-                        $fotoAdm = $admin -> fotoAdm;
-//                    $foto = $admin->foto;
+                        $fotoAdm = $admin->fotoAdm;
+                        //                    $foto = $admin->foto;
 //
 //                    if ($foto === ''){
 //                        $foto = 'perfil-300x300-4.jpg';
 //                    }
                         ?>
 
-                        <img src="../img/perfil/<?php echo $fotoAdm?>" alt="Foto de perfil" title="Foto de perfil"
+                        <img src="../img/perfil/<?php echo $fotoAdm ?>" alt="Foto de perfil" title="Foto de perfil"
                              class="circulo fotoPerfil mt-2" height="200px">
-                        <p class="fs-3 mt-2"><?php echo $nome?></p>
-                        <p class="mt-1 mb-3"><?php echo $email?></p>
+                        <p class="fs-3 mt-2"><?php echo $nome ?></p>
+                        <p class="mt-1 mb-3"><?php echo $email ?></p>
                         <?php
                     }
                 }
@@ -100,9 +100,104 @@ if ($_SESSION['idadm']) {
 
 </div>
 
+<!-- Modal Banner -->
+<div class="modal fade" id="modalBannerEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Alterar Banner</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" name="frmBannerEdit" id="frmBannerEdit">
 
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="imagem1" name="imagem1">
+                        <label class="input-group-text" for="imagem1">Imagem 1</label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="imagem2" name="imagem2">
+                        <label class="input-group-text" for="imagem2">Imagem 2</label>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="imagem3" name="imagem3">
+                        <label class="input-group-text" for="imagem3">Imagem 3</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary" id="btnEditBanner">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal Contato -->
+<div class="modal fade" id="modalDeleteContato" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar Contato</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" name="frmContatoDelete" id="frmContatoDelete">
+
+                <div class="modal-body">
+                    <input type="text" id="idDeletarContato" name="idDeletarContato" hidden="hidden">
+                    <h3 class="text-danger">Deletar <span class="text-black" id="nomeDelete" name="nomeDelete"></span>
+                    </h3>
+                    <p class="alert alert-danger">Tem certeza disto? Esta ação não pode ser desfeita!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-danger" id="btnDeleteContato">Deletar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de adicionar adm-->
+<div class="modal fade" id="addAdm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar administrador</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" name="frmAddAdm" id="frmAddAdm">
+                <div class="modal-body">
+                    <div class="">
+                        <label for="addNomeAdm" class="label-control">Nome:</label>
+                        <input type="text" name="addNomeAdm" id="addNomeAdm" required="required" class="form-control">
+                    </div>
+                    <div class="mt-3">
+                        <label for="addEmailAdm" class="label-control">Email:</label>
+                        <input type="email" name="addEmailAdm" id="addEmailAdm" required="required"
+                               class="form-control">
+                    </div>
+                    <div class="mt-3">
+                        <label for="addSenhaAdm" class="label-control">Senha:</label>
+                        <input type="text" name="addSenhaAdm" id="addSenhaAdm" class="form-control" required="required">
+                    </div>
+                    <div class="mt-3">
+                        <label for="addFotoAdm" class="label-control">Foto:</label>
+                        <input type="file" name="addFotoAdm" id="addFotoAdm" class="form-control" required="required">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success" id="btnAddAdm">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js"
         integrity="sha512-oJCa6FS2+zO3EitUSj+xeiEN9UTr+AjqlBZO58OPadb2RfqwxHpjTU8ckIC8F4nKvom7iru2s8Jwdo+Z8zm0Vg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

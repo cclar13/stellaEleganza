@@ -145,7 +145,7 @@ function addContato() {
                 if (data.success) {
                     formulario.reset()
                     alertSuccess(data.message, 'green')
-                }else{
+                } else {
                     alertError('Algo deu Errado, tente novamente.')
                 }
 
@@ -156,7 +156,8 @@ function addContato() {
     }
     formulario.addEventListener('submit', submitHandler);
 }
-function abrirModalJsAdm(id, inID, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, inFocus, inFocusValue, formulario) {
+
+function abrirModalJsAdm(id, inID, idFoto, infoto, innome, idNome, inemail, idEmail, insenha, idSenha, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, inFocus, inFocusValue, formulario) {
     const formDados = document.getElementById(`${formulario}`)
 
     var botoes = document.getElementById(`${botao}`);
@@ -176,6 +177,23 @@ function abrirModalJsAdm(id, inID, nomeModal, dataTime, abrirModal = 'A', botao,
         if (inID !== 'nao') {
             ID.value = id;
         }
+        const foto = document.getElementById(`${infoto}`);
+        if (infoto !== 'nao') {
+            foto.value = idFoto;
+        }
+        const nome = document.getElementById(`${innome}`);
+        if (innome !== 'nao') {
+            nome.value = idNome;
+        }
+        const email = document.getElementById(`${inemail}`);
+        if (inemail !== 'nao') {
+            email.value = idEmail;
+        }
+        const senha = document.getElementById(`${insenha}`);
+        if (insenha !== 'nao') {
+            senha.value = idSenha;
+        }
+
 
         const submitHandler = function (event) {
             event.preventDefault();
@@ -190,12 +208,13 @@ function abrirModalJsAdm(id, inID, nomeModal, dataTime, abrirModal = 'A', botao,
             }
             formData.append('controle', `${addEditDel}`)
 
+
             fetch('controle.php', {
                 method: 'POST', body: formData,
             })
                 .then(response => response.json())
                 .then(data => {
-
+                    console.log(data)
                     if (data.success) {
                         carregarConteudo("listarVenda");
 
@@ -214,18 +233,120 @@ function abrirModalJsAdm(id, inID, nomeModal, dataTime, abrirModal = 'A', botao,
                         }
                         ModalInstacia.hide();
                     } else {
-                        addErro()
                         ModalInstacia.hide();
                         carregarConteudo("listarVenda");
                     }
                 })
-                .catch(error => {
-                    botoes.disabled = false;
+                // .catch(error => {
+                //     botoes.disabled = false;
+                //     ModalInstacia.hide();
+                //     addErro()
+                //     carregarConteudo("listarVenda");
+                //     console.error('Erro na requisição:', error);
+                // });
+        }
+        formDados.addEventListener('submit', submitHandler);
+    } else {
+        botoes.disabled = false;
+        ModalInstacia.hide();
+    }
+}
+
+function abrirModalBanner(img1, img2, img3, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
+    const formDados = document.getElementById(`${formulario}`)
+
+    var botoes = document.getElementById(`${botao}`);
+    const ModalInstacia = new bootstrap.Modal(document.getElementById(`${nomeModal}`))
+    if (abrirModal === 'A') {
+        ModalInstacia.show();
+
+        const submitHandler = function (event) {
+            event.preventDefault();
+            botoes.disabled = true;
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            formData.append('controle', `${addEditDel}`)
+            imagem1 = document.getElementById(`${img1}`)
+            if (imagem1.value == '') {
+                formData.append('item1', `vazio`)
+                imagem1.append('foto1', imagem1.files[0]);
+            }
+            imagem2 = document.getElementById(`${img2}`)
+            if (imagem2.value == '') {
+                formData.append('item2', `vazio`)
+                imagem2.append('foto2', imagem2.files[0]);
+
+            }
+            imagem3 = document.getElementById(`${img3}`)
+            if (imagem3.value == '') {
+                formData.append('item3', `vazio`)
+                imagem3.append('foto3', imagem3.files[0]);
+
+            }
+            fetch('../controle.php', {
+                method: 'POST', body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
                     ModalInstacia.hide();
-                    addErro()
-                    carregarConteudo("listarVenda");
+                })
+                .catch(error => {
                     console.error('Erro na requisição:', error);
                 });
+        }
+        formDados.addEventListener('submit', submitHandler);
+    } else {
+
+        ModalInstacia.hide();
+    }
+}
+
+function abrirModalContato(id, inID, nome, InNome, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
+    const formDados = document.getElementById(`${formulario}`)
+
+    var botoes = document.getElementById(`${botao}`);
+    const ModalInstacia = new bootstrap.Modal(document.getElementById(`${nomeModal}`))
+    if (abrirModal === 'A') {
+        ModalInstacia.show();
+
+
+        const ID = document.getElementById(`${inID}`);
+        if (inID !== 'nao') {
+            ID.value = id;
+        }
+        const nomeinput = document.getElementById(`${InNome}`)
+        if (InNome !== 'nao') {
+            nomeinput.innerHTML = nome;
+        }
+        const submitHandler = function (event) {
+            event.preventDefault();
+
+            botoes.disabled = true;
+
+            const form = event.target;
+            const formData = new FormData(form);
+            formData.append('controle', `${addEditDel}`)
+
+            fetch('controle.php', {
+                method: 'POST', body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.success) {
+                        alertSuccess(data.message, '#1B7E008C')
+                        ModalInstacia.hide();
+                    } else {
+                        alertError(data.message)
+                    }
+                })
+            // .catch(error => {
+            //     botoes.disabled = false;
+            //     ModalInstacia.hide();
+            //     console.error('Erro na requisição:', error);
+            // });
         }
         formDados.addEventListener('submit', submitHandler);
     } else {
@@ -269,25 +390,29 @@ function alertError(msg) {
 
 }
 
-const menos = document.getElementById('diminuirQtd');
-const mais = document.getElementById('aumentarQtd');
-let qtdProduto = parseInt(document.getElementById('qtdProduto').value);
+if (document.getElementById('diminuirQtd')) {
 
-menos.addEventListener('click', () => {
-    if (qtdProduto > 0){
-        qtdProduto -= 1;
-    } else {
-        qtdProduto = 0;
-    }
+    const menos = document.getElementById('diminuirQtd');
+    const mais = document.getElementById('aumentarQtd');
+    let qtdProduto = parseInt(document.getElementById('qtdProduto').value);
 
-    document.getElementById('qtdProduto').value = parseInt(qtdProduto);
-    console.log(qtdProduto);
-});
+    menos.addEventListener('click', () => {
+        if (qtdProduto > 0) {
+            qtdProduto -= 1;
+        } else {
+            qtdProduto = 0;
+        }
 
-mais.addEventListener('click', () => {
+        document.getElementById('qtdProduto').value = parseInt(qtdProduto);
+        console.log(qtdProduto);
+    });
 
-    qtdProduto += 1;
+    mais.addEventListener('click', () => {
 
-    document.getElementById('qtdProduto').value = parseInt(qtdProduto);
-    console.log(qtdProduto);
-});
+        qtdProduto += 1;
+
+        document.getElementById('qtdProduto').value = parseInt(qtdProduto);
+        console.log(qtdProduto);
+    });
+
+}

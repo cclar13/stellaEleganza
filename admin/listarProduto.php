@@ -7,19 +7,19 @@
         </ol>
     </nav>
 </div>
-<div class="card">
-    <h5 class="card-header">#Produtos
-        <button type="button" class="btn btn-primary" style="float: right">Cadastrar</button>
-    </h5>
+<div class="card" style="background: transparent;border:none">
+    <h4 class="card-header">#Produtos
+        <button type="button" class="btn btn-dark" style="float: right">Cadastrar</button>
+    </h4>
     <div class="card-body">
-        <table class="table table-light table-striped table-bordered border-dark table-hover ">
+        <table class="table  table-bordered border-dark table-hover ">
             <thead class="table-dark">
             <tr>
-                <th scope="col" style="width: 5%">#</th>
-                <th scope="col" style="width: 10%">Sexo</th>
-                <th scope="col" style="width: 58.5%">Nome</th>
-                <th scope="col" style="width: 5%">Tipo</th>
-                <th scope="col" style="width: 21.5%">Ação</th>
+                <th scope="col" style="width: 7%">#</th>
+                <th scope="col" style="width: 16%">Sexo</th>
+                <th scope="col" style="width: 50%">Nome</th>
+                <th scope="col" style="width: 10%">Tipo</th>
+                <th scope="col" style="width: 17%">Ação</th>
             </tr>
             </thead>
             <tbody>
@@ -42,7 +42,7 @@
 
                     ?>
                     <tr>
-                        <th scope="row"><?php echo $idproduto ?></th>
+                        <th scope="row"><?php echo $contar ?></th>
                         <td><?php echo $sexo ?></td>
                         <td><?php echo $nomeProduto ?></td>
                         <td><?php echo $tipo ?></td>
@@ -56,9 +56,10 @@
 
                     </tr>
                     <?php
+                    ++$contar;
                 }
             } else {
-                ++$contar;
+
                 ?>
                 <tr>
                     <td colspan="5" class="text-center">

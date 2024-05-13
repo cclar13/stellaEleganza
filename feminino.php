@@ -32,7 +32,7 @@ include_once("func/funcoes.php");
     <div class="text-center fs-3 secao">
         Seção feminina
     </div>
-    <div class="row mt-5 mb-3">
+    <div class="row mt-5 mb-3 d-flex justify-content-center align-items-center">
         <?php
         $roupas = listarTabela('*', 'produto');
         foreach ($roupas as $femi) {
@@ -40,14 +40,27 @@ include_once("func/funcoes.php");
             if ($sexo == 1) {
                 $foto = $femi->nomeFoto;
                 $nome = $femi->nomeProduto;
-
+                $id = $femi -> idproduto;
+                $preco = $femi->valor;
+                $idsexo = $femi->idsexo;
                 ?>
                 <div class="col-lg-3 col-6 mt-3">
-                    <div class="card quasebranco pointer">
+                    <div class="card quasebranco pointer" style="min-height: 780px">
                         <img src="./img/roupas/feminino/<?php echo $foto ?>" class="card-img-top"
                              alt="<?php echo $nome ?>" title="<?php echo $nome ?>">
                         <div class="card-body quasebranco minHeightCard">
                             <h5 class="card-title"><?php echo $nome ?></h5>
+                            <hr>
+                            <div class="d-flex align-items-center">
+                                <div>Preço: R$  </div> <div><?php echo $preco?></div>
+                            </div>
+                            <hr>
+                            <div>
+                                <form action="produto.php" method="get">
+                                    <input type="hidden" name="produto" value="<?php echo $id ?>">
+                                    <button type="submit" class="btnVerProduto">Ver produto</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -28,6 +28,9 @@ if (!empty($controle) && isset($controle)) {
         case 'listarBanner':
             include_once ('./admin/listarBanner.php');
             break;
+        case 'bannerEdit':
+            include_once ('./admin/bannerEdit.php');
+            break;
     }
 
 } else {
