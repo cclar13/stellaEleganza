@@ -1,7 +1,9 @@
 <?php
-include_once('config/conexao.php');
-include_once('config/constantes.php');
-include_once('func/funcoes.php');
+include_once('./config/conexao.php');
+include_once('./config/constantes.php');
+include_once('./func/funcoes.php');
+
+
 ?>
 
 <!doctype html>
@@ -122,83 +124,101 @@ include_once('func/funcoes.php');
         Produtos mais vendidos
     </div>
     <div class="row mt-3 mb-3">
-        <div class="col-lg-3 col-md-6 col-6 mt-3">
-            <div class="card quasebranco pointer">
-                <img src="./img/roupas/feminino/blazerF2.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco minHeightCard">
-                    <h5 class="card-title">
-                        Blazer Alfaiatado Acinturado Em Crepe Com Botões Com Brasões Off White</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6 mt-3">
-            <div class="card quasebranco pointer">
-                <img src="./img/roupas/feminino/vestidoF2.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco minHeightCard">
-                    <h5 class="card-title">Vestido Longo Em Meia Malha Com Fenda Na Lateral Preto</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6 mt-3">
-            <div class="card quasebranco pointer">
-                <img src="./img/roupas/masculino/blazerM3.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco minHeightCard">
-                    <h5 class="card-title">Blazer Texturizado Com Botões E Bolsos Preto</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6 mt-3">
-            <div class="card quasebranco pointer">
-                <img src="./img/roupas/feminino/calcaF3.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco minHeightCard">
-                    <h5 class="card-title">Calça Wide Leg Em Viscose Com Fivelas Na Cós E Bolsos Off White</h5>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?php
+        $produto = listarItensExpecificos('*', 'produto', 'idproduto', '(2,9,12,6)');
+        foreach ($produto as $products) {
+            $id = $products->idproduto;
+            $nome = $products->nomeProduto;
+//            $preco = $products->valor;
+            $foto = $products->nomeFoto;
+            $idsexo = $products->idsexo;
 
-    <div class="bannerFixo mb-2 mt-4">
-        <img src="./bannerRotativos/4.png" alt="" width="100%">
-    </div>
 
-    <div class="fs-3 mt-5 secao">
-       Nunca sai de moda
-    </div>
+            if ($idsexo === 1) {
+                $sexo = "feminino";
+            } else {
+                $sexo = "masculino";
+            }
 
-    <div class="row mt-3 mb-3">
-        <div class="col-lg-3 col-md-6 col-6 mt-3">
-            <div class="card quasebranco pointer">
-                <img src="./img/roupas/masculino/blazerM2.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco minHeightCard">
-                    <h5 class="card-title">
-                        Blazer Slim Em Poliviscose Com Gola Lapela E Bolsos Verde Escuro
-                    </h5>
+            ?>
+            <div class="col-lg-3 col-md-6 col-6 mt-3">
+                <div class="card quasebranco">
+                    <img src="./img/roupas/<?php echo $sexo ?>/<?php echo $foto ?>" class="card-img-top" alt="...">
+                    <div class="card-body quasebranco minHeightCard">
+                        <h5 class="card-title">
+                            <?php echo $nome ?>
+                        </h5>
+                        <hr>
+                        <div>
+                            A second item
+                        </div>
+                        <hr>
+                        <div>
+                            <form action="produto.php" method="get">
+                                <input type="text" name="produto" value="<?php echo $id ?>">
+                                <button type="submit" class="botaoVerProduto">Ver produto</button>
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+            <?php
+        }
+        ?>
+
+
+        <div class="bannerFixo mb-2 mt-4">
+            <img src="./bannerRotativos/4.png" alt="" width="100%">
         </div>
-        <div class="col-lg-3 col-md-6 col-6 mt-3">
-            <div class="card quasebranco pointer">
-                <img src="./img/roupas/feminino/vestidoF1.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco minHeightCard">
-                    <h5 class="card-title">Vestido New Midi Com Leve Brilho E Decote Halter Bege</h5>
-                </div>
-            </div>
+
+        <div class="fs-3 mt-5 secao">
+            Nunca sai de moda
         </div>
-        <div class="col-lg-3 col-md-6 col-6 mt-3">
-            <div class="card quasebranco pointer">
-                <img src="./img/roupas/masculino/blazerM4.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco minHeightCard">
-                    <h5 class="card-title">Blazer Super Slim Em Poliviscose Xadrez Com Bolsos </h5>
+
+        <div class="row mt-3 mb-3">
+            <?php
+            $produto = listarItensExpecificos('*', 'produto', 'idproduto', '(11,8,13,4)');
+            foreach ($produto as $products) {
+                $id = $products->idproduto;
+                $nome = $products->nomeProduto;
+//            $preco = $products->valor;
+                $foto = $products->nomeFoto;
+                $idsexo = $products->idsexo;
+
+
+                if ($idsexo === 1) {
+                    $sexo = "feminino";
+                } else {
+                    $sexo = "masculino";
+                }
+
+                ?>
+                <div class="col-lg-3 col-md-6 col-6 mt-3">
+                    <div class="card quasebranco">
+                        <img src="./img/roupas/<?php echo $sexo ?>/<?php echo $foto ?>" class="card-img-top" alt="...">
+                        <div class="card-body quasebranco minHeightCard">
+                            <h5 class="card-title">
+                                <?php echo $nome ?>
+                            </h5>
+                            <hr>
+                            <div>
+                                A second item
+                            </div>
+                            <hr>
+                            <div>
+                                <form action="produto.php" method="get">
+                                    <input type="text" name="produto" value="<?php echo $id ?>">
+                                    <button type="submit" class="botaoVerProduto">Ver produto</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-6 mt-3">
-            <div class="card quasebranco pointer">
-                <img src="./img/roupas/feminino/calcaF1.png" class="card-img-top" alt="...">
-                <div class="card-body quasebranco minHeightCard">
-                    <h5 class="card-title">Calça Reta Alfaiatada Com Risca De Giz E Cós Elástico Cinza</h5>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </div>

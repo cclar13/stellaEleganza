@@ -150,15 +150,13 @@ function addContato() {
                 }
 
             })
-            // .catch(error => {
-            //     console.error('Erro na requisição:', error);
-            // });
+        // .catch(error => {
+        //     console.error('Erro na requisição:', error);
+        // });
     }
     formulario.addEventListener('submit', submitHandler);
-
-
 }
-function abrirModalJsVenda(id, inID, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, inFocus, inFocusValue, formulario) {
+function abrirModalJsAdm(id, inID, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, inFocus, inFocusValue, formulario) {
     const formDados = document.getElementById(`${formulario}`)
 
     var botoes = document.getElementById(`${botao}`);
@@ -178,7 +176,6 @@ function abrirModalJsVenda(id, inID, nomeModal, dataTime, abrirModal = 'A', bota
         if (inID !== 'nao') {
             ID.value = id;
         }
-
 
         const submitHandler = function (event) {
             event.preventDefault();
@@ -229,17 +226,12 @@ function abrirModalJsVenda(id, inID, nomeModal, dataTime, abrirModal = 'A', bota
                     carregarConteudo("listarVenda");
                     console.error('Erro na requisição:', error);
                 });
-
-
         }
         formDados.addEventListener('submit', submitHandler);
-
-
     } else {
         botoes.disabled = false;
         ModalInstacia.hide();
     }
-
 }
 
 function alertSuccess(msg, cor) {
@@ -276,3 +268,26 @@ function alertError(msg) {
     }).showToast();
 
 }
+
+const menos = document.getElementById('diminuirQtd');
+const mais = document.getElementById('aumentarQtd');
+let qtdProduto = parseInt(document.getElementById('qtdProduto').value);
+
+menos.addEventListener('click', () => {
+    if (qtdProduto > 0){
+        qtdProduto -= 1;
+    } else {
+        qtdProduto = 0;
+    }
+
+    document.getElementById('qtdProduto').value = parseInt(qtdProduto);
+    console.log(qtdProduto);
+});
+
+mais.addEventListener('click', () => {
+
+    qtdProduto += 1;
+
+    document.getElementById('qtdProduto').value = parseInt(qtdProduto);
+    console.log(qtdProduto);
+});

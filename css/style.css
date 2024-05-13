@@ -310,3 +310,28 @@ body {
     margin-left: 30px;
     min-height: 65vh;
 }
+
+.botaoAddCarrinho {
+    width: 240px;
+    height: 60px;
+    font-size: 20px;
+    background: transparent;
+    border-radius: 10px;
+    border: 3px solid #73543e;
+    color: #73543e;
+}
+
+.botaoAddCarrinho:hover {
+    transition: 0.5s;
+    background-color: #73543e;
+    color: white;
+}
+
+.btnQtd{
+    width: 30px;
+    background: transparent;
+    border: 1px solid #73543e;
+    color: #73543e;
+    border-radius: 5px;
+    margin-left: 5px;
+}
