@@ -21,28 +21,50 @@ function listarTabela($campos, $tabela)
     $conn = null;
 }
 
-function listarItemExpecifico($campos, $tabela, $campoExpecifico, $valorCampo)
+function listarItensExpecificos($campos, $tabela, $campoExpecifico, $valorCampo)
 {
     $conn = conectar();
     try {
         $conn->beginTransaction();
-        $sqlListaTabelas = $conn->prepare("SELECT $campos FROM $tabela WHERE ? = ?");
-//        $sqlListaTabelas->bindValue(1, $campos, PDO::PARAM_STR);
-//        $sqlListaTabelas->bindValue(2, $tabela, PDO::PARAM_STR);
-        $sqlListaTabelas->bindValue(1, $campoExpecifico, PDO::PARAM_STR);
-        $sqlListaTabelas->bindValue(2, $valorCampo, PDO::PARAM_STR);
+        $sqlListaTabelas = $conn->prepare("SELECT $campos FROM $tabela WHERE $campoExpecifico IN $valorCampo");
+//        $sqlListaTabelas->bindValue(1, $valorCampo, PDO::PARAM_STR);
         $sqlListaTabelas->execute();
         $conn->commit();
         if ($sqlListaTabelas->rowCount() > 0) {
             return $sqlListaTabelas->fetchAll(PDO::FETCH_OBJ);
         }
-        return False;
+        return 'vazio';
     } catch
     (PDOException $e) {
         echo 'Exception -> ';
         return ($e->getMessage());
         $conn->rollback();
     };
+    $conn = null;
+}
+
+function listarItemExpecifico($campos, $tabela, $campoExpecifico, $valorCampo)
+{
+    $conn = conectar();
+    try {
+        $conn->beginTransaction();
+        $sqlListaTabelas = $conn->prepare("SELECT $campos FROM $tabela WHERE $campoExpecifico = ?");
+//        $sqlListaTabelas->bindValue(1, $campos, PDO::PARAM_STR);
+//        $sqlListaTabelas->bindValue(2, $tabela, PDO::PARAM_STR);
+//        $sqlListaTabelas->bindValue(1, $campoExpecifico, PDO::PARAM_STR);
+        $sqlListaTabelas->bindValue(1, $valorCampo, PDO::PARAM_STR);
+        $sqlListaTabelas->execute();
+        $conn->commit();
+        if ($sqlListaTabelas->rowCount() > 0) {
+            return $sqlListaTabelas->fetchAll(PDO::FETCH_OBJ);
+        }
+        return 'vazio';
+    } catch
+    (PDOException $e) {
+        echo 'Exception -> ';
+        return ($e->getMessage());
+        $conn->rollback();
+    }
     $conn = null;
 }
 
