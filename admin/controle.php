@@ -40,6 +40,12 @@ if (!empty($controle) && isset($controle)) {
         case 'addAdm':
             include_once('addAdm.php');
             break;
+        case 'editAdm':
+            include_once('editAdm.php');
+            break;
+        case 'deleteAdm':
+            include_once('deleteAdm.php');
+            break;
         case 'deleteContato':
             include_once('contatoDelete.php');
             break;

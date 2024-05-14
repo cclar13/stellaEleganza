@@ -207,7 +207,8 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, innome, idNome, inemail, idEm
                 formData.append('dataTime', `${dataTime}`)
             }
             formData.append('controle', `${addEditDel}`)
-
+            let fileInput = document.getElementById('addFotoAdm')
+            formData.append('foto', fileInput.files[0]);
 
             fetch('controle.php', {
                 method: 'POST', body: formData,
@@ -216,34 +217,36 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, innome, idNome, inemail, idEm
                 .then(data => {
                     console.log(data)
                     if (data.success) {
-                        carregarConteudo("listarVenda");
+                        carregarConteudo("listarAdm");
 
                         switch (addEditDel) {
-                            case 'addVenda':
-                                addOuEditSucesso('Você', 'success', 'adicionou')
+                            case 'addAdm':
+
                                 break;
-                            case 'editVenda':
-                                addOuEditSucesso('Você', 'info', 'editou')
+                            case 'editAdm':
+
                                 botoes.disabled = false;
                                 break;
-                            case 'deleteVenda':
-                                addOuEditSucesso('Você', 'success', 'deletou')
+                            case 'deleteAdm':
+
                                 botoes.disabled = false;
                                 break;
                         }
                         ModalInstacia.hide();
+                        carregarConteudo("listarAdm");
+
                     } else {
                         ModalInstacia.hide();
-                        carregarConteudo("listarVenda");
+                        carregarConteudo("listarAdm");
                     }
                 })
-                // .catch(error => {
-                //     botoes.disabled = false;
-                //     ModalInstacia.hide();
-                //     addErro()
-                //     carregarConteudo("listarVenda");
-                //     console.error('Erro na requisição:', error);
-                // });
+            // .catch(error => {
+            //     botoes.disabled = false;
+            //     ModalInstacia.hide();
+            //     addErro()
+            //     carregarConteudo("listarVenda");
+            //     console.error('Erro na requisição:', error);
+            // });
         }
         formDados.addEventListener('submit', submitHandler);
     } else {
