@@ -9,7 +9,10 @@
 </div>
 <div class="card" style="background: transparent;border:none">
     <h4 class="card-header">#Produtos
-        <button type="button" class="btn btn-dark" style="float: right">Cadastrar</button>
+        <button type="button" class="btn btn-dark" style="float: right"
+                onclick="abrirModalProduto('nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'modalAddProduto','A', 'btnAddProduto', 'addProduto', 'frmAddProduto')">
+            Cadastrar
+        </button>
     </h4>
     <div class="card-body">
         <table class="table  table-bordered border-dark table-hover ">
@@ -40,6 +43,15 @@
                     $tamanho = $itemProduto->tamanho;
                     $ativo = $itemProduto->ativo;
 
+                    if ($tipo === 'calca') {
+                        $tipo = 'Calça';
+                    } else if ($tipo === 'blazer') {
+                        $tipo = 'Blazer';
+                    } else if ($tipo === 'vestido') {
+                        $tipo = 'Vestido';
+                    } else if ($tipo === 'camisa') {
+                        $tipo = 'Camisa';
+                    }
                     ?>
                     <tr>
                         <th scope="row"><?php echo $contar ?></th>
@@ -49,8 +61,11 @@
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
                                 <button type="button" class="btn btn-outline-primary">Ver+</button>
-                                <button type="button" class="btn btn-outline-success"><i class="bi bi-pen">Alterar</i></button>
-                                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash">Deletar</i></button>
+                                <button type="button" class="btn btn-outline-success" onclick="abrirModalProduto('<?php echo $idproduto?>','idEditProduto', '<?php echo $idsexo?>','sexoProdutoEdit', '<?php echo $nomeProduto?>','nomeProdutoEdit', '<?php echo $tipo?>','tipoProdutoEdit','nao','nao', '<?php echo $valor?>','valorProdutoEdit','<?php echo $marca?>', 'nao','<?php echo $cor?>','corProdutoEdit', '<?php echo $tamanho?>','tamanhoProdutoEdit', 'modalEditProduto','A', 'btnEditProduto', 'editProduto', 'frmEditProduto')"><i class="bi bi-pen">Alterar</i>
+                                </button>
+                                <button type="button" class="btn btn-outline-danger" onclick="abrirModalProduto('<?php echo $idproduto?>','idDeletarProduto', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'modalDeleteProduto','A', 'btnDeleteProduto', 'deleteProduto', 'frmProdutoDelete')">
+                                    <i class="bi bi-trash">Deletar</i>
+                                </button>
                             </div>
                         </td>
 

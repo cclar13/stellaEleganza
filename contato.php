@@ -50,7 +50,8 @@ include_once("func/funcoes.php");
             </form>
         </div>
         <div class="col-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.072490757377!2d-41.96478547404086!3d-18.88386500658829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb1a7d340d00e43%3A0xf3acb8b7a321ccf2!2sSENAI%20Governador%20Valadares%20UI%20Luiz%20Chaves!5e0!3m2!1spt-BR!2sbr!4v1715363614152!5m2!1spt-BR!2sbr"
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190028.35442656942!2d12.371191233888956!3d41.91020879186577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2zUm9tYSwgSXTDoWxpYQ!5e0!3m2!1spt-BR!2sbr!4v1715714537689!5m2!1spt-BR!2sbr"
                     class="w-100" style="border:1px black solid; height: 500px; border-radius: 20px" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>

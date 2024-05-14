@@ -28,6 +28,9 @@ if (!empty($controle) && isset($controle)) {
         case 'listarBanner':
             include_once('listarBanner.php');
             break;
+        case 'bannerEdit':
+            include_once ('bannerEdit.php');
+            break;
         case 'listarContato':
             include_once('listarContato.php');
             break;
@@ -49,6 +52,14 @@ if (!empty($controle) && isset($controle)) {
         case 'deleteContato':
             include_once('contatoDelete.php');
             break;
+        case 'addProduto':
+            include_once('addProduto.php');
+            break;
+
+        case 'deleteProduto':
+            include_once('deleteProduto.php');
+            break;
+
     }
 
 } else {

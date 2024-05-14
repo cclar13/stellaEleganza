@@ -251,6 +251,10 @@ body {
     background-color: #f8e7d8;
 }
 
+.circulo{
+    border-radius: 50%;
+}
+
 .quasebranco {
     background-color: #fff8f0;
 }
@@ -281,9 +285,20 @@ body {
     border-radius: 10px 10px 0px 0px;
 }
 
-.circulo {
+.imagemUser img {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+
 }
+.imagemUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 .minHeightCard {
     min-height: 150px;
@@ -300,11 +315,11 @@ body {
     font-style: italic;
 }
 
-.fotoPerfil{
+.fotoPerfil {
     box-shadow: black 0 0 2em;
 }
 
-.aside{
+.aside {
     font-size: 25px;
     flex-direction: column;
     margin-left: 30px;
@@ -327,7 +342,7 @@ body {
     color: white;
 }
 
-.btnQtd{
+.btnQtd {
     width: 30px;
     background: transparent;
     border: 1px solid #73543e;
@@ -336,7 +351,7 @@ body {
     margin-left: 5px;
 }
 
-.btnVerProduto{
+.btnVerProduto {
     width: 150px;
     height: 40px;
     border: 1px solid #73543e;
@@ -346,7 +361,7 @@ body {
 
 }
 
-.btnVerProduto:hover{
+.btnVerProduto:hover {
     transition: 0.5s;
     background-color: #73543e;
     color: white;
