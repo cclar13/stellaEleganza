@@ -273,6 +273,36 @@ function insert6Item($tabela, $dados, $novosDados1, $novosDados2, $novosDados3, 
     $conn = null;
 }
 
+function insert9Item($tabela, $dados, $novosDados1, $novosDados2, $novosDados3, $novosDados4, $novosDados5, $novosDados6,$novosDados7,$novosDados8,$novosDados9)
+{
+    $conn = conectar();
+    try {
+        $conn->beginTransaction();
+        $sqlLista = $conn->prepare("INSERT INTO $tabela($dados) VALUES (?,?,?,?,?,?,?,?,?)");
+        $sqlLista->bindValue(1, $novosDados1, PDO::PARAM_STR);
+        $sqlLista->bindValue(2, $novosDados2, PDO::PARAM_STR);
+        $sqlLista->bindValue(3, $novosDados3, PDO::PARAM_STR);
+        $sqlLista->bindValue(4, $novosDados4, PDO::PARAM_STR);
+        $sqlLista->bindValue(5, $novosDados5, PDO::PARAM_STR);
+        $sqlLista->bindValue(6, $novosDados6, PDO::PARAM_STR);
+        $sqlLista->bindValue(7, $novosDados7, PDO::PARAM_STR);
+        $sqlLista->bindValue(8, $novosDados8, PDO::PARAM_STR);
+        $sqlLista->bindValue(9, $novosDados9, PDO::PARAM_STR);
+
+        $sqlLista->execute();
+        $conn->commit();
+        if ($sqlLista->rowCount() > 0) {
+            return $sqlLista->fetchAll(PDO::FETCH_OBJ);
+        }
+        return False;
+    } catch (PDOException $e) {
+        echo 'Exception -> ';
+        $conn->rollback();
+        return ($e->getMessage());
+    }
+    $conn = null;
+}
+
 
 function deletarCadastro($tabela, $NomeDoCampoId, $id)
 {
@@ -373,7 +403,7 @@ function alterar4Item($tabela, $campo1, $campo2, $campo3, $campo4, $valor, $valo
     $conn = conectar();
     try {
         $conn->beginTransaction();
-        $sqlLista = $conn->prepare("UPDATE $tabela SET $campo1 = ?, $campo2 = ?, $campo3 = ?,$campo4 = ? WHERE  $identificar = $id ;");
+        $sqlLista = $conn->prepare("UPDATE $tabela SET $campo1 = ?, $campo2 = ?, $campo3 = ?,$campo4 = ? WHERE  $identificar = $id");
         $sqlLista->bindValue(1, $valor, PDO::PARAM_STR);
         $sqlLista->bindValue(2, $valor2, PDO::PARAM_STR);
         $sqlLista->bindValue(3, $valor3, PDO::PARAM_STR);

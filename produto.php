@@ -49,10 +49,10 @@ if (isset($dados) && !empty($dados)) {
                 }
 
                 ?>
-                <img src="./img/roupas/<?php echo $pasta ?>/<?php echo $nomeFoto ?>" alt="" height="80%" class="mt-4">
+                <img src="./img/roupas/<?php echo $pasta ?>/<?php echo $nomeFoto ?>" alt=""  class="mt-4 img-fluid">
             <?php } ?>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-7 ">
             <?php
             $produto = listarItemExpecifico('*', 'produto', 'idproduto', "$idproduto");
             foreach ($produto as $product) {

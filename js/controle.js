@@ -20,7 +20,6 @@ function fazerLogin() {
     } else {
         alertlog.style.display = "none";
     }
-    mostrarProcessando();
     fetch("login.php", {
         method: "POST",
         headers: {
@@ -36,6 +35,8 @@ function fazerLogin() {
         .then((data) => {
             console.log(data)
             if (data.success) {
+                mostrarProcessando();
+
                 setTimeout(function () {
                     window.location.href = "dashboard.php";
                 }, 1000);
@@ -120,16 +121,9 @@ function carregarConteudo(controle) {
 
 $('.cpf').mask('000.000.000-00');
 
-// var options = {
-//     onKeyPress: function (tell, e, field, options) {
-//         var masks = ['(00) 0 0000-0000', '(00) 0000-0000'];
-//         var mask = (tell.length < 15) ? masks[1] : masks[0];
-//         $('.telefoneBR').mask(mask, options);
-//     }
-// };
 $('.telefoneBR').mask('(00) 0 0000-0000');
 
-
+$('.dinheiro').mask('000.000.000.000.000,00', {reverse: true});
 function addContato() {
     const formulario = document.getElementById('frmContato');
     const submitHandler = function (event) {
@@ -153,14 +147,14 @@ function addContato() {
                 }
 
             })
-        // .catch(error => {
-        //     console.error('Erro na requisição:', error);
-        // });
+            .catch(error => {
+                console.error('Erro na requisição:', error);
+            });
     }
     formulario.addEventListener('submit', submitHandler);
 }
 
-function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, inemail, idEmail, insenha, idSenha, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, inFocus, inFocusValue, formulario) {
+function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, inemail, idEmail, insenha, idSenha, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, addEditFoto, inFocus, inFocusValue, formulario) {
     const formDados = document.getElementById(`${formulario}`)
 
     var botoes = document.getElementById(`${botao}`);
@@ -198,7 +192,7 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, 
         }
         let imgVermais = document.getElementById('fotoVermais')
         if (caminhoFoto !== 'nao') {
-            imgVermais.src = '../img/perfil/'+`${caminhoFoto}`;
+            imgVermais.src = '../img/perfil/' + `${caminhoFoto}`;
 
         }
 
@@ -215,8 +209,10 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, 
                 formData.append('dataTime', `${dataTime}`)
             }
             formData.append('controle', `${addEditDel}`)
-            let fileInput = document.getElementById('addFotoAdm')
-            formData.append('foto', fileInput.files[0]);
+            if (addEditFoto !== 'nao') {
+                let fileInput = document.getElementById(`${addEditFoto}`)
+                formData.append('foto', fileInput.files[0]);
+            }
 
             fetch('controle.php', {
                 method: 'POST', body: formData,
@@ -225,7 +221,7 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, 
                 .then(data => {
                     console.log(data)
                     if (data.success) {
-                        alertSuccess(data.message,'#1B7E00')
+                        alertSuccess(data.message, '#1B7E00')
                         carregarConteudo("listarAdm");
                         ModalInstacia.hide();
 
@@ -235,12 +231,12 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, 
                         carregarConteudo("listarAdm");
                     }
                 })
-            .catch(error => {
-                botoes.disabled = false;
-                ModalInstacia.hide();
-                carregarConteudo("listarAdm");
-                console.error('Erro na requisição:', error);
-            });
+            // .catch(error => {
+            //     botoes.disabled = false;
+            //     ModalInstacia.hide();
+            //     carregarConteudo("listarAdm");
+            //     console.error('Erro na requisição:', error);
+            // });
         }
         formDados.addEventListener('submit', submitHandler);
     } else {
@@ -282,19 +278,19 @@ function abrirModalBanner(img1, img2, img3, nomeModal, abrirModal = 'A', botao, 
                 imagem3.append('foto3', imagem3.files[0]);
 
             }
-            fetch('../controle.php', {
+            fetch('controle.php', {
                 method: 'POST', body: formData,
             })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.success){
+                    if (data.success) {
                         alertSuccess(data.message, '#1B7E00')
                         carregarConteudo('listarBanner')
-                        formDados.reset()
-                    }else{
+
+                    } else {
                         alertError(data.message)
                         carregarConteudo('listarBanner')
-                        formDados.reset()
+
                     }
                     ModalInstacia.hide();
                 })
@@ -352,6 +348,113 @@ function abrirModalContato(id, inID, nome, InNome, nomeModal, abrirModal = 'A', 
                         ModalInstacia.hide();
                         botoes.disabled = false;
 
+                    }
+                })
+                .catch(error => {
+                    botoes.disabled = false;
+                    ModalInstacia.hide();
+                    console.error('Erro na requisição:', error);
+                });
+        }
+        formDados.addEventListener('submit', submitHandler);
+    } else {
+        botoes.disabled = false;
+        ModalInstacia.hide();
+    }
+}
+
+function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomeProduto, tipo, INPtipo, nomeFoto, INPnomeFoto, valor, INPvalor, marca, INPmarca, cor, INPcor, tamanho, INPtamanho, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
+    const formDados = document.getElementById(`${formulario}`)
+
+    var botoes = document.getElementById(`${botao}`);
+    const ModalInstacia = new bootstrap.Modal(document.getElementById(`${nomeModal}`))
+    if (abrirModal === 'A') {
+        ModalInstacia.show();
+        const imgMeme = document.querySelector('#meme-image');
+        const memeInput = document.querySelector('#fotoProdutoAdd');
+        memeInput.addEventListener('change', function(evt) {
+            if (!(evt.target && evt.target.files && evt.target.files.length > 0)) {
+                return;
+            }
+
+            // Inicia o file-reader:
+            var r = new FileReader();
+            // Define o que ocorre quando concluir:
+            r.onload = function() {
+                // Define o `src` do elemento para o resultado:
+                imgMeme.src = r.result;
+            }
+            // Lê o arquivo e cria um link (o resultado vai ser enviado para o onload.
+            r.readAsDataURL(evt.target.files[0]);
+
+        });
+
+
+
+        const ID = document.getElementById(`${INPid}`);
+        if (INPid !== 'nao') {
+            ID.value = id;
+        }
+        const idGenero = document.getElementById(`${INPidsexo}`)
+        if (INPidsexo !== 'nao') {
+            idGenero.value = idsexo;
+        }
+        const nomeinput = document.getElementById(`${INPnomeProduto}`)
+        if (INPnomeProduto !== 'nao') {
+            nomeinput.value = nomeProduto;
+        }
+        const tipoRoupa = document.getElementById(`${INPtipo}`)
+        if (INPtipo !== 'nao') {
+            tipoRoupa.value = tipo;
+        }
+        const foto = document.getElementById(`${INPnomeFoto}`)
+        if (INPnomeFoto !== 'nao') {
+            foto.value = nomeFoto;
+        }
+        const valorRoupa = document.getElementById(`${INPvalor}`)
+        if (INPvalor !== 'nao') {
+            valorRoupa.value = valor;
+        }
+        const marcaLoja = document.getElementById(`${INPmarca}`)
+        if (INPmarca !== 'nao') {
+            marcaLoja.value = marca;
+        }
+        const corRoupa = document.getElementById(`${INPcor}`)
+        if (INPcor !== 'nao') {
+            corRoupa.value = cor;
+        }
+        const tamanhoRoupa = document.getElementById(`${INPtamanho}`)
+        if (INPtamanho !== 'nao') {
+            tamanhoRoupa.value = tamanho;
+         alert(tamanho)
+        }
+        const submitHandler = function (event) {
+            event.preventDefault();
+
+            botoes.disabled = true;
+
+            const form = event.target;
+            const formData = new FormData(form);
+            formData.append('controle', `${addEditDel}`)
+
+            fetch('controle.php', {
+                method: 'POST', body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.success) {
+                        alertSuccess(data.message, '#156400')
+                        ModalInstacia.hide();
+                        botoes.disabled = false;
+                        // formDados.reset()
+                        carregarConteudo('listarProduto')
+                    }
+                    else {
+                        alertError(data.message)
+                        carregarConteudo('listarProduto')
+                        ModalInstacia.hide();
+                        botoes.disabled = false;
                     }
                 })
             .catch(error => {

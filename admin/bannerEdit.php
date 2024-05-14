@@ -29,7 +29,7 @@ if (isset($dados) && !empty($dados)) {
         if (isset($_FILES["imagem$num"]) && $_FILES["imagem$num"]['error'] === UPLOAD_ERR_OK) {
             $fotoTmpName = $_FILES["imagem$num"]['tmp_name'];
             $fotoName = $_FILES["imagem$num"]['name'];
-            $uploadDir = 'img/banners';
+            $uploadDir = '../img/banners';
             $fotoPath = uniqid() . '_' . $fotoName;
             if (move_uploaded_file($fotoTmpName, $uploadDir . '/' . $fotoPath)) {
                 $retornoInsert = alterar1Item('banner', "foto$num", $fotoPath, 'idbanner', '1');
@@ -40,9 +40,9 @@ if (isset($dados) && !empty($dados)) {
     }
 
     if ($retornoInsert > 0) {
-        echo json_encode(['success' => true, 'message' => "Banner cadastrado com sucesso"]);
+        echo json_encode(['success' => true, 'message' => "Banner alterado com sucesso"]);
     } else {
-        echo json_encode(['success' => false, 'message' => "Banner não cadastrado!"]);
+        echo json_encode(['success' => false, 'message' => "Banner não alterado!"]);
     }
 
 }
