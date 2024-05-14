@@ -32,6 +32,7 @@
                     $email = $itemAdm->email;
                     $senha = $itemAdm->senha;
                     $ativo = $itemAdm->ativo;
+                    $foto = $itemAdm->fotoAdm;
 
                     ?>
                     <tr>
@@ -41,8 +42,8 @@
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
                                 <button type="button" class="btn btn-outline-primary">Ver+</button>
-                                <button type="button" class="btn btn-outline-success"><i class="bi bi-pen">Alterar</i></button>
-                                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash">Deletar</i></button>
+                                <button type="button" class="btn btn-outline-success" onclick="abrirModalJsAdm('<?php echo $idadm?>','idEditAdm','nao','nao','editNomeAdm','<?php echo $nomeAdm?>', 'editEmailAdm','<?php echo $email?>','nao','nao','editAdm','<?php echo DATATIMEATUAL?>','A','btnEditAdm','editAdm','nao','nao','frmEditAdm')"><i class="bi bi-pen">Alterar</i></button>
+                                <button type="button" class="btn btn-outline-danger" onclick="abrirModalJsAdm('<?php echo $idadm?>','idDeleteAdm','nao','nao','nao','nao', 'nao','nao','nao','nao','deleteAdm','<?php echo DATATIMEATUAL?>','A','btnDeleteAdm','deleteAdm','nao','nao','frmDeleteAdm')"><i class="bi bi-trash">Deletar</i></button>
                             </div>
                         </td>
                     </tr>

@@ -179,11 +179,12 @@ if ($_SESSION['idadm']) {
                     </div>
                     <div class="mt-3">
                         <label for="addSenhaAdm" class="label-control">Senha:</label>
-                        <input type="text" name="addSenhaAdm" id="addSenhaAdm" class="form-control" required="required">
+                        <input type="password" name="addSenhaAdm" id="addSenhaAdm" class="form-control"
+                               required="required">
                     </div>
                     <div class="mt-3">
                         <label for="addFotoAdm" class="label-control">Foto:</label>
-                        <input type="file" name="addFotoAdm" id="addFotoAdm" class="form-control" required="required">
+                        <input type="file" name="addFotoAdm" id="addFotoAdm" class="form-control">
                     </div>
                 </div>
 
@@ -195,6 +196,69 @@ if ($_SESSION['idadm']) {
         </div>
     </div>
 </div>
+
+<!-- Modal de editar adm-->
+<div class="modal fade" id="editAdm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar administrador</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" name="frmEditAdm" id="frmEditAdm">
+                <div class="modal-body">
+                    <input type="text" name="idEditAdm" id="idEditAdm">
+                    <div class="">
+                        <label for="editNomeAdm" class="label-control">Nome:</label>
+                        <input type="text" name="editNomeAdm" id="editNomeAdm" required="required" class="form-control">
+                    </div>
+                    <div class="mt-3">
+                        <label for="editEmailAdm" class="label-control">Email:</label>
+                        <input type="email" name="editEmailAdm" id="editEmailAdm" required="required"
+                               class="form-control">
+                    </div>
+                    <div class="mt-3">
+                        <label for="editSenhaAdm" class="label-control">Senha:</label>
+                        <input type="password" name="editSenhaAdm" id="editSenhaAdm" class="form-control">
+                    </div>
+                    <div class="mt-3">
+                        <label for="editFotoAdm" class="label-control">Foto:</label>
+                        <input type="file" name="editFotoAdm" id="editFotoAdm" class="form-control">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary" id="btnEditAdm">Alterar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de deletar adm-->
+<div class="modal fade" id="deleteAdm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar administrador</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" name="frmDeleteAdm" id="frmDeleteAdm">
+                <div class="modal-body">
+                    <input type="text" name="idDeleteAdm" id="idDeleteAdm">
+                    <p>Tem certeza que deseja deletar este administrador?</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-danger" id="btnDeleteAdm">Deletar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
