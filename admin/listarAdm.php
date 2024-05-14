@@ -7,7 +7,7 @@
 </nav>
 <div class="card" style="background: transparent;border:none">
     <h4 class="card-header">#Administadores
-        <button type="button" class="btn btn-dark" style="float: right" onclick="abrirModalJsAdm('nao','nao','nao','nao','nao','nao','nao', 'nao','nao','nao','addAdm','<?php echo DATATIMEATUAL?>','A','btnAddAdm','addAdm','nao','nao','frmAddAdm')">Cadastrar</button></h4>
+        <button type="button" class="btn btn-dark" style="float: right" onclick="abrirModalJsAdm('nao','nao','nao','nao','nao','nao','nao','nao', 'nao','nao','nao','addAdm','<?php echo DATATIMEATUAL?>','A','btnAddAdm','addAdm','nao','nao','frmAddAdm')">Cadastrar</button></h4>
 
     <div class="card-body">
         <table class="table table-bordered border-dark table-hover">
@@ -41,9 +41,9 @@
                         <td><?php echo $email ?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <button type="button" class="btn btn-outline-primary">Ver+</button>
-                                <button type="button" class="btn btn-outline-success" onclick="abrirModalJsAdm('<?php echo $idadm?>','idEditAdm','nao','nao','editNomeAdm','<?php echo $nomeAdm?>', 'editEmailAdm','<?php echo $email?>','nao','nao','editAdm','<?php echo DATATIMEATUAL?>','A','btnEditAdm','editAdm','nao','nao','frmEditAdm')"><i class="bi bi-pen">Alterar</i></button>
-                                <button type="button" class="btn btn-outline-danger" onclick="abrirModalJsAdm('<?php echo $idadm?>','idDeleteAdm','nao','nao','nao','nao', 'nao','nao','nao','nao','deleteAdm','<?php echo DATATIMEATUAL?>','A','btnDeleteAdm','deleteAdm','nao','nao','frmDeleteAdm')"><i class="bi bi-trash">Deletar</i></button>
+                                <button type="button" class="btn btn-outline-primary" onclick="abrirModalJsAdm('<?php echo $idadm?>','idVermaisAdm','nao','nao','<?php echo $foto?>','vermaisNomeAdm','<?php echo $nomeAdm?>', 'vermaisEmailAdm','<?php echo $email?>','nao','nao','vermaisAdm','<?php echo DATATIMEATUAL?>','A','btnVermaisAdm','vermaisAdm','nao','nao','frmVermaisAdm')">Ver+</button>
+                                <button type="button" class="btn btn-outline-success" onclick="abrirModalJsAdm('<?php echo $idadm?>','idEditAdm','nao','nao','nao','editNomeAdm','<?php echo $nomeAdm?>', 'editEmailAdm','<?php echo $email?>','nao','nao','editAdm','<?php echo DATATIMEATUAL?>','A','btnEditAdm','editAdm','nao','nao','frmEditAdm')"><i class="bi bi-pen">Alterar</i></button>
+                                <button type="button" class="btn btn-outline-danger" onclick="abrirModalJsAdm('<?php echo $idadm?>','idDeleteAdm','nao','nao','nao','nao','nao', 'nao','nao','nao','nao','deleteAdm','<?php echo DATATIMEATUAL?>','A','btnDeleteAdm','deleteAdm','nao','nao','frmDeleteAdm')"><i class="bi bi-trash">Deletar</i></button>
                             </div>
                         </td>
                     </tr>

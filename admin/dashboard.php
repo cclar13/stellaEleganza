@@ -158,6 +158,40 @@ if ($_SESSION['idadm']) {
     </div>
 </div>
 
+<!--Modal de ver mais sobre o adm-->
+<div class="modal fade" id="vermaisAdm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ver mais</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" name="frmVermaisAdm" id="frmVermaisAdm">
+                <div class="modal-body">
+                    <input type="hidden" name="idVermaisAdm" id="idVermaisAdm">
+                    <div class="mt-3 text-center">
+                        <img src="" alt="" id="fotoVermais" width="230px">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <label for="vermaisNomeAdm" class="label-control fs-4">Nome:</label>
+                        <input type="text" name="vermaisNomeAdm" id="vermaisNomeAdm" required="required" class="form-control" disabled style="background: transparent; border: none; text-align: center;">
+                    </div>
+                    <div class="mt-3 text-center">
+                        <label for="vermaisEmailAdm" class="label-control fs-4">Email:</label>
+                        <input type="email" name="vermaisEmailAdm" id="vermaisEmailAdm" required="required"
+                               class="form-control" disabled style="background: transparent; border: none; text-align: center;">
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Modal de adicionar adm-->
 <div class="modal fade" id="addAdm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -207,7 +241,7 @@ if ($_SESSION['idadm']) {
             </div>
             <form action="" name="frmEditAdm" id="frmEditAdm">
                 <div class="modal-body">
-                    <input type="text" name="idEditAdm" id="idEditAdm">
+                    <input type="hidden" name="idEditAdm" id="idEditAdm">
                     <div class="">
                         <label for="editNomeAdm" class="label-control">Nome:</label>
                         <input type="text" name="editNomeAdm" id="editNomeAdm" required="required" class="form-control">
@@ -246,7 +280,7 @@ if ($_SESSION['idadm']) {
             </div>
             <form action="" name="frmDeleteAdm" id="frmDeleteAdm">
                 <div class="modal-body">
-                    <input type="text" name="idDeleteAdm" id="idDeleteAdm">
+                    <input type="hidden" name="idDeleteAdm" id="idDeleteAdm">
                     <p>Tem certeza que deseja deletar este administrador?</p>
                 </div>
 

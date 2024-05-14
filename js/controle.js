@@ -81,8 +81,10 @@ function mostrarProcessando() {
 // FUNCAO DE ESCONDER O LOADING
 function esconderProcessando() {
     var divProcessando = document.getElementById("processandoDiv");
+    var divFundoEscuro = document.getElementById('divFundoEscuro');
     if (divProcessando) {
         document.body.removeChild(divProcessando);
+        document.body.removeChild(divFundoEscuro);
     }
 }
 
@@ -146,6 +148,7 @@ function addContato() {
                     formulario.reset()
                     alertSuccess(data.message, 'green')
                 } else {
+                    formulario.reset()
                     alertError('Algo deu Errado, tente novamente.')
                 }
 
@@ -157,7 +160,7 @@ function addContato() {
     formulario.addEventListener('submit', submitHandler);
 }
 
-function abrirModalJsAdm(id, inID, idFoto, infoto, innome, idNome, inemail, idEmail, insenha, idSenha, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, inFocus, inFocusValue, formulario) {
+function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, inemail, idEmail, insenha, idSenha, nomeModal, dataTime, abrirModal = 'A', botao, addEditDel, inFocus, inFocusValue, formulario) {
     const formDados = document.getElementById(`${formulario}`)
 
     var botoes = document.getElementById(`${botao}`);
@@ -193,6 +196,11 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, innome, idNome, inemail, idEm
         if (insenha !== 'nao') {
             senha.value = idSenha;
         }
+        let imgVermais = document.getElementById('fotoVermais')
+        if (caminhoFoto !== 'nao') {
+            imgVermais.src = '../img/perfil/'+`${caminhoFoto}`;
+
+        }
 
 
         const submitHandler = function (event) {
@@ -217,36 +225,22 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, innome, idNome, inemail, idEm
                 .then(data => {
                     console.log(data)
                     if (data.success) {
+                        alertSuccess(data.message,'#1B7E00')
                         carregarConteudo("listarAdm");
-
-                        switch (addEditDel) {
-                            case 'addAdm':
-
-                                break;
-                            case 'editAdm':
-
-                                botoes.disabled = false;
-                                break;
-                            case 'deleteAdm':
-
-                                botoes.disabled = false;
-                                break;
-                        }
                         ModalInstacia.hide();
-                        carregarConteudo("listarAdm");
 
                     } else {
+                        alertError(data.message)
                         ModalInstacia.hide();
                         carregarConteudo("listarAdm");
                     }
                 })
-            // .catch(error => {
-            //     botoes.disabled = false;
-            //     ModalInstacia.hide();
-            //     addErro()
-            //     carregarConteudo("listarVenda");
-            //     console.error('Erro na requisição:', error);
-            // });
+            .catch(error => {
+                botoes.disabled = false;
+                ModalInstacia.hide();
+                carregarConteudo("listarAdm");
+                console.error('Erro na requisição:', error);
+            });
         }
         formDados.addEventListener('submit', submitHandler);
     } else {
@@ -293,6 +287,15 @@ function abrirModalBanner(img1, img2, img3, nomeModal, abrirModal = 'A', botao, 
             })
                 .then(response => response.json())
                 .then(data => {
+                    if (data.success){
+                        alertSuccess(data.message, '#1B7E00')
+                        carregarConteudo('listarBanner')
+                        formDados.reset()
+                    }else{
+                        alertError(data.message)
+                        carregarConteudo('listarBanner')
+                        formDados.reset()
+                    }
                     ModalInstacia.hide();
                 })
                 .catch(error => {
@@ -337,19 +340,25 @@ function abrirModalContato(id, inID, nome, InNome, nomeModal, abrirModal = 'A', 
             })
                 .then(response => response.json())
                 .then(data => {
-
                     if (data.success) {
-                        alertSuccess(data.message, '#1B7E008C')
+                        alertSuccess(data.message, '#156400')
+                        carregarConteudo('listarContato')
                         ModalInstacia.hide();
+                        botoes.disabled = false;
+                        formDados.reset()
                     } else {
                         alertError(data.message)
+                        carregarConteudo('listarContato')
+                        ModalInstacia.hide();
+                        botoes.disabled = false;
+
                     }
                 })
-            // .catch(error => {
-            //     botoes.disabled = false;
-            //     ModalInstacia.hide();
-            //     console.error('Erro na requisição:', error);
-            // });
+            .catch(error => {
+                botoes.disabled = false;
+                ModalInstacia.hide();
+                console.error('Erro na requisição:', error);
+            });
         }
         formDados.addEventListener('submit', submitHandler);
     } else {
