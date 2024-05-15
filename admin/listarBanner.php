@@ -1,4 +1,4 @@
-<div class="fs-3 d-flex justify-content-around">
+<div class="fs-3 d-flex justify-content-around mt-3">
     # Banner
 
     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" onclick="abrirModalBanner('imagem1','imagem2','imagem3','modalBannerEdit', 'A', 'btnEditBanner', 'bannerEdit','modalBannerEdit')">

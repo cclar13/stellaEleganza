@@ -436,7 +436,7 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
         const telainicial = document.getElementById(`${INPtelaIncial}`)
         if (INPtelaIncial !== 'nao') {
             telainicial.value = idTelainicial;
-            alert(idTelainicial)
+            // alert(idTelainicial)
         }
         const submitHandler = function (event) {
             event.preventDefault();
