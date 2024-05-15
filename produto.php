@@ -24,6 +24,7 @@ if (isset($dados) && !empty($dados)) {
           href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicons/sc.png" class="rounded-circle">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
@@ -58,45 +59,17 @@ if (isset($dados) && !empty($dados)) {
             foreach ($produto as $product) {
                 $nome = $product->nomeProduto;
                 $preco = $product-> valor;
+                $tipo = $product -> tipo;
             }
             ?>
             <h5 class="mt-5"><?php echo $nome ?></h5>
             <h3 class="mt-3 text-success">R$ <?php echo $preco?></h3>
             <hr>
-            <p>Tamanho</p>
-            <div class="col-4 d-flex justify-content-around align-items-center">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        P
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        M
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        G
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        GG
-                    </label>
-                </div>
-            </div>
-            <hr>
-            <div>Estoque: 67</div>
-            <div class="mt-3 d-flex align-items-center">
-                <p>Quantidade: <input id="qtdProduto" value="0" disabled class="text-black" style="border: none; background: transparent;"></p> <button id="diminuirQtd" class="btnQtd">-</button><button class="btnQtd" id="aumentarQtd">+</button>
-            </div>
+<!--            <div class="mt-3 d-flex align-items-center">-->
+<!--                <p>Quantidade: <input id="qtdProduto" value="0" disabled class="text-black" style="border: none; background: transparent;"></p> <button id="diminuirQtd" class="btnQtd">-</button><button class="btnQtd" id="aumentarQtd">+</button>-->
+<!--            </div>-->
             <div class="mt-5 text-center ">
-                <button class="botaoAddCarrinho" onclick="">Adicionar ao carrinho</button>
+                <button type="button" class="botaoAddCarrinho" id="botaoAddCarrinho" onclick="alertSuccess('Produto comprado com sucesso!', 'green')">Comprar</button>
             </div>
         </div>
     </div>
@@ -119,6 +92,7 @@ if (isset($dados) && !empty($dados)) {
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 <script src="./js/controle.js"></script>
 </body>
 </html>

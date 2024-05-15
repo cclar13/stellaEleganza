@@ -30,13 +30,27 @@ if ($_SESSION['idadm']) {
     <link rel="icon" type="image/png" sizes="16x16" href="../favicons/sc.png" class="rounded-circle">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body class="quasebranco">
 
+<nav class="d-xxl-none marromEscuro">
+    <div class="container-fluid d-flex justify-content-">
+        <div><img src="../img/logoSESemfd/sc.png" alt="Stella Eleganza" width="50px"></div>
+        <div class="">
+            <button class="botaoListNavbar" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                        class="bi bi-list"></i></button>
+        </div>
+    </div>
+</nav>
+
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2 marromEscuro">
+        <div class="col-xxl-2 marromEscuro navLateral">
             <div class="text-center imagemUser ">
                 <?php
                 $adm = listarTabela('*', 'adm');
@@ -90,9 +104,40 @@ if ($_SESSION['idadm']) {
                 </div>
             </div>
         </div>
-        <div class="col-lg-10">
+
+        <div class="col-xxl-10">
             <div id="show">
 
+<!--                Grafico-->
+                <div id="wrapper">
+                    <div class="content-area">
+                        <div class="container-fluid">
+                            <div class="main">
+                                <div class="row mt-5 mb-4">
+                                    <div class="col-md-6">
+                                        <div class="box">
+                                            <div id="bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="box">
+                                            <div id="donut"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-4 mb-4 text-center">
+                                    <div class="col-md-12">
+                                        <div class="box">
+                                            <div id="area"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!--                Fim grafico-->
             </div>
         </div>
     </div>
@@ -144,7 +189,8 @@ if ($_SESSION['idadm']) {
 
                 <div class="modal-body">
                     <input type="hidden" id="idDeletarContato" name="idDeletarContato" hidden="hidden">
-                    <h3 class="text-danger">Deletar <span class="text-black" id="nomeDelete" name="nomeDelete"></span>
+                    <h3 class="text-danger">Deletar <span class="text-black" id="nomeDelete"
+                                                          name="nomeDelete"></span>
                     </h3>
                     <p class="alert alert-danger">Tem certeza disto? Esta ação não pode ser desfeita!</p>
                 </div>
@@ -266,7 +312,8 @@ if ($_SESSION['idadm']) {
 </div>
 
 <!--modal ver mais do produto-->
-<div class="modal fade" id="modalVermaisProduto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalVermaisProduto" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header marromEscuro">
@@ -284,7 +331,7 @@ if ($_SESSION['idadm']) {
                         <div class="col-lg-6">
                             <div class="row">
                                 <div class="col-12 mb-3">
-                                    <div class="inputInvisivel w-100 fs-4" id="nomeProdutoVermais"
+                                    <div class="inputInvisivel w-100 fs-4 text-center" id="nomeProdutoVermais"
                                          name="nomeProdutoVermais">
                                     </div>
                                 </div>
@@ -292,80 +339,118 @@ if ($_SESSION['idadm']) {
                                 <div class="col-12 mb-3">
                                     <div class="fs-5">
                                         Preço: R$ <span id="valorProdutoVermais" name="valorProdutoVermais"></span>
-<!--                                        <input type="text" class="inputInvisivel dinheiro"-->
-<!--                                               placeholder="Valor do Produto"-->
-<!--                                               aria-label="Valor do Produto" >-->
+                                        <!--                                        <input type="text" class="inputInvisivel dinheiro"-->
+                                        <!--                                               placeholder="Valor do Produto"-->
+                                        <!--                                               aria-label="Valor do Produto" >-->
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="col-12">
                                     <div class="fs-5 mb-3">
-                                        Tipo:
-                                        <select class="form-select inputInvisivel" aria-label="Default select example"
-                                                id="tipoProdutoVermais"
-                                                name="tipoProdutoVermais" disabled>
-                                            <option value="blazer" selected>Blazer</option>
-                                            <option value="blusa">Blusa</option>
-                                            <option value="calca">Calça</option>
-                                            <option value="camisa">Camisa</option>
-                                            <option value="vestido">Vestido</option>
 
-                                        </select>
+                                        <div class="input-group mb-3">
+                                        <span class="input-group-text"
+                                              style="background: transparent; border: none; color: black">
+                                         Tipo:
+                                        </span>
+                                            <select class="form-select inputInvisivel"
+                                                    aria-label="Default select example"
+                                                    id="tipoProdutoVermais"
+                                                    name="tipoProdutoVermais" disabled
+                                                    style="background: transparent; border: none; color: black">
+                                                <option value="blazer" selected>Blazer</option>
+                                                <option value="blusa">Blusa</option>
+                                                <option value="calca">Calça</option>
+                                                <option value="camisa">Camisa</option>
+                                                <option value="vestido">Vestido</option>
+
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="col-12">
                                     <div class="fs-5 mb-3">
-                                        Gênero:
-                                        <select class="form-select" aria-label="Default select example"
-                                                id="sexoProdutoVermais"
-                                                name="sexoProdutoVermais" disabled>
-                                            <option value="2">Masculino</option>
-                                            <option value="1">Feminino</option>
-                                        </select>
+
+                                        <div class="input-group mb-3">
+                                        <span class="input-group-text"
+                                              style="background: transparent; border: none; color: black">
+                                          Gênero:
+                                        </span>
+                                            <select class="form-select" aria-label="Default select example"
+                                                    id="sexoProdutoVermais"
+                                                    name="sexoProdutoVermais" disabled
+                                                    style="background: transparent; border: none; color: black">
+                                                <option value="2">Masculino</option>
+                                                <option value="1">Feminino</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="col-12">
                                     <div class="fs-5 mb-3">
-                                        Cor:
-                                        <input type="text" class="inputInvisivel" placeholder="Cor do Produto"
-                                               aria-label="Cor do Produto" id="corProdutoVermais"
-                                               name="corProdutoVermais">
+                                        <div class="input-group mb-3">
+                                        <span class="input-group-text"
+                                              style="background: transparent; border: none; color: black">
+                                          Cor:
+                                        </span>
+
+                                            <input type="text" class="form-control inputInvisivel"
+                                                   placeholder="Cor do Produto"
+                                                   aria-label="Cor do Produto" id="corProdutoVermais"
+                                                   name="corProdutoVermais" disabled
+                                                   style="background: transparent; border: none; color: black">
+                                        </div>
                                     </div>
+
                                 </div>
                                 <hr>
                                 <div class="col-12">
                                     <div class="fs-5 mb-3">
+                                        <div class="input-group mb-3">
+                                        <span class="input-group-text"
+                                              style="background: transparent; border: none; color: black">
                                         Tamanho:
-                                        <select class="form-select inputInvisivel" aria-label="Default select example"
-                                                id="tamanhoProdutoVermais" name="tamanhoProdutoVermais" disabled>
-                                            <option value="p">P</option>
-                                            <option value="m">M</option>
-                                            <option value="g">G</option>
-                                            <option value="gg">GG</option>
-                                            <option value="xg">XG</option>
-                                            <option value="xgg">XGG</option>
-                                        </select>
+                                        </span>
+                                            <select class="form-select inputInvisivel"
+                                                    aria-label="Default select example"
+                                                    id="tamanhoProdutoVermais" name="tamanhoProdutoVermais" disabled
+                                                    style="background: transparent; border: none; color: black">
+                                                <option value="p">P</option>
+                                                <option value="m">M</option>
+                                                <option value="g">G</option>
+                                                <option value="gg">GG</option>
+                                                <option value="xg">XG</option>
+                                                <option value="xgg">XGG</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="col-12">
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text">Tela inicial</span>
-                                        <select class="form-select" aria-label="Default select example"
-                                                id="telaInicialProdutoVermais" name="telaInicialProdutoVermais">
-                                            <option value="S">Sim</option>
-                                            <option value="N">Não</option>
-                                        </select>
+                                    <div class="fs-5 mb-3">
+                                        <div class="input-group mb-3">
+                                                <span class="input-group-text"
+                                                      style="background: transparent; border: none; color: black">Tela inicial</span>
+                                            <select class="form-select" aria-label="Default select example"
+                                                    id="telaInicialProdutoVermais" name="telaInicialProdutoVermais"
+                                                    disabled
+                                                    style="background: transparent; border: none; color: black">
+                                                <option value="S">Sim</option>
+                                                <option value="N">Não</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
+                                <hr>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="d-flex justify-content-end align-items-center marromEscuro py-3">
-                    <button type="button" class="btn btn-secondary margemDiretaBtn" data-bs-dismiss="modal">Fechar
+                <div class="d-flex justify-content-end align-items-center quasebranco py-3">
+                    <button type="button" class=" margemDiretaBtn botaoAddCarrinho" data-bs-dismiss="modal">Fechar
                     </button>
                 </div>
             </form>
@@ -647,6 +732,70 @@ if ($_SESSION['idadm']) {
     </div>
 </div>
 
+<!--offcanvas-->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+     aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header marromEscuro">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body marromEscuro">
+        <div class="marromEscuro">
+            <div class="text-center imagemUser">
+                <?php
+                $adm = listarTabela('*', 'adm');
+                foreach ($adm as $admin) {
+                    $id = $admin->idadm;
+                    if ($id === $idUsuario) {
+                        $nome = $admin->nomeAdm;
+                        $email = $admin->email;
+                        $fotoAdm = $admin->fotoAdm;
+                        //                    $foto = $admin->foto;
+//
+//                    if ($foto === ''){
+//                        $foto = 'perfil-300x300-4.jpg';
+//                    }
+                        ?>
+
+
+                        <img src="../img/perfil/<?php echo $fotoAdm ?>" alt="Foto de perfil" title="Foto de perfil"
+                             class="circulo fotoPerfil mt-2 img-fluid ">
+
+                        <p class="fs-3 mt-2"><?php echo $nome ?></p>
+                        <p class="mt-1 mb-3"><?php echo $email ?></p>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+            <div class="mt-4 text-center fs-2">
+                <div>Menu</div>
+            </div>
+            <div class="aside">
+                <div class="pointer mt-4" onclick="carregarConteudo('listarBanner')">
+                    <i class="bi bi-image-fill"></i>
+                    <span>Banner(s)</span>
+                </div>
+                <div class="pointer mt-4" onclick="carregarConteudo('listarProduto')">
+                    <i class="bi bi-box-seam"></i>
+                    <span>Produto(s)</span>
+                </div>
+                <div class="pointer mt-4" onclick="carregarConteudo('listarContato')">
+                    <i class="bi bi-person-lines-fill"></i>
+                    <span>Contato(s)</span>
+                </div>
+                <div class="pointer mt-4" onclick="carregarConteudo('listarAdm')">
+                    <i class="bi bi-file-person"></i>
+                    <span>Administrador(es)</span>
+                </div>
+                <div class="pointer mt-4">
+                    <i class="bi bi-door-open"></i>
+                    <span><a href="logout.php" class="edicaoLink text-white">Sair</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -661,8 +810,19 @@ if ($_SESSION['idadm']) {
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="../js/controle.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/scripts.js"></script>
 
 </body>
 
 </html>
+
+
+
+
+

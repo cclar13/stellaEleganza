@@ -322,7 +322,6 @@ body {
 .aside {
     font-size: 25px;
     flex-direction: column;
-    margin-left: 30px;
     min-height: 65vh;
 }
 
@@ -375,4 +374,53 @@ body {
     background: transparent;
     color: black;
     border: none;
+    cursor: default;
+
 }
+
+@media (max-width: 576px) {
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+    .navbar{
+        display: block;
+    }
+}
+
+@media (max-width: 1400px){
+    .navLateral{
+        display: none;
+    }
+    .aside{
+        min-height: 10vh;
+    }
+}
+
+.botaoListNavbar{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #a17759;
+    color: white;
+}
+
+.navbar{
+    height: 80px;
+}
+
+/*.overflowTable{*/
+/*    overflow-x: ;*/
+/*}*/

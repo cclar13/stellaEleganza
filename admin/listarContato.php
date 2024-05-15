@@ -5,12 +5,12 @@
         <li class="breadcrumb-item active" aria-current="page"><a href="">Contato</a></li>
     </ol>
 </nav>
-<div class="card" style="background: transparent;border:none">
+<div class="card overflowTable" style="background: transparent;border:none">
     <div class="card-header">
         <h4>#Contato</h4>
     </div>
     <div class="card-body">
-        <table class="table table-hover table-bordered border-dark">
+        <table class="table table-hover table-bordered border-dark  table-hover text-center">
             <thead class="table-dark">
             <tr>
                 <th scope="col" style="width: 7.1%">#</th>

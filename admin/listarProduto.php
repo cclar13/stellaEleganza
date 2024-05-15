@@ -7,15 +7,15 @@
         </ol>
     </nav>
 </div>
-<div class="card" style="background: transparent;border:none">
+<div class="card overflowTable" style="background: transparent;border:none">
     <h4 class="card-header">#Produtos
         <button type="button" class="btn btn-dark" style="float: right"
                 onclick="abrirModalProduto('nao','nao', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao', 'modalAddProduto','A', 'btnAddProduto', 'addProduto', 'frmAddProduto')">
             Cadastrar
         </button>
     </h4>
-    <div class="card-body">
-        <table class="table  table-bordered border-dark table-hover ">
+    <div class="card-body ">
+        <table class="table  table-bordered border-dark table-hover text-center">
             <thead class="table-dark">
             <tr>
                 <th scope="col" style="width: 7%">#</th>
@@ -44,7 +44,7 @@
                     $ativo = $itemProduto->ativo;
                     $telaInicial = $itemProduto->telainicial;
 
-                    echo $telaInicial;
+
                     if ($sexo === 'Masculino') {
                         $sexoRoupa = 'masculino';
                     } else {
@@ -63,12 +63,12 @@
                     ?>
                     <tr>
                         <th scope="row"><?php echo $contar ?></th>
-                        <td><?php echo $sexo ?></td>
+                        <td ><?php echo $sexo ?></td>
                         <td><?php echo $nomeProduto ?></td>
                         <td><?php echo $tipoRoupa ?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <button type="button" class="btn btn-outline-primary"
+                                <button type="button" class="btn btn-outline-primary "
                                         onclick="abrirModalProduto('<?php echo $idproduto ?>','idVermaisProduto', '<?php echo $idsexo ?>','sexoProdutoVermais', '<?php echo $nomeProduto ?>','nomeProdutoVermais', '<?php echo $tipo ?>','tipoProdutoVermais','<?php echo $nomeFoto ?>','nao','<?php echo $sexoRoupa ?>','fotoVermaisProduto', '<?php echo $valor ?>','valorProdutoVermais','<?php echo $marca ?>', 'nao','<?php echo $cor ?>','corProdutoVermais', '<?php echo $tamanho ?>','tamanhoProdutoVermais','<?php echo $telaInicial ?>','telaInicialProdutoVermais', 'modalVermaisProduto','A', 'btnVermaisProduto', 'editProduto', 'frmVermaisProduto')">
                                     Ver+
                                 </button>
@@ -102,3 +102,5 @@
         </table>
     </div>
 </div>
+
+
