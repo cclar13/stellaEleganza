@@ -366,3 +366,13 @@ body {
     background-color: #73543e;
     color: white;
 }
+
+.margemDiretaBtn{
+    margin-right: 20px;
+}
+
+.inputInvisivel {
+    background: transparent;
+    color: black;
+    border: none;
+}

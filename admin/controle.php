@@ -55,7 +55,9 @@ if (!empty($controle) && isset($controle)) {
         case 'addProduto':
             include_once('addProduto.php');
             break;
-
+        case 'editProduto':
+            include_once('editProduto.php');
+            break;
         case 'deleteProduto':
             include_once('deleteProduto.php');
             break;
