@@ -20,6 +20,7 @@ function fazerLogin() {
     } else {
         alertlog.style.display = "none";
     }
+    mostrarProcessando();
     fetch("login.php", {
         method: "POST",
         headers: {
@@ -35,8 +36,6 @@ function fazerLogin() {
         .then((data) => {
             console.log(data)
             if (data.success) {
-                mostrarProcessando();
-
                 setTimeout(function () {
                     window.location.href = "dashboard.php";
                 }, 1000);
@@ -82,10 +81,10 @@ function mostrarProcessando() {
 // FUNCAO DE ESCONDER O LOADING
 function esconderProcessando() {
     var divProcessando = document.getElementById("processandoDiv");
-    var divFundoEscuro = document.getElementById('divFundoEscuro');
+    var divFundo = document.getElementById('fundoEscuro');
     if (divProcessando) {
         document.body.removeChild(divProcessando);
-        document.body.removeChild(divFundoEscuro);
+        document.body.removeChild(divFundo);
     }
 }
 
@@ -124,6 +123,7 @@ $('.cpf').mask('000.000.000-00');
 $('.telefoneBR').mask('(00) 0 0000-0000');
 
 $('.dinheiro').mask('000.000.000.000.000,00', {reverse: true});
+
 function addContato() {
     const formulario = document.getElementById('frmContato');
     const submitHandler = function (event) {
@@ -363,7 +363,7 @@ function abrirModalContato(id, inID, nome, InNome, nomeModal, abrirModal = 'A', 
     }
 }
 
-function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomeProduto, tipo, INPtipo, nomeFoto, INPnomeFoto, valor, INPvalor, marca, INPmarca, cor, INPcor, tamanho, INPtamanho, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
+function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomeProduto, tipo, INPtipo, nomeFoto, INPnomeFoto,genero, idImgVm, valor, INPvalor, marca, INPmarca, cor, INPcor, tamanho, INPtamanho,idTelainicial,INPtelaIncial, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
     const formDados = document.getElementById(`${formulario}`)
 
     var botoes = document.getElementById(`${botao}`);
@@ -372,7 +372,7 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
         ModalInstacia.show();
         const imgMeme = document.querySelector('#meme-image');
         const memeInput = document.querySelector('#fotoProdutoAdd');
-        memeInput.addEventListener('change', function(evt) {
+        memeInput.addEventListener('change', function (evt) {
             if (!(evt.target && evt.target.files && evt.target.files.length > 0)) {
                 return;
             }
@@ -380,7 +380,7 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
             // Inicia o file-reader:
             var r = new FileReader();
             // Define o que ocorre quando concluir:
-            r.onload = function() {
+            r.onload = function () {
                 // Define o `src` do elemento para o resultado:
                 imgMeme.src = r.result;
             }
@@ -388,7 +388,6 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
             r.readAsDataURL(evt.target.files[0]);
 
         });
-
 
 
         const ID = document.getElementById(`${INPid}`);
@@ -402,6 +401,7 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
         const nomeinput = document.getElementById(`${INPnomeProduto}`)
         if (INPnomeProduto !== 'nao') {
             nomeinput.value = nomeProduto;
+            nomeinput.innerHTML = nomeProduto;
         }
         const tipoRoupa = document.getElementById(`${INPtipo}`)
         if (INPtipo !== 'nao') {
@@ -409,11 +409,16 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
         }
         const foto = document.getElementById(`${INPnomeFoto}`)
         if (INPnomeFoto !== 'nao') {
-            foto.value = nomeFoto;
+            foto.src = nomeFoto;
+        }
+        const fotoVerMais = document.getElementById(`${idImgVm}`)
+        if (idImgVm !== 'nao'){
+            fotoVerMais.src = '../img/roupas/' + genero + '/' + nomeFoto;
         }
         const valorRoupa = document.getElementById(`${INPvalor}`)
         if (INPvalor !== 'nao') {
             valorRoupa.value = valor;
+            valorRoupa.innerHTML = valor;
         }
         const marcaLoja = document.getElementById(`${INPmarca}`)
         if (INPmarca !== 'nao') {
@@ -426,7 +431,12 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
         const tamanhoRoupa = document.getElementById(`${INPtamanho}`)
         if (INPtamanho !== 'nao') {
             tamanhoRoupa.value = tamanho;
-         alert(tamanho)
+            // alert(tamanho)
+        }
+        const telainicial = document.getElementById(`${INPtelaIncial}`)
+        if (INPtelaIncial !== 'nao') {
+            telainicial.value = idTelainicial;
+            alert(idTelainicial)
         }
         const submitHandler = function (event) {
             event.preventDefault();
@@ -449,19 +459,18 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
                         botoes.disabled = false;
                         // formDados.reset()
                         carregarConteudo('listarProduto')
-                    }
-                    else {
+                    } else {
                         alertError(data.message)
                         carregarConteudo('listarProduto')
                         ModalInstacia.hide();
                         botoes.disabled = false;
                     }
                 })
-            .catch(error => {
-                botoes.disabled = false;
-                ModalInstacia.hide();
-                console.error('Erro na requisição:', error);
-            });
+                // .catch(error => {
+                //     botoes.disabled = false;
+                //     ModalInstacia.hide();
+                //     console.error('Erro na requisição:', error);
+                // });
         }
         formDados.addEventListener('submit', submitHandler);
     } else {
