@@ -37,7 +37,7 @@ if ($_SESSION['idadm']) {
 <body class="quasebranco">
 
 <nav class="d-xxl-none marromEscuro">
-    <div class="container-fluid d-flex justify-content-">
+    <div class="container-fluid d-flex justify-content-between">
         <div><img src="../img/logoSESemfd/sc.png" alt="Stella Eleganza" width="50px"></div>
         <div class="">
             <button class="botaoListNavbar" type="button" data-bs-toggle="offcanvas"
@@ -60,11 +60,6 @@ if ($_SESSION['idadm']) {
                         $nome = $admin->nomeAdm;
                         $email = $admin->email;
                         $fotoAdm = $admin->fotoAdm;
-                        //                    $foto = $admin->foto;
-//
-//                    if ($foto === ''){
-//                        $foto = 'perfil-300x300-4.jpg';
-//                    }
                         ?>
 
 

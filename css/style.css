@@ -446,6 +446,6 @@ body {
     color: white;
 }
 
-/*.overflowTable{*/
-/*    overflow-x: ;*/
-/*}*/
+.overflowTable{
+    overflow-x: auto;
+}
