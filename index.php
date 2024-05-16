@@ -72,9 +72,9 @@ include_once('./func/funcoes.php');
         Explore por nossas categorias
     </div>
     <div class="row mt-2">
-        <div class="col-lg-2 col-md-4 col-6 mt-3">
+        <div class="col-xl-2 col-lg-4 col-md-4 col-6 mt-3">
             <a href="blazermasculino.php" class="edicaoLink">
-                <div class="">
+                <div class="text-center">
                     <img src="./img/blazerM1.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1">
@@ -83,9 +83,9 @@ include_once('./func/funcoes.php');
             </a>
 
         </div>
-        <div class="col-lg-2 col-md-4 col-6 mt-3">
+        <div class="col-xl-2 col-lg-4 col-md-4 col-6 mt-3">
             <a href="blazerfeminino.php" class="edicaoLink">
-                <div class="">
+                <div class="text-center">
                     <img src="./img/blazerF3.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
@@ -93,9 +93,9 @@ include_once('./func/funcoes.php');
                 </div>
             </a>
         </div>
-        <div class="col-lg-2 col-md-4 col-6 mt-3">
+        <div class="col-xl-2 col-lg-4 col-md-4 col-6 mt-3">
             <a href="camisas.php" class="edicaoLink">
-                <div class="">
+                <div class="text-center">
                     <img src="./img/camisaM2.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
@@ -103,9 +103,9 @@ include_once('./func/funcoes.php');
                 </div>
             </a>
         </div>
-        <div class="col-lg-2 col-md-4 col-6 mt-3">
+        <div class="col-xl-2 col-lg-4 col-md-4 col-6 mt-3">
             <a href="blusas.php" class="edicaoLink">
-                <div class="">
+                <div class="text-center">
                     <img src="./img/camisaF2.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
@@ -113,9 +113,9 @@ include_once('./func/funcoes.php');
                 </div>
             </a>
         </div>
-        <div class="col-lg-2 col-md-4 col-6 mt-3">
+        <div class="col-xl-2 col-lg-4 col-md-4 col-6 mt-3">
             <a href="calcafeminina.php" class="edicaoLink">
-                <div class="">
+                <div class="text-center">
                     <img src="./img/calcaF2.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">
@@ -123,9 +123,9 @@ include_once('./func/funcoes.php');
                 </div>
             </a>
         </div>
-        <div class="col-lg-2 col-md-4 col-6 mt-3">
+        <div class="col-xl-2 col-lg-4 col-md-4 col-6 mt-3">
             <a href="calcamasculina.php" class="edicaoLink">
-                <div class="">
+                <div class="text-center">
                     <img src="./img/calcaM1.png" alt="" class="circulo pointer" height="200px">
                 </div>
                 <div class="text-center mt-1 pointer">

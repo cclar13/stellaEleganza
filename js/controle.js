@@ -139,6 +139,7 @@ function addContato() {
             .then(data => {
                 console.log(data)
                 if (data.success) {
+
                     formulario.reset()
                     alertSuccess(data.message, 'green')
                 } else {
@@ -545,3 +546,60 @@ if (document.getElementById('diminuirQtd')) {
     });
 
 }
+
+
+
+
+// console.log(selecte.value)
+//     const submitHandler = function (event) {
+//         event.preventDefault();
+//         const form = event.target;
+//         const formData = new FormData(form);
+//         fetch('hf.php', {
+//             method: 'POST',
+//             body: formData,
+//         })
+//             .then(response => response.json())
+//             .then(data => {
+//                 console.log(data)
+//
+//                 if (data.success) {
+//                 }
+//
+//             })
+//             .catch(error => {
+//                 console.error('Erro na requisição:', error);
+//             });
+//     }
+//     selecte.addEventListener('change', submitHandler);
+//
+//
+
+
+// let jsonEmail = {
+//     "from": {
+//         "email": "hello@mailersend.com",
+//         "name": "MailerSend"
+//     },
+//     "to": [
+//         {
+//             "email": "john@mailersend.com",
+//             "name": "John Mailer"
+//         }
+//     ],
+//     "subject": "Hello from {$company}!",
+//     "text": "This is just a friendly hello from your friends at {$company}.",
+//     "html": "<b>Este é um teste de email</b>",
+//     "personalization": [
+//         {
+//             "email": "john@mailersend.com",
+//             "data": {
+//                 "company": "MailerSend"
+//             }
+//         }
+//     ]
+// }
+//
+// // const obj = JSON.parse(jsonEmail)
+//
+// console.log (jsonEmail)

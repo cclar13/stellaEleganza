@@ -235,9 +235,9 @@ var monthlyEarningsOpt = {
 }
 
 
-new ApexCharts(document.querySelector("#spark1"), spark1).render();
-new ApexCharts(document.querySelector("#spark2"), spark2).render();
-new ApexCharts(document.querySelector("#spark3"), spark3).render();
+// new ApexCharts(document.querySelector("#spark1"), spark1).render();
+// new ApexCharts(document.querySelector("#spark2"), spark2).render();
+// new ApexCharts(document.querySelector("#spark3"), spark3).render();
 
 var monthlyEarningsChart = new ApexCharts(document.querySelector("#monthly-earnings-chart"), monthlyEarningsOpt);
 
@@ -581,15 +581,6 @@ var optionsLine = {
 
 }
 
-var chartLine = new ApexCharts(document.querySelector('#line'), optionsLine);
-
-// a small hack to extend height in website sample dashboard
-chartLine.render().then(function () {
-  var ifr = document.querySelector("#wrapper");
-  if (ifr.contentDocument) {
-    ifr.style.height = ifr.contentDocument.body.scrollHeight + 20 + 'px';
-  }
-});
 
 
 // on smaller screen, change the legends position for donut
