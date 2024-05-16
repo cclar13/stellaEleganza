@@ -36,23 +36,23 @@ include_once('./func/funcoes.php');
     <div class="carousel-inner">
         <?php
         $banner = listarTabela('*', 'banner');
-        foreach($banner as $item){
+        foreach ($banner as $item) {
             $foto1 = $item->foto1;
             $foto2 = $item->foto2;
             $foto3 = $item->foto3;
-       
-        ?>
-        <div class="carousel-item active">
-            <img src="./img/banners/<?php echo $foto1?>" class="d-block w-100" alt="Banner 1">
-        </div>
-        <div class="carousel-item">
-            <img src="./img/banners/<?php echo $foto2?>" class="d-block w-100" alt="Banner 2">
-        </div>
-        <div class="carousel-item">
-            <img src="./img/banners/<?php echo $foto3?>" class="d-block w-100" alt="Banner 3">
-        </div>
-        <?php
-         }
+
+            ?>
+            <div class="carousel-item active">
+                <img src="./img/banners/<?php echo $foto1 ?>" class="d-block w-100" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/banners/<?php echo $foto2 ?>" class="d-block w-100" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/banners/<?php echo $foto3 ?>" class="d-block w-100" alt="Banner 3">
+            </div>
+            <?php
+        }
         ?>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -134,64 +134,15 @@ include_once('./func/funcoes.php');
             </a>
         </div>
     </div>
+
     <div class="fs-3 mt-5 secao">
         Produtos mais vendidos
     </div>
-    <div class="row mt-3 mb-3">
+
+    <div class="row mt-3 mb-3 d-flex justify-content-center align-items-center">
         <?php
-        $produto = listarItensExpecificos('*', 'produto', 'idproduto', '(2,9,12,6)');
-        foreach ($produto as $products) {
-            $id = $products->idproduto;
-            $nome = $products->nomeProduto;
-            $preco = $products->valor;
-            $foto = $products->nomeFoto;
-            $idsexo = $products->idsexo;
-
-
-            if ($idsexo === 1) {
-                $sexo = "feminino";
-            } else {
-                $sexo = "masculino";
-            }
-
-            ?>
-            <div class="col-lg-3 col-md-6 col-6 mt-3">
-                <div class="card quasebranco">
-                    <img src="./img/roupas/<?php echo $sexo ?>/<?php echo $foto ?>" class="card-img-top" alt="...">
-                    <div class="card-body quasebranco minHeightCard">
-                        <h5 class="card-title">
-                            <?php echo $nome ?>
-                        </h5>
-                        <hr>
-                        <div class="d-flex align-items-center">
-                            <div>Preço: R$ </div> <div><?php echo $preco?></div>
-                        </div>
-                        <hr>
-                        <div>
-                            <form action="produto.php" method="get">
-                                <input type="hidden" name="produto" value="<?php echo $id ?>">
-                                <button type="submit" class="btnVerProduto">Ver produto</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php
-        }
-        ?>
-
-
-        <div class="bannerFixo mb-2 mt-4">
-            <img src="./bannerRotativos/4.png" alt="" width="100%">
-        </div>
-
-        <div class="fs-3 mt-5 secao">
-            Nunca sai de moda
-        </div>
-
-        <div class="row mt-3 mb-3">
-            <?php
-            $produto = listarItensExpecificos('*', 'produto', 'idproduto', '(11,8,13,4)');
+        $produto = listarItensExpecificosProduto('*', 'produto', 'telainicial', 'S', 'posicao', 'C');
+        if ($produto !== 'vazio') {
             foreach ($produto as $products) {
                 $id = $products->idproduto;
                 $nome = $products->nomeProduto;
@@ -216,7 +167,8 @@ include_once('./func/funcoes.php');
                             </h5>
                             <hr>
                             <div class="d-flex align-items-center">
-                                <div>Preço: R$  </div> <div><?php echo $preco?></div>
+                                <div>Preço: R$ </div>
+                                <div><?php echo $preco ?></div>
                             </div>
                             <hr>
                             <div>
@@ -230,10 +182,82 @@ include_once('./func/funcoes.php');
                 </div>
                 <?php
             }
+        } else {
             ?>
-        </div>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <div class="fs-1 mb-4">
+                    Seção vazia
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+
+    <div class="bannerFixo mb-2 mt-4">
+        <img src="./bannerRotativos/4.png" alt="" width="100%">
+    </div>
+
+    <div class="fs-3 mt-5 secao">
+        Nunca sai de moda
+    </div>
+
+    <div class="row mt-3 mb-3 d-flex justify-content-center align-items-center">
+        <?php
+        $produto = listarItensExpecificosProduto('*', 'produto', 'telainicial', 'S', 'posicao', 'F');
+        if ($produto !== 'vazio') {
+            foreach ($produto as $products) {
+                $id = $products->idproduto;
+                $nome = $products->nomeProduto;
+                $preco = $products->valor;
+                $foto = $products->nomeFoto;
+                $idsexo = $products->idsexo;
+
+
+                if ($idsexo === 1) {
+                    $sexo = "feminino";
+                } else {
+                    $sexo = "masculino";
+                }
+
+                ?>
+                <div class="col-lg-3 col-md-6 col-6 mt-3">
+                    <div class="card quasebranco">
+                        <img src="./img/roupas/<?php echo $sexo ?>/<?php echo $foto ?>" class="card-img-top" alt="...">
+                        <div class="card-body quasebranco minHeightCard">
+                            <h5 class="card-title">
+                                <?php echo $nome ?>
+                            </h5>
+                            <hr>
+                            <div class="d-flex align-items-center">
+                                <div>Preço: R$ </div>
+                                <div><?php echo $preco ?></div>
+                            </div>
+                            <hr>
+                            <div>
+                                <form action="produto.php" method="get">
+                                    <input type="hidden" name="produto" value="<?php echo $id ?>">
+                                    <button type="submit" class="btnVerProduto">Ver produto</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+        } else {
+            ?>
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <div class="fs-1 mb-4">
+                    Seção vazia
+                </div>
+            </div>
+            <?php
+        }
+        ?>
     </div>
 </div>
+
 
 <?php include_once('footer.php'); ?>
 
