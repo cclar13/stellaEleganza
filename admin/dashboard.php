@@ -31,7 +31,7 @@ if ($_SESSION['idadm']) {
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet"/>
-    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 
 <body class="quasebranco">
@@ -108,7 +108,7 @@ if ($_SESSION['idadm']) {
         <div class="col-xxl-10">
             <div id="show">
 
-<!--                Grafico-->
+                <!--                Grafico-->
                 <div id="wrapper">
                     <div class="content-area">
                         <div class="container-fluid">
@@ -137,7 +137,7 @@ if ($_SESSION['idadm']) {
                     </div>
                 </div>
 
-<!--                Fim grafico-->
+                <!--                Fim grafico-->
             </div>
         </div>
     </div>
@@ -215,24 +215,24 @@ if ($_SESSION['idadm']) {
                 <div class="modal-body">
 
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-lg-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Nome</span>
+                                <span class="input-group-text">Nome:</span>
                                 <input type="text" class="form-control" placeholder="Nome do Produto"
                                        aria-label="Nome do Produto" id="nomeProdutoAdd" name="nomeProdutoAdd">
                             </div>
 
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Preco</span>
+                                <span class="input-group-text">Preço:</span>
                                 <input type="text" class="form-control dinheiro" placeholder="Valor do Produto"
                                        aria-label="Valor do Produto" id="valorProdutoAdd" name="valorProdutoAdd">
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Tipo</span>
+                                <span class="input-group-text">Tipo:</span>
                                 <select class="form-select" aria-label="Default select example" id="tipoProdutoAdd"
                                         name="tipoProdutoAdd">
                                     <option value="blazer" selected>Blazer</option>
@@ -244,9 +244,9 @@ if ($_SESSION['idadm']) {
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Gênero</span>
+                                <span class="input-group-text">Gênero:</span>
                                 <select class="form-select" aria-label="Default select example" id="sexoProdutoAdd"
                                         name="sexoProdutoAdd">
                                     <option value="2" selected>Masculino</option>
@@ -254,30 +254,30 @@ if ($_SESSION['idadm']) {
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Foto</span>
+                                <span class="input-group-text">Foto:</span>
                                 <input type="file" class="form-control" placeholder="Foto do Produto"
                                        aria-label="Foto do Produto" id="fotoProdutoAdd" name="fotoProdutoAdd"
                                        required="required">
                             </div>
                         </div>
-                        <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
                             <div class=" mb-3">
                                 <img src="" id="meme-image" alt=""
                                      style="width: 150px;border: 1px black solid;border-radius: 10px"/>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-lg-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Cor</span>
+                                <span class="input-group-text">Cor:</span>
                                 <input type="text" class="form-control" placeholder="Cor do Produto"
                                        aria-label="Cor do Produto" id="corProdutoAdd" name="corProdutoAdd">
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-lg-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Tamanho</span>
+                                <span class="input-group-text">Tamanho:</span>
                                 <select class="form-select" aria-label="Default select example"
                                         id="tamanhoProdutoAdd" name="tamanhoProdutoAdd">
                                     <option value="p">P</option>
@@ -289,13 +289,24 @@ if ($_SESSION['idadm']) {
                                 </select>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-lg-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Tela inicial</span>
+                                <span class="input-group-text">Tela inicial:</span>
                                 <select class="form-select" aria-label="Default select example"
                                         id="telaInicialProdutoAdd" name="telaInicialProdutoAdd">
                                     <option value="S">Sim</option>
                                     <option value="N" selected>Não</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Posição na tela:</span>
+                                <select class="form-select" aria-label="Default select example"
+                                        id="posicaoProdutoAdd" name="posicaoProdutoAdd">
+                                    <option value="C">Início</option>
+                                    <option value="M">Meio</option>
+                                    <option value="F">Final</option>
                                 </select>
                             </div>
                         </div>
@@ -325,10 +336,10 @@ if ($_SESSION['idadm']) {
                 <div class="modal-body quasebranco">
                     <input type="hidden" name="idVermaisProduto" id="idVermaisProduto">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-12">
                             <img src="" alt="" class="img-fluid" id="fotoVermaisProduto">
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-12">
                             <div class="row">
                                 <div class="col-12 mb-3">
                                     <div class="inputInvisivel w-100 fs-4 text-center" id="nomeProdutoVermais"
@@ -432,13 +443,29 @@ if ($_SESSION['idadm']) {
                                     <div class="fs-5 mb-3">
                                         <div class="input-group mb-3">
                                                 <span class="input-group-text"
-                                                      style="background: transparent; border: none; color: black">Tela inicial</span>
+                                                      style="background: transparent; border: none; color: black">Tela inicial:</span>
                                             <select class="form-select" aria-label="Default select example"
                                                     id="telaInicialProdutoVermais" name="telaInicialProdutoVermais"
                                                     disabled
                                                     style="background: transparent; border: none; color: black">
                                                 <option value="S">Sim</option>
                                                 <option value="N">Não</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="col-12">
+                                    <div class="fs-5 mb-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"
+                                                  style="background: transparent; border: none; color: black">Posição na tela:</span>
+                                            <select class="form-select" aria-label="Default select example"
+                                                    id="posicaoProdutoVermais" name="posicaoProdutoVermais" disabled
+                                                    style="background: transparent; border: none; color: black">
+                                                <option value="C">Início</option>
+                                                <option value="M">Meio</option>
+                                                <option value="F">Final</option>
                                             </select>
                                         </div>
                                     </div>
@@ -473,7 +500,7 @@ if ($_SESSION['idadm']) {
                     <div class="row">
                         <div class="col-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Nome</span>
+                                <span class="input-group-text">Nome:</span>
                                 <input type="text" class="form-control" placeholder="Nome do Produto"
                                        aria-label="Nome do Produto" id="nomeProdutoEdit" name="nomeProdutoEdit">
                             </div>
@@ -481,14 +508,14 @@ if ($_SESSION['idadm']) {
                         </div>
                         <div class="col-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Preco</span>
+                                <span class="input-group-text">Preco:</span>
                                 <input type="text" class="form-control dinheiro" placeholder="Valor do Produto"
                                        aria-label="Valor do Produto" id="valorProdutoEdit" name="valorProdutoEdit">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Tipo</span>
+                                <span class="input-group-text">Tipo:</span>
                                 <select class="form-select" aria-label="Default select example" id="tipoProdutoEdit"
                                         name="tipoProdutoEdit">
                                     <option value="blazer" selected>Blazer</option>
@@ -502,7 +529,7 @@ if ($_SESSION['idadm']) {
                         </div>
                         <div class="col-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Gênero</span>
+                                <span class="input-group-text">Gênero:</span>
                                 <select class="form-select" aria-label="Default select example" id="sexoProdutoEdit"
                                         name="sexoProdutoEdit">
                                     <option value="2">Masculino</option>
@@ -512,7 +539,7 @@ if ($_SESSION['idadm']) {
                         </div>
                         <div class="col-6 d-flex justify-content-center align-items-center">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Foto</span>
+                                <span class="input-group-text">Foto:</span>
                                 <input type="file" class="form-control" placeholder="Foto do Produto"
                                        aria-label="Foto do Produto" id="fotoProdutoEdit" name="fotoProdutoEdit">
                             </div>
@@ -523,16 +550,16 @@ if ($_SESSION['idadm']) {
                                      style="width: 150px;border: 1px black solid;border-radius: 10px"/>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Cor</span>
+                                <span class="input-group-text">Cor:</span>
                                 <input type="text" class="form-control" placeholder="Cor do Produto"
                                        aria-label="Cor do Produto" id="corProdutoEdit" name="corProdutoEdit">
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Tamanho</span>
+                                <span class="input-group-text">Tamanho:</span>
                                 <select class="form-select" aria-label="Default select example"
                                         id="tamanhoProdutoEdit" name="tamanhoProdutoEdit">
                                     <option value="p">P</option>
@@ -544,13 +571,24 @@ if ($_SESSION['idadm']) {
                                 </select>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Tela inicial</span>
+                                <span class="input-group-text">Tela inicial:</span>
                                 <select class="form-select" aria-label="Default select example"
                                         id="telaInicialProdutoEdit" name="telaInicialProdutoEdit">
                                     <option value="S">Sim</option>
                                     <option value="N">Não</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Posição na tela:</span>
+                                <select class="form-select" aria-label="Default select example"
+                                        id="posicaoProdutoEdit" name="posicaoProdutoEdit">
+                                    <option value="C">Início</option>
+                                    <option value="M">Meio</option>
+                                    <option value="F">Final</option>
                                 </select>
                             </div>
                         </div>

@@ -10,7 +10,7 @@
 <div class="card overflowTable" style="background: transparent;border:none">
     <h4 class="card-header">#Produtos
         <button type="button" class="btn btn-dark" style="float: right"
-                onclick="abrirModalProduto('nao','nao', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao', 'modalAddProduto','A', 'btnAddProduto', 'addProduto', 'frmAddProduto')">
+                onclick="abrirModalProduto('nao','nao', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao','nao','nao', 'modalAddProduto','A', 'btnAddProduto', 'addProduto', 'frmAddProduto')">
             Cadastrar
         </button>
     </h4>
@@ -43,6 +43,7 @@
                     $tamanho = $itemProduto->tamanho;
                     $ativo = $itemProduto->ativo;
                     $telaInicial = $itemProduto->telainicial;
+                    $posicao = $itemProduto->posicao;
 
 
                     if ($sexo === 'Masculino') {
@@ -69,15 +70,15 @@
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
                                 <button type="button" class="btn btn-outline-primary "
-                                        onclick="abrirModalProduto('<?php echo $idproduto ?>','idVermaisProduto', '<?php echo $idsexo ?>','sexoProdutoVermais', '<?php echo $nomeProduto ?>','nomeProdutoVermais', '<?php echo $tipo ?>','tipoProdutoVermais','<?php echo $nomeFoto ?>','nao','<?php echo $sexoRoupa ?>','fotoVermaisProduto', '<?php echo $valor ?>','valorProdutoVermais','<?php echo $marca ?>', 'nao','<?php echo $cor ?>','corProdutoVermais', '<?php echo $tamanho ?>','tamanhoProdutoVermais','<?php echo $telaInicial ?>','telaInicialProdutoVermais', 'modalVermaisProduto','A', 'btnVermaisProduto', 'editProduto', 'frmVermaisProduto')">
+                                        onclick="abrirModalProduto('<?php echo $idproduto ?>','idVermaisProduto', '<?php echo $idsexo ?>','sexoProdutoVermais', '<?php echo $nomeProduto ?>','nomeProdutoVermais', '<?php echo $tipo ?>','tipoProdutoVermais','<?php echo $nomeFoto ?>','nao','<?php echo $sexoRoupa ?>','fotoVermaisProduto', '<?php echo $valor ?>','valorProdutoVermais','<?php echo $marca ?>', 'nao','<?php echo $cor ?>','corProdutoVermais', '<?php echo $tamanho ?>','tamanhoProdutoVermais','<?php echo $telaInicial ?>','telaInicialProdutoVermais','<?php echo $posicao?>','posicaoProdutoVermais', 'modalVermaisProduto','A', 'btnVermaisProduto', 'editProduto', 'frmVermaisProduto')">
                                     Ver+
                                 </button>
                                 <button type="button" class="btn btn-outline-success"
-                                        onclick="abrirModalProduto('<?php echo $idproduto ?>','idEditProduto', '<?php echo $idsexo ?>','sexoProdutoEdit', '<?php echo $nomeProduto ?>','nomeProdutoEdit', '<?php echo $tipo ?>','tipoProdutoEdit','<?php echo $nomeFoto ?>','fotoProdutoEdit','nao','nao', '<?php echo $valor ?>','valorProdutoEdit','<?php echo $marca ?>', 'nao','<?php echo $cor ?>','corProdutoEdit', '<?php echo $tamanho ?>','tamanhoProdutoEdit','<?php echo $telaInicial ?>','telaInicialProdutoEdit', 'modalEditProduto','A', 'btnEditProduto', 'editProduto', 'frmEditProduto')">
+                                        onclick="abrirModalProduto('<?php echo $idproduto ?>','idEditProduto', '<?php echo $idsexo ?>','sexoProdutoEdit', '<?php echo $nomeProduto ?>','nomeProdutoEdit', '<?php echo $tipo ?>','tipoProdutoEdit','<?php echo $nomeFoto ?>','fotoProdutoEdit','nao','nao', '<?php echo $valor ?>','valorProdutoEdit','<?php echo $marca ?>', 'nao','<?php echo $cor ?>','corProdutoEdit', '<?php echo $tamanho ?>','tamanhoProdutoEdit','<?php echo $telaInicial ?>','telaInicialProdutoEdit','<?php echo $posicao?>','posicaoProdutoEdit', 'modalEditProduto','A', 'btnEditProduto', 'editProduto', 'frmEditProduto')">
                                     <i class="bi bi-pen">Alterar</i>
                                 </button>
                                 <button type="button" class="btn btn-outline-danger"
-                                        onclick="abrirModalProduto('<?php echo $idproduto ?>','idDeletarProduto', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao', 'modalDeleteProduto','A', 'btnDeleteProduto', 'deleteProduto', 'frmProdutoDelete')">
+                                        onclick="abrirModalProduto('<?php echo $idproduto ?>','idDeletarProduto', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao', 'nao','nao','nao','nao','nao','nao','modalDeleteProduto','A', 'btnDeleteProduto', 'deleteProduto', 'frmProdutoDelete')">
                                     <i class="bi bi-trash">Deletar</i>
                                 </button>
                             </div>

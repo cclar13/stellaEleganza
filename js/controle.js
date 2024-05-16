@@ -363,7 +363,7 @@ function abrirModalContato(id, inID, nome, InNome, nomeModal, abrirModal = 'A', 
     }
 }
 
-function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomeProduto, tipo, INPtipo, nomeFoto, INPnomeFoto,genero, idImgVm, valor, INPvalor, marca, INPmarca, cor, INPcor, tamanho, INPtamanho,idTelainicial,INPtelaIncial, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
+function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomeProduto, tipo, INPtipo, nomeFoto, INPnomeFoto,genero, idImgVm, valor, INPvalor, marca, INPmarca, cor, INPcor, tamanho, INPtamanho,idTelainicial,INPtelaIncial,idPosicao,INPposicao, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
     const formDados = document.getElementById(`${formulario}`)
 
     var botoes = document.getElementById(`${botao}`);
@@ -433,10 +433,15 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
             tamanhoRoupa.value = tamanho;
             // alert(tamanho)
         }
+
         const telainicial = document.getElementById(`${INPtelaIncial}`)
         if (INPtelaIncial !== 'nao') {
             telainicial.value = idTelainicial;
             // alert(idTelainicial)
+        }
+        const posicao = document.getElementById(`${INPposicao}`)
+        if (INPposicao !== 'nao'){
+            posicao.value = idPosicao;
         }
         const submitHandler = function (event) {
             event.preventDefault();

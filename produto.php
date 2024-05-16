@@ -50,7 +50,7 @@ if (isset($dados) && !empty($dados)) {
                 }
 
                 ?>
-                <img src="./img/roupas/<?php echo $pasta ?>/<?php echo $nomeFoto ?>" alt=""  class="mt-4 img-fluid">
+                <img src="./img/roupas/<?php echo $pasta ?>/<?php echo $nomeFoto ?>" alt="" class="mt-4 img-fluid">
             <?php } ?>
         </div>
         <div class="col-lg-7 ">
@@ -58,18 +58,56 @@ if (isset($dados) && !empty($dados)) {
             $produto = listarItemExpecifico('*', 'produto', 'idproduto', "$idproduto");
             foreach ($produto as $product) {
                 $nome = $product->nomeProduto;
-                $preco = $product-> valor;
-                $tipo = $product -> tipo;
+                $preco = $product->valor;
+                $tipo = $product->tipo;
+                $cor = $product->cor;
+                $tamanho = $product->tamanho;
+
+                if ($tamanho === 'pp') {
+                    $tamanho = 'PP';
+                } else if ($tamanho === 'p') {
+                    $tamanho = 'P';
+                } else if ($tamanho === 'm') {
+                    $tamanho = 'M';
+                } else if ($tamanho === 'g') {
+                    $tamanho = 'G';
+                } else if ($tamanho === 'gg') {
+                    $tamanho = 'GG';
+                } else if ($tamanho === 'xg') {
+                    $tamanho = 'XG';
+                } else if ($tamanho === 'xgg') {
+                    $tamanho = 'XGG';
+                } else if ($tamanho === 'eg') {
+                    $tamanho = 'EG';
+                }
+
+                if ($tipo === 'calca') {
+                    $tipo = 'Calça';
+                } else if ($tipo === 'blazer') {
+                    $tipo = 'Blazer';
+                } else if ($tipo === 'vestido') {
+                    $tipo = 'Vestido';
+                } else if ($tipo === 'camisa') {
+                    $tipo = 'Camisa';
+                }
             }
             ?>
             <h5 class="mt-5"><?php echo $nome ?></h5>
-            <h3 class="mt-3 text-success">R$ <?php echo $preco?></h3>
+            <h3 class="mt-3 text-success">R$ <?php echo $preco ?></h3>
             <hr>
-<!--            <div class="mt-3 d-flex align-items-center">-->
-<!--                <p>Quantidade: <input id="qtdProduto" value="0" disabled class="text-black" style="border: none; background: transparent;"></p> <button id="diminuirQtd" class="btnQtd">-</button><button class="btnQtd" id="aumentarQtd">+</button>-->
-<!--            </div>-->
+            <p>Tamanho: <?php echo $tamanho ?></p>
+            <hr>
+            <p>Cor: <?php echo $cor ?></p>
+            <hr>
+            <p>Tipo: <?php echo $tipo ?></p>
+            <hr>
+            <!--            <div class="mt-3 d-flex align-items-center">-->
+            <!--                <p>Quantidade: <input id="qtdProduto" value="0" disabled class="text-black" style="border: none; background: transparent;"></p> <button id="diminuirQtd" class="btnQtd">-</button><button class="btnQtd" id="aumentarQtd">+</button>-->
+            <!--            </div>-->
             <div class="mt-5 text-center ">
-                <button type="button" class="botaoAddCarrinho" id="botaoAddCarrinho" onclick="alertSuccess('Produto comprado com sucesso!', 'green')">Comprar</button>
+                <button type="button" class="botaoAddCarrinho" id="botaoAddCarrinho"
+                        onclick="alertSuccess('Produto comprado com sucesso!', 'green')">Comprar
+                </button>
             </div>
         </div>
     </div>

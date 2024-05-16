@@ -16,6 +16,7 @@ if (isset($dados) && !empty($dados)) {
     $valor = isset($dados['valorProdutoEdit']) ? addslashes($dados['valorProdutoEdit']) : '';
     $tipo = isset($dados['tipoProdutoEdit']) ? addslashes($dados['tipoProdutoEdit']) : '';
     $telainicial = isset($dados['telaInicialProdutoEdit']) ? addslashes($dados['telaInicialProdutoEdit']) : '';
+    $posicao = isset($dados['posicaoProdutoEdit']) ? addslashes($dados['posicaoProdutoEdit']) : '';
 
 
     if (isset($_FILES["fotoProdutoEdit"]) && $_FILES["fotoProdutoEdit"]['error'] === UPLOAD_ERR_OK) {
@@ -31,7 +32,7 @@ if (isset($dados) && !empty($dados)) {
         $fotoPath = uniqid() . '_' . $fotoName;
 
         if (move_uploaded_file($fotoTmpName, $uploadDir . '/' . $fotoPath)) {
-            $retornoUpdate = alterar9Item('produto', 'idsexo', 'nomeProduto', 'tipo', 'nomeFoto', 'valor', 'marca', 'cor', 'tamanho','telainicial', "$sexo", "$nome", "$tipo", "$fotoPath", "$valor", 'stellaEleganza', "$cor", "$tam","$telainicial",'idproduto',"$id");
+            $retornoUpdate = alterar10Item('produto', 'idsexo', 'nomeProduto', 'tipo', 'nomeFoto', 'valor', 'marca', 'cor', 'tamanho', 'telainicial', 'posicao', "$sexo", "$nome", "$tipo", "$fotoPath", "$valor", 'stellaEleganza', "$cor", "$tam", "$telainicial", "$posicao", 'idproduto', "$id");
             if ($retornoUpdate > 0) {
                 echo json_encode(['success' => true, 'message' => "Produto alterado com sucesso"]);
             } else {
@@ -41,8 +42,8 @@ if (isset($dados) && !empty($dados)) {
             echo json_encode(['success' => false, 'message' => "Foto não encontrada!"]);
         }
 
-    }else{
-        $retornoUpdate = alterar8Item('produto', 'idsexo', 'nomeProduto', 'tipo', 'valor', 'marca', 'cor', 'tamanho','telainicial', "$sexo", "$nome", "$tipo", "$valor", 'stellaEleganza', "$cor", "$tam","$telainicial",'idproduto',"$id");
+    } else {
+        $retornoUpdate = alterar9Item('produto', 'idsexo', 'nomeProduto', 'tipo', 'valor', 'marca', 'cor', 'tamanho', 'telainicial', 'posicao', "$sexo", "$nome", "$tipo", "$valor", 'stellaEleganza', "$cor", "$tam", "$telainicial", "$posicao", 'idproduto', "$id");
         if ($retornoUpdate > 0) {
             echo json_encode(['success' => true, 'message' => "Produto alterado com sucesso"]);
         } else {

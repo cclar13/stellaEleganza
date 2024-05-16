@@ -14,22 +14,24 @@ if (isset($dados) && !empty($dados)) {
     $tam = isset($dados['tamanhoProdutoAdd']) ? addslashes($dados['tamanhoProdutoAdd']) : '';
     $valor = isset($dados['valorProdutoAdd']) ? addslashes($dados['valorProdutoAdd']) : '';
     $tipo = isset($dados['tipoProdutoAdd']) ? addslashes($dados['tipoProdutoAdd']) : '';
+    $telainicial = isset($dados['telaInicialProdutoAdd']) ? addslashes($dados['telaInicialProdutoAdd']) : '';
+    $posicao = isset($dados['posicaoProdutoAdd']) ? addslashes($dados['posicaoProdutoAdd']) : '';
 
 
     if (isset($_FILES["fotoProdutoAdd"]) && $_FILES["fotoProdutoAdd"]['error'] === UPLOAD_ERR_OK) {
         $fotoTmpName = $_FILES["fotoProdutoAdd"]['tmp_name'];
         $fotoName = $_FILES["fotoProdutoAdd"]['name'];
-if($sexo ==1){
+        if ($sexo == 1) {
 
-        $uploadDir = '../img/roupas/feminino';
-}else{
-        $uploadDir = '../img/roupas/masculino';
-}
+            $uploadDir = '../img/roupas/feminino';
+        } else {
+            $uploadDir = '../img/roupas/masculino';
+        }
 
         $fotoPath = uniqid() . '_' . $fotoName;
 
         if (move_uploaded_file($fotoTmpName, $uploadDir . '/' . $fotoPath)) {
-            $retornoInsert = insert9Item('produto', 'idsexo, nomeProduto, tipo, nomeFoto, valor, marca, cor, tamanho,cadastro', "$sexo", "$nome", "$tipo", "$fotoPath", "$valor",'stellaEleganza',"$cor","$tam",DATATIMEATUAL);
+            $retornoInsert = insert11Item('produto', 'idsexo, nomeProduto, tipo, nomeFoto, valor, marca, cor, tamanho,telainicial,posicao,cadastro', "$sexo", "$nome", "$tipo", "$fotoPath", "$valor", 'stellaEleganza', "$cor", "$tam","$telainicial","$posicao", DATATIMEATUAL);
             if ($retornoInsert > 0) {
                 echo json_encode(['success' => true, 'message' => "Produto cadastrado com sucesso"]);
             } else {
