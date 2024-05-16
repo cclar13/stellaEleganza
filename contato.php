@@ -33,7 +33,7 @@ include_once("func/funcoes.php");
         <div class="col-12">
             <h2>Entre em contato conosco:</h2>
         </div>
-        <div class="col-6 ">
+        <div class="col-lg-6 col-12 mt-5">
             <form  method="post" id="frmContato" name="frmContato">
 
                 <div class="input-container ">
@@ -49,7 +49,7 @@ include_once("func/funcoes.php");
                 <button class="botaoContato" type="submit" onclick="addContato()" >Enviar</button>
             </form>
         </div>
-        <div class="col-6">
+        <div class="col-lg-6 col-12 mt-5">
 
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190028.35442656942!2d12.371191233888956!3d41.91020879186577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2zUm9tYSwgSXTDoWxpYQ!5e0!3m2!1spt-BR!2sbr!4v1715714537689!5m2!1spt-BR!2sbr"
                     class="w-100" style="border:1px black solid; height: 500px; border-radius: 20px" allowfullscreen="" loading="lazy"
