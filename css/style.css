@@ -387,7 +387,22 @@ body {
 @media (min-width: 768px) {
 }
 
+@media (max-width: 992px) {
+    #inicio{
+        display: none;
+    }
+    .navSecundaria{
+        display: block;
+    }
+}
+
 @media (min-width: 992px) {
+    #inicio{
+        display: block;
+    }
+    .navSecundaria{
+        display: none;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -419,6 +434,16 @@ body {
 
 .navbar{
     height: 80px;
+}
+
+.generolist{
+    border: none;
+    margin-left: 10%;
+}
+.btnGeneroAside{
+    border: none;
+    background: transparent;
+    color: white;
 }
 
 /*.overflowTable{*/
