@@ -348,8 +348,8 @@ if ($_SESSION['idadm']) {
                                 </div>
                                 <hr>
                                 <div class="col-12 mb-3">
-                                    <div class="fs-5">
-                                        Preço: R$ <span id="valorProdutoVermais" name="valorProdutoVermais"></span>
+                                    <div class="fs-5 text-black">
+                                        Preço: R$ <span class="text-black" id="valorProdutoVermais" name="valorProdutoVermais"></span>
                                         <!--                                        <input type="text" class="inputInvisivel dinheiro"-->
                                         <!--                                               placeholder="Valor do Produto"-->
                                         <!--                                               aria-label="Valor do Produto" >-->
