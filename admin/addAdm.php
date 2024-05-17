@@ -26,12 +26,11 @@ if (isset($dados) && !empty($dados)) {
 
         if (move_uploaded_file($fotoTmpName, $uploadDir . '/' . $fotoPath)) {
             $retornoInsert = insert5Item('adm', 'fotoAdm, nomeAdm, email, senha, cadastro', "$fotoPath", "$nome", "$email", "$senhaCrip", DATATIMEATUAL);
-            echo json_encode(['success' => true, 'message' => "Administrador cadastrado com sucesso pettersen"]);
-//            if ($retornoInsert > 0) {
-//                echo json_encode(['success' => true, 'message' => "Administrador cadastrado com sucesso pettersen"]);
-//            } else {
-//                echo json_encode(['success' => false, 'message' => "Administrador não cadastrado LUciano!"]);
-//            }
+            if ($retornoInsert > 0) {
+                echo json_encode(['success' => true, 'message' => "Administrador cadastrado com sucesso!"]);
+            } else {
+                echo json_encode(['success' => false, 'message' => "Administrador não cadastrado!"]);
+            }
         } else {
             echo json_encode(['success' => false, 'message' => "Foto não encontrada!"]);
         }
@@ -41,11 +40,11 @@ if (isset($dados) && !empty($dados)) {
     else {
         $retornoInsert = insert4Item('adm', 'nomeAdm, email, senha, cadastro', "$nome", "$email", "$senhaCrip", DATATIMEATUAL);
         if ($retornoInsert > 0) {
-            echo json_encode(['success' => true, 'message' => "Administrador cadastrado com sucesso alessa"]);
+            echo json_encode(['success' => true, 'message' => "Administrador cadastrado com sucesso!"]);
         } else {
-            echo json_encode(['success' => false, 'message' => "Administrador não cadastrado vanessa!"]);
+            echo json_encode(['success' => false, 'message' => "Administrador não cadastrado!"]);
         }
     }
 } else {
-    echo json_encode(['success' => false, 'message' => "Erro, nenhum dado encontrado walter!"]);
+    echo json_encode(['success' => false, 'message' => "Erro, nenhum dado encontrado!"]);
 }
