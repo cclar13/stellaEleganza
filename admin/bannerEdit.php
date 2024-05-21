@@ -9,21 +9,9 @@ $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 
 if (isset($dados) && !empty($dados)) {
-    $item1 = isset($dados['item1']) ? addslashes($dados['item1']) : '';
-    $item2 = isset($dados['item2']) ? addslashes($dados['item2']) : '';
-    $item3 = isset($dados['item3']) ? addslashes($dados['item3']) : '';
 
-    if ($item1 !== 'vazio') {
-        $contar = 1;
-    }
-    if ($item2 !== 'vazio') {
-        $contar = 2;
-    }
-    if ($item3 !== 'vazio') {
-        $contar = 3;
-    }
     $num = 0;
-    while ($num < $contar) {
+    while ($num < 4) {
         $num = $num + 1;
 
         if (isset($_FILES["imagem$num"]) && $_FILES["imagem$num"]['error'] === UPLOAD_ERR_OK) {

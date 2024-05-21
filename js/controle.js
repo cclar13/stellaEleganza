@@ -246,7 +246,7 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, 
     }
 }
 
-function abrirModalBanner(img1, img2, img3, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
+function abrirModalBanner(img1, img2, img3, img4, nomeModal, abrirModal = 'A', botao, addEditDel, formulario) {
     const formDados = document.getElementById(`${formulario}`)
 
     var botoes = document.getElementById(`${botao}`);
@@ -262,23 +262,6 @@ function abrirModalBanner(img1, img2, img3, nomeModal, abrirModal = 'A', botao, 
             const formData = new FormData(form);
 
             formData.append('controle', `${addEditDel}`)
-            imagem1 = document.getElementById(`${img1}`)
-            if (imagem1.value == '') {
-                formData.append('item1', `vazio`)
-                imagem1.append('foto1', imagem1.files[0]);
-            }
-            imagem2 = document.getElementById(`${img2}`)
-            if (imagem2.value == '') {
-                formData.append('item2', `vazio`)
-                imagem2.append('foto2', imagem2.files[0]);
-
-            }
-            imagem3 = document.getElementById(`${img3}`)
-            if (imagem3.value == '') {
-                formData.append('item3', `vazio`)
-                imagem3.append('foto3', imagem3.files[0]);
-
-            }
             fetch('controle.php', {
                 method: 'POST', body: formData,
             })

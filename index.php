@@ -195,7 +195,18 @@ include_once('./func/funcoes.php');
     </div>
 
     <div class="bannerFixo mb-2 mt-4">
-        <img src="./bannerRotativos/4.png" alt="" width="100%">
+        <?php
+        $banner = listarTabela('*', 'banner');
+        foreach ($banner as $item) {
+
+        $foto4 = $item->foto4;
+
+        ?>
+        <img src="./img/banners/<?php echo $foto4 ?>" class="d-block w-100" alt="Banner 4">
+        <?php
+        }
+        ?>
+
     </div>
 
     <div class="fs-3 mt-5 secao">

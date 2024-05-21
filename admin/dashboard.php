@@ -161,7 +161,10 @@ if ($_SESSION['idadm']) {
                         <input type="file" class="form-control" id="imagem3" name="imagem3">
                         <label class="input-group-text" for="imagem3">Imagem 3</label>
                     </div>
-
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="imagem4" name="imagem4">
+                        <label class="input-group-text" for="imagem4">Imagem 4</label>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
