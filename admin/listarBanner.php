@@ -5,7 +5,7 @@
         Alterar
     </button>
 </div>
-<div class="overflowTable">
+<div class="overflowTable mb-5">
     <?php
     $banner = listarTabela('*', 'banner');
     if ($banner !== 'Vazio') {
@@ -54,6 +54,4 @@
         <?php
     }
     ?>
-    </tbody>
-    </table>
 </div>

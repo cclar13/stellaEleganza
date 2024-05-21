@@ -199,11 +199,19 @@ include_once('./func/funcoes.php');
         $banner = listarTabela('*', 'banner');
         foreach ($banner as $item) {
 
-        $foto4 = $item->foto4;
+            $foto4 = $item->foto4;
 
-        ?>
-        <img src="./img/banners/<?php echo $foto4 ?>" class="d-block w-100" alt="Banner 4">
-        <?php
+            if ($foto4 !== '') {
+                ?>
+                <img src="./img/banners/<?php echo $foto4 ?>" class="d-block w-100" alt="Banner 4">
+                <?php
+            } else {
+                ?>
+                <img src="./img/banners/<?php echo $foto4 ?>" class="d-none w-100" alt="Banner 4">
+                <?php
+            }
+
+
         }
         ?>
 
