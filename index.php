@@ -171,7 +171,7 @@ include_once('./func/funcoes.php');
                                 <div><?php echo $preco ?></div>
                             </div>
                             <hr>
-                            <div>
+                            <div class="d-flex justify-content-center align-items-center">
                                 <form action="produto.php" method="get">
                                     <input type="hidden" name="produto" value="<?php echo $id ?>">
                                     <button type="submit" class="btnVerProduto">Ver produto</button>
@@ -234,7 +234,7 @@ include_once('./func/funcoes.php');
                                 <div><?php echo $preco ?></div>
                             </div>
                             <hr>
-                            <div>
+                            <div class="d-flex justify-content-center align-items-center">
                                 <form action="produto.php" method="get">
                                     <input type="hidden" name="produto" value="<?php echo $id ?>">
                                     <button type="submit" class="btnVerProduto">Ver produto</button>
