@@ -61,6 +61,31 @@ body {
     transition: 0.2s ease-in-out;
 }
 
+.picanhaHover {
+    /*color: #73543E;*/
+    /*background: white;*/
+    /*padding: 5px;*/
+    transition: all 0.2s ease;
+    border-radius: 15px;
+    padding: 10px 10px;
+}
+
+.picanhaHover:hover {
+    background: #a17759;
+    border-radius: 15px;
+    padding: 10px 10px;
+
+}
+.picanhaHover.sair:hover{
+    background:  #940000;
+    border-radius: 15px;
+    padding: 5px ;
+
+}
+.picanhaHover.sair{
+    padding: 5px ;
+
+}
 .input {
     margin-left: 10px;
     border-radius: 10px;
@@ -251,7 +276,7 @@ body {
     background-color: #f8e7d8;
 }
 
-.circulo{
+.circulo {
     border-radius: 50%;
 }
 
@@ -292,7 +317,8 @@ body {
     border-radius: 50%;
 
 }
-.imagemUser{
+
+.imagemUser {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -366,7 +392,7 @@ body {
     color: white;
 }
 
-.margemDiretaBtn{
+.margemDiretaBtn {
     margin-right: 20px;
 }
 
@@ -388,19 +414,21 @@ body {
 }
 
 @media (max-width: 992px) {
-    #inicio{
+    #inicio {
         display: none;
     }
-    .navSecundaria{
+
+    .navSecundaria {
         display: block;
     }
 }
 
 @media (min-width: 992px) {
-    #inicio{
+    #inicio {
         display: block;
     }
-    .navSecundaria{
+
+    .navSecundaria {
         display: none;
     }
 }
@@ -409,21 +437,22 @@ body {
 }
 
 @media (min-width: 1400px) {
-    .navbar{
+    .navbar {
         display: block;
     }
 }
 
-@media (max-width: 1400px){
-    .navLateral{
+@media (max-width: 1400px) {
+    .navLateral {
         display: none;
     }
-    .aside{
+
+    .aside {
         min-height: 10vh;
     }
 }
 
-.botaoListNavbar{
+.botaoListNavbar {
     width: 50px;
     height: 50px;
     border: none;
@@ -432,20 +461,21 @@ body {
     color: white;
 }
 
-.navbar{
+.navbar {
     height: 80px;
 }
 
-.generolist{
+.generolist {
     border: none;
     margin-left: 10%;
 }
-.btnGeneroAside{
+
+.btnGeneroAside {
     border: none;
     background: transparent;
     color: white;
 }
 
-.overflowTable{
+.overflowTable {
     overflow-x: auto;
 }

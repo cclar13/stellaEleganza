@@ -77,23 +77,23 @@ if ($_SESSION['idadm']) {
                 <div>Menu</div>
             </div>
             <div class="aside">
-                <div class="pointer mt-4" onclick="carregarConteudo('listarBanner')">
+                <div class="pointer mt-3 picanhaHover" onclick="carregarConteudo('listarBanner')">
                     <i class="bi bi-image-fill"></i>
                     <span>Banner(s)</span>
                 </div>
-                <div class="pointer mt-4" onclick="carregarConteudo('listarProduto')">
+                <div class="pointer mt-3 picanhaHover" onclick="carregarConteudo('listarProduto')">
                     <i class="bi bi-box-seam"></i>
                     <span>Produto(s)</span>
                 </div>
-                <div class="pointer mt-4" onclick="carregarConteudo('listarContato')">
+                <div class="pointer mt-3 picanhaHover" onclick="carregarConteudo('listarContato')">
                     <i class="bi bi-person-lines-fill"></i>
                     <span>Contato(s)</span>
                 </div>
-                <div class="pointer mt-4" onclick="carregarConteudo('listarAdm')">
+                <div class="pointer mt-3 picanhaHover" onclick="carregarConteudo('listarAdm')">
                     <i class="bi bi-file-person"></i>
                     <span>Administrador(es)</span>
                 </div>
-                <div class="pointer mt-4">
+                <div class="pointer mt-3 sair picanhaHover">
                     <i class="bi bi-door-open"></i>
                     <span><a href="logout.php" class="edicaoLink text-white">Sair</a></span>
                 </div>
