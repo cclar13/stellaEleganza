@@ -19,8 +19,8 @@ if ($servidorLocal) {
     define('PASS', '');
     define('DBNAME', 'moda');
 } else {
-    define('HOST', '192.168.1.1');
-    define('USER', 'root');
-    define('PASS', '');
+    define('HOST', '15.235.55.95');
+    define('USER', 'ademirSilva');
+    define('PASS', 'Wold24#5');
     define('DBNAME', 'moda');
 }
