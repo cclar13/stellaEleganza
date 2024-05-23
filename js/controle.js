@@ -502,29 +502,6 @@ function alertError(msg) {
 
 }
 
-// if (document.getElementById('diminuirQtd')) {
-//
-//     const menos = document.getElementById('diminuirQtd');
-//     const mais = document.getElementById('aumentarQtd');
-//     let qtdProduto = parseInt(document.getElementById('qtdProduto').value);
-//
-//     menos.addEventListener('click', () => {
-//         if (qtdProduto > 0) {
-//             qtdProduto -= 1;
-//         } else {
-//             qtdProduto = 0;
-//         }
-//
-//         document.getElementById('qtdProduto').value = parseInt(qtdProduto);
-//         console.log(qtdProduto);
-//     });
-//
-//     mais.addEventListener('click', () => {
-//
-//         qtdProduto += 1;
-//
-//         document.getElementById('qtdProduto').value = parseInt(qtdProduto);
-//         console.log(qtdProduto);
-//     });
-//
-// }
+function redirecionamento(page){
+    window.location.href = page
+}
