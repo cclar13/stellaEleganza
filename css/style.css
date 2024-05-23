@@ -490,7 +490,10 @@ body {
 }
 
 .overflowTable {
-    overflow-x: auto;
+    overflow: scroll !important;
+    /*text-overflow: ellipsis !important;*/
+    white-space: nowrap;
+    /*direction: ltr;*/
 }
 
 .minHeight{

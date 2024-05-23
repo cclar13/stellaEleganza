@@ -93,10 +93,12 @@ if ($_SESSION['idadm']) {
                     <i class="bi bi-file-person"></i>
                     <span>Administrador(es)</span>
                 </div>
-                <div class="pointer mt-3 sair picanhaHover">
-                    <i class="bi bi-door-open"></i>
-                    <span><a href="logout.php" class="edicaoLink text-white">Sair</a></span>
-                </div>
+                <a href="logout.php" class="edicaoLink text-white">
+                    <div class="pointer mt-3 sair picanhaHover">
+                        <i class="bi bi-door-open"></i>
+                        <span>Sair</span>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -347,7 +349,8 @@ if ($_SESSION['idadm']) {
                                 <hr>
                                 <div class="col-12 mb-3">
                                     <div class="fs-5 text-black">
-                                        Preço: R$ <span class="text-black" id="valorProdutoVermais" name="valorProdutoVermais"></span>
+                                        Preço: R$ <span class="text-black" id="valorProdutoVermais"
+                                                        name="valorProdutoVermais"></span>
                                         <!--                                        <input type="text" class="inputInvisivel dinheiro"-->
                                         <!--                                               placeholder="Valor do Produto"-->
                                         <!--                                               aria-label="Valor do Produto" >-->
@@ -808,26 +811,28 @@ if ($_SESSION['idadm']) {
                 <div>Menu</div>
             </div>
             <div class="aside">
-                <div class="pointer mt-4" onclick="carregarConteudo('listarBanner')">
+                <div class="pointer mt-4 picanhaHover" onclick="carregarConteudo('listarBanner')">
                     <i class="bi bi-image-fill"></i>
                     <span>Banner(s)</span>
                 </div>
-                <div class="pointer mt-4" onclick="carregarConteudo('listarProduto')">
+                <div class="pointer mt-4 picanhaHover" onclick="carregarConteudo('listarProduto')">
                     <i class="bi bi-box-seam"></i>
                     <span>Produto(s)</span>
                 </div>
-                <div class="pointer mt-4" onclick="carregarConteudo('listarContato')">
+                <div class="pointer mt-4 picanhaHover" onclick="carregarConteudo('listarContato')">
                     <i class="bi bi-person-lines-fill"></i>
                     <span>Contato(s)</span>
                 </div>
-                <div class="pointer mt-4" onclick="carregarConteudo('listarAdm')">
+                <div class="pointer mt-4 picanhaHover" onclick="carregarConteudo('listarAdm')">
                     <i class="bi bi-file-person"></i>
                     <span>Administrador(es)</span>
                 </div>
-                <div class="pointer mt-4">
-                    <i class="bi bi-door-open"></i>
-                    <span><a href="logout.php" class="edicaoLink text-white">Sair</a></span>
-                </div>
+                <a href="logout.php" class="edicaoLink text-white">
+                    <div class="pointer mt-4 picanhaHover sair">
+                        <i class="bi bi-door-open"></i>
+                        <span>Sair</span>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
