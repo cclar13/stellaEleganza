@@ -137,9 +137,8 @@ function addContato() {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.success) {
-
                     formulario.reset()
                     alertSuccess(data.message, 'green')
                 } else {
@@ -220,7 +219,7 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, 
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     if (data.success) {
                         alertSuccess(data.message, '#1B7E00')
                         carregarConteudo("listarAdm");
@@ -232,12 +231,12 @@ function abrirModalJsAdm(id, inID, idFoto, infoto, caminhoFoto, innome, idNome, 
                         carregarConteudo("listarAdm");
                     }
                 })
-            // .catch(error => {
-            //     botoes.disabled = false;
-            //     ModalInstacia.hide();
-            //     carregarConteudo("listarAdm");
-            //     console.error('Erro na requisição:', error);
-            // });
+            .catch(error => {
+                botoes.disabled = false;
+                ModalInstacia.hide();
+                carregarConteudo("listarAdm");
+                console.error('Erro na requisição:', error);
+            });
         }
         formDados.addEventListener('submit', submitHandler);
     } else {
@@ -441,7 +440,7 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     if (data.success) {
                         alertSuccess(data.message, '#156400')
                         ModalInstacia.hide();
@@ -455,11 +454,11 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
                         botoes.disabled = false;
                     }
                 })
-                // .catch(error => {
-                //     botoes.disabled = false;
-                //     ModalInstacia.hide();
-                //     console.error('Erro na requisição:', error);
-                // });
+                .catch(error => {
+                    botoes.disabled = false;
+                    ModalInstacia.hide();
+                    console.error('Erro na requisição:', error);
+                });
         }
         formDados.addEventListener('submit', submitHandler);
     } else {
@@ -503,86 +502,29 @@ function alertError(msg) {
 
 }
 
-if (document.getElementById('diminuirQtd')) {
-
-    const menos = document.getElementById('diminuirQtd');
-    const mais = document.getElementById('aumentarQtd');
-    let qtdProduto = parseInt(document.getElementById('qtdProduto').value);
-
-    menos.addEventListener('click', () => {
-        if (qtdProduto > 0) {
-            qtdProduto -= 1;
-        } else {
-            qtdProduto = 0;
-        }
-
-        document.getElementById('qtdProduto').value = parseInt(qtdProduto);
-        console.log(qtdProduto);
-    });
-
-    mais.addEventListener('click', () => {
-
-        qtdProduto += 1;
-
-        document.getElementById('qtdProduto').value = parseInt(qtdProduto);
-        console.log(qtdProduto);
-    });
-
-}
-
-
-
-
-// console.log(selecte.value)
-//     const submitHandler = function (event) {
-//         event.preventDefault();
-//         const form = event.target;
-//         const formData = new FormData(form);
-//         fetch('hf.php', {
-//             method: 'POST',
-//             body: formData,
-//         })
-//             .then(response => response.json())
-//             .then(data => {
-//                 console.log(data)
+// if (document.getElementById('diminuirQtd')) {
 //
-//                 if (data.success) {
-//                 }
+//     const menos = document.getElementById('diminuirQtd');
+//     const mais = document.getElementById('aumentarQtd');
+//     let qtdProduto = parseInt(document.getElementById('qtdProduto').value);
 //
-//             })
-//             .catch(error => {
-//                 console.error('Erro na requisição:', error);
-//             });
-//     }
-//     selecte.addEventListener('change', submitHandler);
-//
-//
-
-
-// let jsonEmail = {
-//     "from": {
-//         "email": "hello@mailersend.com",
-//         "name": "MailerSend"
-//     },
-//     "to": [
-//         {
-//             "email": "john@mailersend.com",
-//             "name": "John Mailer"
+//     menos.addEventListener('click', () => {
+//         if (qtdProduto > 0) {
+//             qtdProduto -= 1;
+//         } else {
+//             qtdProduto = 0;
 //         }
-//     ],
-//     "subject": "Hello from {$company}!",
-//     "text": "This is just a friendly hello from your friends at {$company}.",
-//     "html": "<b>Este é um teste de email</b>",
-//     "personalization": [
-//         {
-//             "email": "john@mailersend.com",
-//             "data": {
-//                 "company": "MailerSend"
-//             }
-//         }
-//     ]
+//
+//         document.getElementById('qtdProduto').value = parseInt(qtdProduto);
+//         console.log(qtdProduto);
+//     });
+//
+//     mais.addEventListener('click', () => {
+//
+//         qtdProduto += 1;
+//
+//         document.getElementById('qtdProduto').value = parseInt(qtdProduto);
+//         console.log(qtdProduto);
+//     });
+//
 // }
-//
-// // const obj = JSON.parse(jsonEmail)
-//
-// console.log (jsonEmail)
