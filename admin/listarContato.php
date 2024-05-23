@@ -27,7 +27,7 @@ if ($_SESSION['idadm']) {
     <div class="card-body">
         <table class="table table-hover table-bordered border-dark  table-hover text-center">
             <thead class="table-dark">
-            <tr>
+            <tr class="overflowTable">
                 <th scope="col" style="width: 7.1%">#</th>
                 <th scope="col" style="width: 45%">Nome</th>
                 <th scope="col" style="width: 40%">Telefone</th>

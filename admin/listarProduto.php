@@ -31,9 +31,9 @@ if ($_SESSION['idadm']) {
     </h4>
 
     <div class="card-body ">
-        <table class="table  table-bordered border-dark table-hover text-center">
-            <thead class="table-dark">
-            <tr>
+        <table class="table  table-bordered border-dark table-hover text-center overflowTable">
+            <thead class="table-dark  ">
+            <tr class="overflowTable">
                 <th scope="col" style="width: 7%">#</th>
                 <th scope="col" style="width: 16%">Gênero</th>
                 <th scope="col" style="width: 50%">Nome</th>

@@ -18,14 +18,14 @@ if ($_SESSION['idadm']) {
         <li class="breadcrumb-item active" aria-current="page"><a href="">Administradores</a></li>
     </ol>
 </nav>
-<div class="card " style="background: transparent;border:none">
+<div class="card overflowTable" style="background: transparent;border:none">
     <h4 class="card-header">#Administadores
         <button type="button" class="btn btn-dark" style="float: right" onclick="abrirModalJsAdm('nao','nao','nao','nao','nao','nao','nao','nao', 'nao','nao','nao','addAdm','<?php echo DATATIMEATUAL?>','A','btnAddAdm','addAdm','addFotoAdm','nao','nao','frmAddAdm')">Cadastrar</button></h4>
 
     <div class="card-body">
         <table class="table table-bordered border-dark table-hover text-center">
             <thead class="table-dark">
-            <tr>
+            <tr class="overflowTable">
                 <th scope="col" style="width: 5%">#</th>
 <!--                <th scope="col" style="width: 10%">Foto</th>-->
                 <th scope="col" style="width: 43%">Nome</th>
