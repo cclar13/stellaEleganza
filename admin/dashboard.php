@@ -93,10 +93,12 @@ if ($_SESSION['idadm']) {
                     <i class="bi bi-file-person"></i>
                     <span>Administrador(es)</span>
                 </div>
-                <div class="pointer mt-3 sair picanhaHover">
-                    <i class="bi bi-door-open"></i>
-                    <span><a href="logout.php" class="edicaoLink text-white">Sair</a></span>
-                </div>
+                <a href="logout.php" class="edicaoLink text-white">
+                    <div class="pointer mt-3 sair picanhaHover">
+                        <i class="bi bi-door-open"></i>
+                        <span>Sair</span>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -347,7 +349,8 @@ if ($_SESSION['idadm']) {
                                 <hr>
                                 <div class="col-12 mb-3">
                                     <div class="fs-5 text-black">
-                                        Preço: R$ <span class="text-black" id="valorProdutoVermais" name="valorProdutoVermais"></span>
+                                        Preço: R$ <span class="text-black" id="valorProdutoVermais"
+                                                        name="valorProdutoVermais"></span>
                                         <!--                                        <input type="text" class="inputInvisivel dinheiro"-->
                                         <!--                                               placeholder="Valor do Produto"-->
                                         <!--                                               aria-label="Valor do Produto" >-->
