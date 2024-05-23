@@ -23,7 +23,7 @@ if ($_SESSION['idadm']) {
 <div class="overflowTable mb-5">
     <?php
     $banner = listarTabela('*', 'banner');
-    if ($banner !== 'Vazio') {
+    if ($banner !== False) {
         foreach ($banner as $item) {
             $foto1 = $item->foto1;
             $foto2 = $item->foto2;

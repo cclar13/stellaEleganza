@@ -11,7 +11,6 @@ include_once("func/funcoes.php");
 <head>
     <title>Blazers masculinos - Stella Eleganza</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="./css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -22,6 +21,7 @@ include_once("func/funcoes.php");
     <link rel="icon" type="image/png" sizes="16x16"  href="./favicons/sc.png" class="rounded-circle">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="quasebranco">
@@ -47,7 +47,7 @@ include_once("func/funcoes.php");
 
                 ?>
                 <div class="col-lg-3 col-6 mt-3">
-                        <div class="card quasebranco pointer">
+                        <div class="card quasebranco">
                         <img src="./img/roupas/masculino/<?php echo $foto ?>" class="card-img-top"
                              alt="<?php echo $nome ?>" title="<?php echo $nome ?>">
                         <div class="card-body quasebranco minHeightCard">
@@ -57,7 +57,7 @@ include_once("func/funcoes.php");
                                 <div>Preço: R$  </div> <div><?php echo $preco?></div>
                             </div>
                             <hr>
-                            <div>
+                            <div class="text-center">
                                 <form action="produto.php" method="get">
                                     <input type="hidden" name="produto" value="<?php echo $id ?>">
                                     <button type="submit" class="btnVerProduto">Ver produto</button>

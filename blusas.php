@@ -11,7 +11,6 @@ include_once("func/funcoes.php");
 <head>
     <title>Blusas - Stella Eleganza</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="./css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -19,9 +18,10 @@ include_once("func/funcoes.php");
           href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="icon" type="image/png" sizes="16x16"  href="./favicons/sc.png" class="rounded-circle">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/sc.png" class="rounded-circle">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="quasebranco">
@@ -35,22 +35,39 @@ include_once("func/funcoes.php");
     <div class="row mt-5 mb-3">
         <?php
         $roupas = listarTabela('*', 'produto');
-        foreach ($roupas as $femi) {
+        foreach ($roupas
+
+                 as $femi) {
             $sexo = $femi->idsexo;
             $tipo = $femi->tipo;
             if ($sexo === 1 && $tipo === 'blusa') {
                 $foto = $femi->nomeFoto;
                 $nome = $femi->nomeProduto;
+                $id = $femi -> idproduto;
+                $preco = $femi->valor;
+                $idsexo = $femi->idsexo;
 
                 ?>
                 <div class="col-lg-3 col-6 mt-3">
-                    <div class="card quasebranco pointer">
+                    <div class="card quasebranco">
                         <img src="./img/roupas/feminino/<?php echo $foto ?>" class="card-img-top"
                              alt="<?php echo $nome ?>" title="<?php echo $nome ?>">
                         <div class="card-body quasebranco minHeightCard">
                             <h5 class="card-title"><?php echo $nome ?></h5>
+                            <hr>
+                            <div class="d-flex align-items-center">
+                                <div>Preço: R$  </div> <div><?php echo $preco?></div>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                                <form action="produto.php" method="get">
+                                    <input type="hidden" name="produto" value="<?php echo $id ?>">
+                                    <button type="submit" class="btnVerProduto">Ver produto</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
+
                 </div>
                 <?php
             }

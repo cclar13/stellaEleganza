@@ -4,8 +4,55 @@ include_once('config/constantes.php');
 include_once('func/funcoes.php');
 $dados = filter_input_array(INPUT_GET, FILTER_DEFAULT);
 
-if (isset($dados) && !empty($dados)) {
+if (isset($dados) && !empty($dados) && isset($dados['produto']) && !empty($dados['produto'])) {
+
 $idproduto = $dados['produto'];
+
+$produtos = ordenarLimite('*', 'produto', 'idproduto', 1);
+foreach ($produtos
+
+as $produtoo) {
+$id = $produtoo->idproduto;
+if ($idproduto > $id) {
+?>
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stella Eleganza</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/sc.png" class="rounded-circle">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body class="quasebranco">
+
+<?php include_once('navbar.php'); ?>
+
+<div class="container minHeight position-relative">
+    <div class="position-absolute top-50 start-50 translate-middle text-center">
+        <h3>Erro 404!</h3>
+        <h5>Está página está vázia! Por favor retorne.</h5>
+        <a href="index.php" class="btnRetorne">Retornar</a>
+    </div>
+</div>
+
+
+<?php include_once('footer.php'); ?>
+
+
+<?php
+}
 ?>
 
 <!doctype html>
@@ -54,6 +101,7 @@ $idproduto = $dados['produto'];
         <div class="col-lg-7 ">
             <?php
             $produto = listarItemExpecifico('*', 'produto', 'idproduto', "$idproduto");
+            if ($produto !== 'vazio'){
             foreach ($produto as $product) {
                 $nome = $product->nomeProduto;
                 $preco = $product->valor;
@@ -115,6 +163,8 @@ $idproduto = $dados['produto'];
 <?php include_once('footer.php'); ?>
 
 <?php
+}
+}
 }else{
 ?>
 <!doctype html>
@@ -143,7 +193,6 @@ $idproduto = $dados['produto'];
 
 <div class="container minHeight position-relative">
     <div class="position-absolute top-50 start-50 translate-middle text-center">
-        <img src="./img/vazio.gif" alt="Página vazia! Por favor retorne" title="Página vazia! Por favor retorne. Erro 404!">
         <h3>Erro 404!</h3>
         <h5>Está página está vázia! Por favor retorne.</h5>
         <a href="index.php" class="btnRetorne">Retornar</a>
