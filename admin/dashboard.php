@@ -148,7 +148,7 @@ if ($_SESSION['idadm']) {
             </div>
             <form method="post" name="frmBannerEdit" id="frmBannerEdit">
 
-                <div class="modal-body">
+                <div class="modal-body quasebranco ">
                     <div class="input-group mb-3">
                         <input type="file" class="form-control" id="imagem1" name="imagem1">
                         <label class="input-group-text" for="imagem1">Imagem 1</label>
@@ -166,7 +166,7 @@ if ($_SESSION['idadm']) {
                         <label class="input-group-text" for="imagem4">Imagem 4</label>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer quasebranco ">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-primary" id="btnEditBanner">Salvar Alterações</button>
                 </div>
@@ -185,14 +185,14 @@ if ($_SESSION['idadm']) {
             </div>
             <form method="post" name="frmContatoDelete" id="frmContatoDelete">
 
-                <div class="modal-body">
+                <div class="modal-body quasebranco">
                     <input type="hidden" id="idDeletarContato" name="idDeletarContato" hidden="hidden">
                     <h3 class="text-danger">Deletar <span class="text-black" id="nomeDelete"
                                                           name="nomeDelete"></span>
                     </h3>
                     <p class="alert alert-danger">Tem certeza disto? Esta ação não pode ser desfeita!</p>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer quasebranco">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-danger" id="btnDeleteContato">Deletar</button>
                 </div>
@@ -210,7 +210,7 @@ if ($_SESSION['idadm']) {
             </div>
             <form method="post" name="frmAddProduto" id="frmAddProduto">
 
-                <div class="modal-body">
+                <div class="modal-body quasebranco">
 
                     <div class="row">
                         <div class="col-lg-6">
@@ -311,7 +311,7 @@ if ($_SESSION['idadm']) {
                     </div>
 
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer quasebranco">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-success" id="btnAddProduto">Adicionar</button>
                 </div>
@@ -331,7 +331,7 @@ if ($_SESSION['idadm']) {
             </div>
             <form method="post" name="frmVermaisProduto" id="frmVermaisProduto">
 
-                <div class="modal-body quasebranco">
+                <div class="modal-body quasebranco ">
                     <input type="hidden" name="idVermaisProduto" id="idVermaisProduto">
                     <div class="row">
                         <div class="col-lg-6 col-12">
@@ -493,7 +493,7 @@ if ($_SESSION['idadm']) {
             </div>
             <form method="post" name="frmEditProduto" id="frmEditProduto">
 
-                <div class="modal-body quasebranco">
+                <div class="modal-body quasebranco ">
                     <input type="hidden" name="idEditProduto" id="idEditProduto">
                     <div class="row">
                         <div class="col-6">
@@ -595,7 +595,7 @@ if ($_SESSION['idadm']) {
                 </div>
 
 
-                <div class="modal-footer">
+                <div class="modal-footer quasebranco">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-primary" id="btnEditProduto">Alterar</button>
                 </div>
@@ -615,11 +615,11 @@ if ($_SESSION['idadm']) {
             </div>
             <form method="post" name="frmProdutoDelete" id="frmProdutoDelete">
 
-                <div class="modal-body quasebranco">
+                <div class="modal-body quasebranco ">
                     <input type="hidden" id="idDeletarProduto" name="idDeletarProduto" hidden="hidden">
                     <p class="alert alert-danger">Tem certeza disto? Esta ação não pode ser desfeita!</p>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer quasebranco">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-danger" id="btnDeleteProduto">Deletar</button>
                 </div>
@@ -636,7 +636,7 @@ if ($_SESSION['idadm']) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" name="frmVermaisAdm" id="frmVermaisAdm">
-                <div class="modal-body quasebranco">
+                <div class="modal-body quasebranco ">
                     <input type="hidden" name="idVermaisAdm" id="idVermaisAdm">
                     <div class="mt-3 text-center imagemUser">
                         <img src="" alt="" id="fotoVermais" width="230px">
@@ -674,7 +674,7 @@ if ($_SESSION['idadm']) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" name="frmAddAdm" id="frmAddAdm">
-                <div class="modal-body quasebranco">
+                <div class="modal-body quasebranco ">
                     <div class="">
                         <label for="addNomeAdm" class="label-control">Nome:</label>
                         <input type="text" name="addNomeAdm" id="addNomeAdm" required="required"
@@ -696,7 +696,7 @@ if ($_SESSION['idadm']) {
                     </div>
                 </div>
 
-                <div class="modal-footer quasebranco">
+                <div class="modal-footer quasebranco ">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-success" id="btnAddAdm">Cadastrar</button>
                 </div>
@@ -714,7 +714,7 @@ if ($_SESSION['idadm']) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" name="frmEditAdm" id="frmEditAdm">
-                <div class="modal-body quasebranco">
+                <div class="modal-body quasebranco ">
                     <input type="hidden" name="idEditAdm" id="idEditAdm">
                     <div class="">
                         <label for="editNomeAdm" class="label-control">Nome:</label>
@@ -736,7 +736,7 @@ if ($_SESSION['idadm']) {
                     </div>
                 </div>
 
-                <div class="modal-footer quasebranco">
+                <div class="modal-footer quasebranco ">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-primary" id="btnEditAdm">Alterar</button>
                 </div>
@@ -754,12 +754,12 @@ if ($_SESSION['idadm']) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" name="frmDeleteAdm" id="frmDeleteAdm">
-                <div class="modal-body quasebranco">
+                <div class="modal-body quasebranco ">
                     <input type="hidden" name="idDeleteAdm" id="idDeleteAdm">
                     <p>Tem certeza que deseja deletar este administrador?</p>
                 </div>
 
-                <div class="modal-footer quasebranco">
+                <div class="modal-footer quasebranco ">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-danger" id="btnDeleteAdm">Deletar</button>
                 </div>

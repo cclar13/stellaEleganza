@@ -294,7 +294,7 @@ body {
 }
 
 .quasebranco {
-    background-color: #fff8f0;
+    background-color: #fff8f0 !important;
 }
 
 .pointer {
