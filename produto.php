@@ -5,9 +5,7 @@ include_once('func/funcoes.php');
 $dados = filter_input_array(INPUT_GET, FILTER_DEFAULT);
 
 if (isset($dados) && !empty($dados)) {
-    $idproduto = $dados['produto'];
-}
-
+$idproduto = $dados['produto'];
 ?>
 
 <!doctype html>
@@ -32,7 +30,7 @@ if (isset($dados) && !empty($dados)) {
 </head>
 <body class="quasebranco">
 
-<?php include_once('navbar.php') ?>
+<?php include_once('navbar.php'); ?>
 
 <div class="container">
     <div class="row">
@@ -92,14 +90,14 @@ if (isset($dados) && !empty($dados)) {
                 }
             }
             ?>
-            <h5 class="mt-5"><?php echo $nome ?></h5>
-            <h3 class="mt-3 text-success">R$ <?php echo $preco ?></h3>
+            <h5 class="mt-5"><?php echo $nome; ?></h5>
+            <h3 class="mt-3 text-success">R$ <?php echo $preco; ?></h3>
             <hr>
-            <p>Tamanho: <?php echo $tamanho ?></p>
+            <p>Tamanho: <?php echo $tamanho; ?></p>
             <hr>
-            <p>Cor: <?php echo $cor ?></p>
+            <p>Cor: <?php echo $cor; ?></p>
             <hr>
-            <p>Tipo: <?php echo $tipo ?></p>
+            <p>Tipo: <?php echo $tipo; ?></p>
             <hr>
             <!--            <div class="mt-3 d-flex align-items-center">-->
             <!--                <p>Quantidade: <input id="qtdProduto" value="0" disabled class="text-black" style="border: none; background: transparent;"></p> <button id="diminuirQtd" class="btnQtd">-</button><button class="btnQtd" id="aumentarQtd">+</button>-->
@@ -115,6 +113,50 @@ if (isset($dados) && !empty($dados)) {
 </div>
 
 <?php include_once('footer.php'); ?>
+
+<?php
+}else{
+?>
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stella Eleganza</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/sc.png" class="rounded-circle">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body class="quasebranco">
+
+<?php include_once('navbar.php'); ?>
+
+<div class="container minHeight position-relative">
+    <div class="position-absolute top-50 start-50 translate-middle text-center">
+        <img src="./img/vazio.gif" alt="Página vazia! Por favor retorne" title="Página vazia! Por favor retorne. Erro 404!">
+        <h3>Erro 404!</h3>
+        <h5>Está página está vázia! Por favor retorne.</h5>
+        <a href="index.php" class="btnRetorne">Retornar</a>
+    </div>
+</div>
+
+
+<?php include_once('footer.php'); ?>
+
+
+<?php
+}
+?>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

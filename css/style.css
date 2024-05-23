@@ -479,3 +479,20 @@ body {
 .overflowTable {
     overflow-x: auto;
 }
+
+.minHeight{
+    min-height: 50vh;
+}
+
+.btnRetorne{
+    text-decoration: none;
+    color: #73543e;
+    border: 2px solid #73543e;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+}
+
+.btnRetorne:hover{
+    background-color: #73543e;
+    color: white;
+}
