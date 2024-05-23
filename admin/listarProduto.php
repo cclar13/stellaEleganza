@@ -1,3 +1,18 @@
+<?php
+include_once("../config/constantes.php");
+include_once("../config/conexao.php");
+include_once("../func/funcoes.php");
+
+if ($_SESSION['idadm']) {
+    $idUsuario = $_SESSION['idadm'];
+    $fotoAdm = $_SESSION['fotoAdm'];
+    //echo '<p class="text-white">'.$idUsuario.'</p>';
+} else {
+    session_destroy();
+    header('location: index.php?error=404');
+}
+?>
+
 <div class="pags">
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
          aria-label="breadcrumb">

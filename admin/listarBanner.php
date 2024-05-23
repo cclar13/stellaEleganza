@@ -1,3 +1,18 @@
+<?php
+include_once("../config/constantes.php");
+include_once("../config/conexao.php");
+include_once("../func/funcoes.php");
+
+if ($_SESSION['idadm']) {
+    $idUsuario = $_SESSION['idadm'];
+    $fotoAdm = $_SESSION['fotoAdm'];
+    //echo '<p class="text-white">'.$idUsuario.'</p>';
+} else {
+    session_destroy();
+    header('location: index.php?error=404');
+}
+?>
+
 <div class="fs-3 d-flex justify-content-around mt-3">
     # Banner
 

@@ -5,6 +5,15 @@ include_once("../config/conexao.php");
 include_once("../func/funcoes.php");
 $controle = filter_input(INPUT_POST, 'controle', FILTER_SANITIZE_STRING);
 
+if ($_SESSION['idadm']) {
+    $idUsuario = $_SESSION['idadm'];
+    $fotoAdm = $_SESSION['fotoAdm'];
+} else {
+    session_destroy();
+    header('location: index.php?error=404');
+}
+
+
 //if ($_SESSION['idadm']) {
 //    $idUsuario = $_SESSION['idadm'];
 //    $senhaAdm = $_SESSION['senhaAdm'];
