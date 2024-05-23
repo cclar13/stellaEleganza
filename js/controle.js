@@ -468,7 +468,6 @@ function abrirModalProduto(id, INPid, idsexo, INPidsexo, nomeProduto, INPnomePro
 }
 
 function alertSuccess(msg, cor) {
-
     Toastify({
         text: `${msg}`,
         duration: 3000,
@@ -482,7 +481,6 @@ function alertSuccess(msg, cor) {
             color: 'white',
         },
     }).showToast();
-
 }
 
 function alertError(msg) {
@@ -499,9 +497,4 @@ function alertError(msg) {
             color: 'white',
         },
     }).showToast();
-
-}
-
-function redirecionamento(page){
-    window.location.href = page
 }
