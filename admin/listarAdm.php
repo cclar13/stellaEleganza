@@ -37,7 +37,7 @@ if ($_SESSION['idadm']) {
             <?php
             $contar = 1;
             $listaAdm = listarTabela("*", "adm");
-            if ($listaAdm !== "Vazio") {
+            if ($listaAdm !== False) {
                 foreach ($listaAdm as $itemAdm) {
                     $idadm = $itemAdm->idadm;
                     $fotoAdm = $itemAdm->fotoAdm;

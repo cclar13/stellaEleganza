@@ -45,7 +45,7 @@ if ($_SESSION['idadm']) {
             <?php
             $contar = 1;
             $innerJoinProduto = listarTabelaInnerJoinOrdenada("*", "produto", "sexo", "idsexo", "idsexo", "idproduto", "ASC");
-            if ($innerJoinProduto !== "False") {
+            if ($innerJoinProduto !== False) {
                 foreach ($innerJoinProduto as $itemProduto) {
                     $idproduto = $itemProduto->idproduto;
                     $idsexo = $itemProduto->idsexo;

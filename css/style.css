@@ -26,7 +26,12 @@ body {
     border-radius: 20px 20px 0px 0px;
     padding-top: 20px;
 }
-
+.card-title{
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+    direction: ltr;
+}
 .form {
     display: flex;
     flex-direction: column;
@@ -251,7 +256,15 @@ body {
     background-color: #73543e;
     color: white;
 }
-
+.dropdown-menu .nav-link{
+    background-color: #73543e !important;
+    color: white !important;
+    transition: all 0.5s ease;
+}
+.dropdown-menu .nav-link:hover{
+    background-color: #946e61 !important;
+    color: white !important;
+}
 .marromIntermediario {
     background-color: #946e61;
 }
@@ -326,9 +339,9 @@ body {
 }
 
 
-.minHeightCard {
-    min-height: 150px;
-}
+/*.minHeightCard {*/
+/*    min-height: 150px;*/
+/*}*/
 
 .edicaoLink {
     text-decoration: none;

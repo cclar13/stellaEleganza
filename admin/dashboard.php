@@ -93,12 +93,10 @@ if ($_SESSION['idadm']) {
                     <i class="bi bi-file-person"></i>
                     <span>Administrador(es)</span>
                 </div>
-                <a href="logout.php" class="edicaoLink text-white">
-                    <div class="pointer mt-3 sair picanhaHover">
-                        <i class="bi bi-door-open"></i>
-                        <span>Sair</span>
-                    </div>
-                </a>
+                <div class="pointer mt-3 sair picanhaHover">
+                    <i class="bi bi-door-open"></i>
+                    <span><a href="logout.php" class="edicaoLink text-white">Sair</a></span>
+                </div>
             </div>
         </div>
 
@@ -315,7 +313,7 @@ if ($_SESSION['idadm']) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary" id="btnAddProduto">Adicionar</button>
+                    <button type="submit" class="btn btn-success" id="btnAddProduto">Adicionar</button>
                 </div>
             </form>
         </div>
@@ -349,8 +347,7 @@ if ($_SESSION['idadm']) {
                                 <hr>
                                 <div class="col-12 mb-3">
                                     <div class="fs-5 text-black">
-                                        Preço: R$ <span class="text-black" id="valorProdutoVermais"
-                                                        name="valorProdutoVermais"></span>
+                                        Preço: R$ <span class="text-black" id="valorProdutoVermais" name="valorProdutoVermais"></span>
                                         <!--                                        <input type="text" class="inputInvisivel dinheiro"-->
                                         <!--                                               placeholder="Valor do Produto"-->
                                         <!--                                               aria-label="Valor do Produto" >-->
@@ -659,8 +656,8 @@ if ($_SESSION['idadm']) {
 
                 </div>
 
-                <div class="d-flex justify-content-end align-items-center py-3 marromEscuro">
-                    <button type="button" class="btn btn-secondary margemDiretaBtn" data-bs-dismiss="modal">Fechar
+                <div class="d-flex justify-content-end align-items-center quasebranco py-3">
+                    <button type="button" class=" margemDiretaBtn botaoAddCarrinho" data-bs-dismiss="modal">Fechar
                     </button>
                 </div>
             </form>
@@ -672,7 +669,7 @@ if ($_SESSION['idadm']) {
 <div class="modal fade" id="addAdm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-success text-white">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar administrador</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -699,7 +696,7 @@ if ($_SESSION['idadm']) {
                     </div>
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer quasebranco">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-success" id="btnAddAdm">Cadastrar</button>
                 </div>
@@ -712,7 +709,7 @@ if ($_SESSION['idadm']) {
 <div class="modal fade" id="editAdm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-primary text-white">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Editar administrador</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -739,7 +736,7 @@ if ($_SESSION['idadm']) {
                     </div>
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer quasebranco">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-primary" id="btnEditAdm">Alterar</button>
                 </div>
@@ -752,8 +749,8 @@ if ($_SESSION['idadm']) {
 <div class="modal fade" id="deleteAdm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar administrador</h1>
+            <div class="modal-header bg-danger text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Deletar administrador</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="" name="frmDeleteAdm" id="frmDeleteAdm">
@@ -762,7 +759,7 @@ if ($_SESSION['idadm']) {
                     <p>Tem certeza que deseja deletar este administrador?</p>
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer quasebranco">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-danger" id="btnDeleteAdm">Deletar</button>
                 </div>

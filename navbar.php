@@ -7,17 +7,34 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Início</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="masculino.php">Masculino</a>
+                <li class="nav-item dropdown marromEscuro">
+                    <a class="nav-link dropdown-toggle marromEscuro" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Masculino
+                    </a>
+                    <ul class="dropdown-menu marromEscuro">
+                        <a class="nav-link" href="masculino.php"><b>Todas as roupas</b></a>
+                         <li><hr class="dropdown-divider"></li>
+                        <a class="nav-link" href="blazermasculino.php"> Blazers</a>
+                        <a class="nav-link" href="camisas.php"> Camisas</a>
+                        <a class="nav-link" href="calcamasculina.php"> Calças</a>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="feminino.php">Feminino</a>
+                <li class="nav-item dropdown marromEscuro">
+                    <a class="nav-link dropdown-toggle marromEscuro" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Feminino
+                    </a>
+                    <ul class="dropdown-menu marromEscuro">
+                        <a class="nav-link" href="feminino.php"><b>Todas as roupas</b></a>
+                         <li><hr class="dropdown-divider"></li>
+                        <a class="nav-link" href="blazerfeminino.php"> Blazers</a>
+                        <a class="nav-link" href="blusas.php"> Blusas</a>
+                        <a class="nav-link" href="calcafeminina.php"> Calças</a>
+                    </ul>
                 </li>
-
             </ul>
             <div style="margin-right: 20px" class="pointer">
                 <a href="contato.php" class="text-white nav-link">
-                    <i class="bi bi-person-square"></i> Contato
+                    <i class="mdi mdi-phone-plus"></i> Contato
                 </a>
             </div>
         </div>

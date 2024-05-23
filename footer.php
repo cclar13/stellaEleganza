@@ -2,6 +2,7 @@
 ?>
 
 <div class="container-fluid areia mt-3">
+
     <footer class="py-5">
         <div class="row">
             <div class="col-6 col-md-2 mb-3">
@@ -20,15 +21,19 @@
             <div class="col-6 col-md-2 mb-3">
                 <h5>Veja também</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="masculino.php" class="nav-link p-0 text-body-secondary">Roupas masculinas</a>
+                    <li class="nav-item mb-2"><a href="masculino.php" class="nav-link p-0 text-body-secondary">Roupas
+                            masculinas</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="feminino.php" class="nav-link p-0 text-body-secondary">Roupas femininas</a>
+                    <li class="nav-item mb-2"><a href="feminino.php" class="nav-link p-0 text-body-secondary">Roupas
+                            femininas</a>
                     </li>
                     <li class="nav-item mb-2"><a href="blazermasculino.php" class="nav-link p-0 text-body-secondary">Blazers
                             masculinos</a></li>
-                    <li class="nav-item mb-2"><a href="calcafeminina.php" class="nav-link p-0 text-body-secondary">Calças femininas</a>
+                    <li class="nav-item mb-2"><a href="calcafeminina.php" class="nav-link p-0 text-body-secondary">Calças
+                            femininas</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="camisas.php" class="nav-link p-0 text-body-secondary">Camisas</a></li>
+                    <li class="nav-item mb-2"><a href="camisas.php" class="nav-link p-0 text-body-secondary">Camisas</a>
+                    </li>
                 </ul>
             </div>
 
@@ -49,6 +54,9 @@
                         <button class="botaoRevista" type="button"><b>Inscrever</b></button>
                     </div>
                 </form>
+
+
+
             </div>
         </div>
 
@@ -57,6 +65,7 @@
                 <script>document.write(new Date().getFullYear());</script>
                 Stella Eleganza. Todos os direitos reservados.
             </p>
+
             <ul class="list-unstyled d-flex">
                 <li class="ms-3"><a class="link-body-emphasis" href="#">
                         <i class="bi bi-twitter-x"></i>
@@ -68,6 +77,10 @@
                         <i class="bi bi-threads"></i>
                     </a></li>
             </ul>
+        </div>
+        <div class="text-center">
+            <h6><span class="mdi mdi-email-open"> </span>contato@stellaeleganza.com.br</h6>
+
         </div>
     </footer>
 </div>
