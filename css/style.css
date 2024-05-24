@@ -490,7 +490,7 @@ body {
 }
 
 .overflowTable {
-    overflow: scroll !important;
+    overflow-x: scroll !important;
     /*text-overflow: ellipsis !important;*/
     white-space: nowrap;
     /*direction: ltr;*/

@@ -137,13 +137,13 @@ function addContato() {
         })
             .then(response => response.json())
             .then(data => {
-                // console.log(data)
+                console.log(data)
                 if (data.success) {
-                    formulario.reset()
                     alertSuccess(data.message, 'green')
+                    form.reset()
                 } else {
-                    formulario.reset()
                     alertError('Algo deu Errado, tente novamente.')
+                    form.reset()
                 }
 
             })
